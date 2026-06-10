@@ -12,7 +12,9 @@ git commit -m "feat(sse-qa): agent-only CLI+MCP single package v0.3.x"
 git push origin main
 ```
 
-**勿提交**：`~/.sse-qa/`、`**/*.secret.env`、Neo4j `data/`、Chroma 向量、`packages/sse-qa-cli/runtime/backend/`（由 `sync-server-bundle.sh` 在发布前生成）。
+**勿提交**：`~/.sse-qa/`、`.cursor/`、`.claude/`、`.codex`、`.superpowers/`、`**/*.secret.env`（仅保留 `*.example`）、Neo4j `data/`、Chroma 向量、`runtime/backend/`。
+
+发布前运行：`bash scripts/audit-release-safety.sh`
 
 ## npm（`@sse-qa/cli`）
 
@@ -23,6 +25,7 @@ cd packages/sse-qa-cli
 npm ci
 npm run build
 npm run test:smoke
+bash ../../scripts/audit-release-safety.sh
 npm pack --dry-run
 ```
 
@@ -35,8 +38,8 @@ npm publish --access public
 或打 tag 触发 [`.github/workflows/release.yml`](.github/workflows/release.yml)：
 
 ```bash
-git tag v0.3.1
-git push origin v0.3.1
+git tag v0.3.2
+git push origin v0.3.2
 ```
 
 ## 用户安装
