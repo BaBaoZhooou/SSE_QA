@@ -136,7 +136,7 @@ claude mcp add sse-qa \
 claude mcp list
 ```
 
-Cursor / Codex：见 [`packages/sse-qa-cli/examples/`](packages/sse-qa-cli/examples/)，命令改为 `$SSE_QA_BIN` 绝对路径。
+Cursor / Codex：见 [`packages/sse-qa-cli/examples/`](packages/sse-qa-cli/examples/)，将 MCP 命令中的 `sse-qa` 换为阶段 F 得到的**绝对路径**。
 
 #### 阶段 G — MCP 验收
 
@@ -215,36 +215,40 @@ MCP 注册仍建议使用 `command -v sse-qa` 或绝对路径，避免 PATH 问�
 
 ```mermaid
 flowchart TB
-  subgraph agentLayer [Agent]
-    Claude[Claude / Cursor / Codex]
-    MCP["sse-qa MCP"]
+  subgraph agentLayer [Agent 层]
+    Claude[Claude Cursor Codex]
+    MCP[sse-qa MCP]
   end
 
-  subgraph cliPkg ["@sse-qa/cli"]
-    CLI["CLI · init / doctor / mcp"]
-    RT["runtime · 配置渲染 / 启停"]
-    BE["runtime/backend · fastQA + highThinkingQA"]
+  subgraph cliPkg [sse-qa-cli 包]
+    CLI[CLI init doctor mcp]
+    RT[runtime 配置与启停]
+    BE[backend fastQA highThinkingQA]
   end
 
-  subgraph processes [运行时]
-    FastQA["fastQA :18018"]
-    Think["highThinkingQA :18019"]
-    Redis["Redis :16380"]
+  subgraph processes [运行时进程]
+    FastQA[fastQA 18018]
+    Think[highThinkingQA 18019]
+    Redis[Redis 16380]
   end
 
   subgraph userData [用户自备]
-    Chroma["Chroma 向量库"]
-    Neo4j["Neo4j（可选）"]
-    LLM["LLM / Embedding API"]
+    Chroma[Chroma 向量库]
+    Neo4j[Neo4j 可选]
+    LLM[LLM Embedding API]
   end
 
   Claude -->|stdio| MCP
   MCP --> CLI
   CLI --> RT
-  RT --> processes
-  BE -.-> processes
-  MCP -->|HTTP ask_stream| FastQA
-  MCP -->|HTTP ask_stream| Think
+  CLI --> BE
+  RT --> FastQA
+  RT --> Think
+  RT --> Redis
+  BE -.-> FastQA
+  BE -.-> Think
+  MCP -->|HTTP| FastQA
+  MCP -->|HTTP| Think
   FastQA --> Chroma
   FastQA --> Neo4j
   Think --> Chroma
@@ -301,9 +305,9 @@ sequenceDiagram
         RT->>Fast: 启动
         RT->>Think: 启动
     end
-    Agent->>MCP: setup_check / ask_*
-    MCP->>Fast: POST /api/ask_stream
-    MCP->>Think: POST /api/ask_stream
+    Agent->>MCP: setup_check 或 ask 工具
+    MCP->>Fast: POST ask_stream
+    MCP->>Think: POST ask_stream
     MCP-->>Agent: JSON 答案
 ```
 
@@ -330,7 +334,7 @@ flowchart LR
   Q[用户问题] --> Agent{Agent 选工具}
   Agent -->|ask_fast| F_RAG[fastQA 多阶段 RAG]
   Agent -->|ask_thinking| T_DEC[highThinkingQA 分解综合]
-  F_RAG --> F_VEC[Chroma + 可选 Neo4j]
+  F_RAG --> F_VEC[Chroma 与 Neo4j]
   T_DEC --> T_VEC[Chroma 检索]
 ```
 
@@ -544,7 +548,7 @@ bash scripts/audit-release-safety.sh   # 发布前审计
 
 | 现象 | 处理 |
 |------|------|
-| `sse-qa: command not found` | `export PATH="$(npm config get prefix)/bin:$PATH"` 或 `~/.npm-global/bin`；MCP 用绝对路径 |
+| `sse-qa: command not found` | 将 npm global 的 `bin` 目录加入 PATH（见 §1.2）；MCP 注册使用 `sse-qa` 绝对路径 |
 | npm `allow-scripts` 警告 | `npm approve-scripts @sse-qa/cli` 后重装 |
 | MCP Failed to connect | MCP 命令用绝对路径；先 `sse-qa server start` |
 | MCP 启动慢 | 首次冷启动 30–120s；可手动 `sse-qa server start` 常驻 |

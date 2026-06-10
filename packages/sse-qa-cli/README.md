@@ -93,7 +93,7 @@ python3 ~/sse-qa/scripts/ingest_sse_md_chroma.py \
 
 | 现象 | 处理 |
 |------|------|
-| `sse-qa: command not found` | 将 `$(npm config get prefix)/bin` 加入 PATH |
+| `sse-qa: command not found` | 将 npm global 的 `bin` 目录加入 PATH；MCP 注册使用 `sse-qa` 绝对路径 |
 | `Collection [lfp_papers] does not exist` | 运行 ingest 脚本或配置已有 Chroma 路径 |
 | MCP 连接失败 | 使用 `sse-qa` 绝对路径；先 `sse-qa server start` |
 
