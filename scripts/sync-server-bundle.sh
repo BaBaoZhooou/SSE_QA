@@ -24,6 +24,11 @@ copy_tree() {
     --exclude '.runtime' \
     --exclude 'node_modules' \
     --exclude 'tests' \
+    --exclude '.cursor' \
+    --exclude '.claude' \
+    --exclude '.codex' \
+    --exclude '.superpowers' \
+    --exclude '*.secret.env' \
     "$src/" "$dst/"
   echo "[sync] copied $src -> $dst"
 }
@@ -51,21 +56,68 @@ mkdir -p "$DEST/resource/config/shared" \
   "$DEST/resource/logs/dev/fastQA" \
   "$DEST/resource/logs/dev/highThinkingQA"
 
-for f in infrastructure.shared.env model-endpoints.shared.env graph.shared.env \
-  infrastructure.secret.env model-endpoints.secret.env graph.secret.env; do
+for f in infrastructure.shared.env model-endpoints.shared.env graph.shared.env; do
   if [[ -f "$ROOT_DIR/resource/config/shared/$f" ]]; then
     cp "$ROOT_DIR/resource/config/shared/$f" "$DEST/resource/config/shared/"
-  else
-    touch "$DEST/resource/config/shared/$f"
   fi
 done
 
+# Empty secret placeholders only — never copy local *.secret.env into npm bundle
+cat > "$DEST/resource/config/shared/infrastructure.secret.env" <<'EOF'
+# placeholder — use ~/.sse-qa/secrets.env
+PUBLIC_SERVICE_INTERNAL_AUTH_TOKEN=
+MYSQL_USER=
+MYSQL_PASSWORD=
+REDIS_PASSWORD=
+MINIO_ENDPOINT=
+MINIO_ACCESS_KEY=
+MINIO_SECRET_KEY=
+EOF
+cat > "$DEST/resource/config/shared/model-endpoints.secret.env" <<'EOF'
+# placeholder — use ~/.sse-qa/secrets.env
+LLM_API_KEY=
+INTENT_MODEL_API_KEY=
+EMBEDDING_API_KEY=
+RERANK_API_KEY=
+EOF
+touch "$DEST/resource/config/shared/graph.secret.env"
+
 for svc in fastQA highThinkingQA; do
   svc_dir="$ROOT_DIR/resource/config/services/$svc"
+  dest_svc="$DEST/resource/config/services/$svc"
+  mkdir -p "$dest_svc"
   if [[ -d "$svc_dir" ]]; then
-    rsync -a "$svc_dir/" "$DEST/resource/config/services/$svc/"
+    rsync -a \
+      --exclude '*.secret.env' \
+      "$svc_dir/" "$dest_svc/"
+  fi
+  cat > "$dest_svc/config.secret.env" <<'EOF'
+# placeholder — use ~/.sse-qa/secrets.env
+EOF
+  if [[ "$svc" == "fastQA" ]]; then
+    cat >> "$dest_svc/config.secret.env" <<'EOF'
+FASTQA_NEO4J_PASSWORD=
+NEO4J_PASSWORD=
+EOF
+  elif [[ "$svc" == "highThinkingQA" ]]; then
+    cat >> "$dest_svc/config.secret.env" <<'EOF'
+DASHSCOPE_API_KEY=
+LLM_API_KEY=
+OPENAI_API_KEY=
+HIGHTHINKINGQA_EMBEDDING_API_KEY=
+EOF
   fi
 done
+
+if [[ -d "$DEST/highThinkingQA" ]]; then
+  cat > "$DEST/highThinkingQA/config.secret.env" <<'EOF'
+# placeholder — use ~/.sse-qa/secrets.env
+DASHSCOPE_API_KEY=
+LLM_API_KEY=
+OPENAI_API_KEY=
+HIGHTHINKINGQA_EMBEDDING_API_KEY=
+EOF
+fi
 
 # Merged Python requirements for native venv / Docker
 REQ="$DEST/requirements.txt"

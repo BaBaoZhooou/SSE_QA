@@ -44,7 +44,7 @@ export async function runMcp(argv: string[] = process.argv): Promise<void> {
   const enabledModes = getEnabledModes();
   const server = new McpServer({
     name: "sse-qa",
-    version: "0.3.1",
+    version: "0.3.2",
   });
 
   server.tool(

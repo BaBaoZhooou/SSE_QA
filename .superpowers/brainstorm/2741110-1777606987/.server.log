@@ -1,4 +1,0 @@
-{"type":"server-started","port":51830,"host":"0.0.0.0","url_host":"localhost","url":"http://localhost:51830","screen_dir":"/home/cqy/worktrees/highThinking/.superpowers/brainstorm/2741110-1777606987"}
-{"type":"screen-added","file":"/home/cqy/worktrees/highThinking/.superpowers/brainstorm/2741110-1777606987/timing-layout-options.html"}
-{"source":"user-event","type":"click","text":"▼处理过程5\n          \n          总耗时 1m18s · 阶段四 50.5s\n        \n        \n          规划 12.1s\n          检索 16.2s\n          筛选 8ms\n          生成 50.5s\n        \n        \n          ● 阶段一 问题规划与检索词生成\n          ● 阶段二 向量检索与重排\n          ● 阶段四 最终答案生成\n        \n      \n    \n    \n      推荐：头部摘要 + 展开明细\n      折叠时能看总耗时和最慢阶段；展开后看到每个阶段耗时。信息密度高，对现有布局侵入小。","choice":"compact-header","id":null,"timestamp":1777607209533}
-{"type":"server-stopped","reason":"idle timeout"}

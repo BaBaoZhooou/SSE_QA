@@ -46,8 +46,15 @@ data/**/*
 # --- Large KG export (import via scripts; keep compact CSV/JSON optional) ---
 知识图谱/sse_knowledge_graph_full.json
 
-# --- IDE / agent ---
+# --- IDE / agent (never commit) ---
 .cursor/
+**/.cursor/
+.claude/
+**/.claude/
+.codex
+**/.codex
+.superpowers/
+**/.superpowers/
 
 # --- OS ---
 .DS_Store

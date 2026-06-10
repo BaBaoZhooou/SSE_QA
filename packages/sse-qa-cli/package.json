@@ -1,10 +1,10 @@
 {
   "name": "@sse-qa/cli",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "All-in-one CLI, MCP, and backend runtime for solid-state electrolyte QA (agent-only).",
   "type": "module",
   "bin": {
-    "sse-qa": "./dist/index.js"
+    "sse-qa": "dist/index.js"
   },
   "files": [
     "dist",
@@ -17,7 +17,7 @@
     "build": "tsc -p tsconfig.json",
     "check": "tsc -p tsconfig.json --noEmit",
     "sync-backend": "bash ../../scripts/sync-server-bundle.sh",
-    "prepublishOnly": "npm run sync-backend && npm run build",
+    "prepublishOnly": "npm run sync-backend && npm run build && bash ../../scripts/audit-release-safety.sh",
     "postinstall": "node ./runtime/install.mjs",
     "test:smoke": "node ./dist/index.js --help && node ./runtime/src/index.mjs --help"
   },
@@ -47,7 +47,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/BaBaoZhooou/SSE_QA.git",
+    "url": "git+https://github.com/BaBaoZhooou/SSE_QA.git",
     "directory": "packages/sse-qa-cli"
   },
   "author": "Wenbo Li <BaBaoZhooou@users.noreply.github.com>"

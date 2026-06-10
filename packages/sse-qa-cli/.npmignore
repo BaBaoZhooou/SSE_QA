@@ -1,0 +1,8 @@
+**/.cursor/**
+**/.claude/**
+**/.codex
+**/.superpowers/**
+**/*.secret.env
+!**/*.secret.env.example
+**/.env
+**/.sse-qa/**
