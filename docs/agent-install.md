@@ -1,10 +1,14 @@
 # Agent 安装指南 — `@sse-qa/cli` 单包
 
-面向 Claude / Cursor / Codex 的 **单 npm 包**安装流程。主文档见 [README.md](../README.md)。
+面向 Claude / Cursor / Codex 的 **单 npm 包**安装流程。
+
+- **npm**：https://www.npmjs.com/package/@sse-qa/cli  
+- **GitHub**：https://github.com/BaBaoZhooou/SSE_QA  
+- 主文档：[README.md](../README.md)
 
 ## 包内容
 
-`@sse-qa/cli` v0.3.0+ 包含：
+`@sse-qa/cli`（当前 `0.3.2+`）包含：
 
 | 组件 | 说明 |
 |------|------|
@@ -22,6 +26,7 @@
 
 ```bash
 npm install -g @sse-qa/cli
+export PATH="$(npm config get prefix)/bin:$PATH"
 ```
 
 本地开发（仓库内）：

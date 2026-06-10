@@ -3,9 +3,23 @@
 面向 **Claude / Codex / Cursor** 等编程 Agent 的**单用户**固态电解质（SSE）/ 全固态电池（ASSB）文献问答后端。
 
 - **领域**：硫化物 / 氧化物 / 聚合物 / 卤化物固态电解质，离子电导率，界面稳定性，合成工艺等
-- **接入方式**：npm 包 `@sse-qa/cli`（CLI + MCP + 后端运行时 + 配置模板）
+- **接入方式**：npm 包 [`@sse-qa/cli`](https://www.npmjs.com/package/@sse-qa/cli)（CLI + MCP + 后端运行时 + 配置模板）
 - **问答能力**：fastQA（文献快答）与 highThinkingQA（深度综合分析）
 - **知识来源**：用户自备 **Chroma 向量库** + 可选 **Neo4j 图谱**；服务本身不打包数据
+
+### 发布地址
+
+| 渠道 | 链接 |
+|------|------|
+| **GitHub** | [github.com/BaBaoZhooou/SSE_QA](https://github.com/BaBaoZhooou/SSE_QA) |
+| **npm** | [`@sse-qa/cli`](https://www.npmjs.com/package/@sse-qa/cli)（全局命令 `sse-qa`） |
+| **当前版本** | `0.3.3` |
+
+```bash
+npm install -g @sse-qa/cli
+export PATH="$(npm config get prefix)/bin:$PATH"   # 或 ~/.npm-global/bin
+sse-qa --help
+```
 
 ---
 
@@ -35,10 +49,8 @@
 ### 0.1 复制给 Agent 的一句话（尚未 clone 仓库）
 
 ```text
-请 clone https://github.com/BaBaoZhooou/SSE_QA 到本机，然后阅读该仓库 README 的「0.2 Agent 安装剧本」章节，帮我在本机完整安装并配置 SSE QA（@sse-qa/cli）：执行依赖检查、npm 构建与 link、sse-qa init、注册 MCP、逐项引导我提供 LLM API Key、Chroma 向量库绝对路径和 Neo4j 配置（可选），直到 sse-qa doctor 通过，最后给我日常使用说明。npm 尚未发布到 registry 时，按剧本使用 packages/sse-qa-cli 本地安装。
+请 clone https://github.com/BaBaoZhooou/SSE_QA 到本机，阅读 README「0.2 Agent 安装剧本」，帮我在本机安装并配置 SSE QA：优先 npm install -g @sse-qa/cli；配置 PATH；sse-qa init；引导我本地填写 ~/.sse-qa/secrets.env 与 config.yaml（LLM Key、Chroma 绝对路径、可选 Neo4j）；运行 scripts/ingest_sse_md_chroma.py 入库（若有结构化 MD）；sse-qa server start 与 sse-qa doctor 直到通过；注册 MCP；最后给日常使用说明。
 ```
-
-将 `<SSE_QA 仓库 URL>` 替换为实际 Git 地址。
 
 ### 0.2 Agent 安装剧本
 
@@ -54,9 +66,20 @@ npm config get prefix
 - 记下 npm global prefix，其下 `bin/` 须在 PATH 中。
 - 若 `sse-qa` 不在 PATH，MCP 注册须使用**绝对路径**。
 
-#### 阶段 B — 获取代码并安装 CLI
+#### 阶段 B — 安装 CLI（推荐 npm）
 
-**从仓库本地安装（npm 未发布时）**：
+**已发布 npm（推荐）**：
+
+```bash
+npm install -g @sse-qa/cli
+# 若提示 allow-scripts，可执行：npm approve-scripts @sse-qa/cli
+export PATH="$(npm config get prefix)/bin:$PATH"
+# 常见：export PATH="$HOME/.npm-global/bin:$PATH"
+sse-qa --help
+sse-qa init
+```
+
+**从 GitHub 源码本地安装（开发 / 未装 npm 包时）**：
 
 ```bash
 git clone https://github.com/BaBaoZhooou/SSE_QA ~/sse-qa
@@ -66,14 +89,6 @@ cd packages/sse-qa-cli
 npm install && npm run build && npm link
 export PATH="$(npm config get prefix)/bin:$PATH"
 sse-qa --help
-```
-
-**npm 已发布后**：
-
-```bash
-npm install -g @sse-qa/cli
-export PATH="$(npm config get prefix)/bin:$PATH"
-sse-qa init
 ```
 
 #### 阶段 C — 初始化配置
@@ -88,8 +103,9 @@ sse-qa config show
 | 配置项 | 文件 | 键 |
 |--------|------|-----|
 | LLM API Key | `~/.sse-qa/secrets.env` | `LLM_API_KEY` |
-| fastQA 向量库 | `~/.sse-qa/config.yaml` | `chroma.fastqa.vector_db_path`（绝对路径） |
-| thinking 向量库 | `~/.sse-qa/config.yaml` | `chroma.thinking.persist_dir`（绝对路径） |
+| fastQA 向量库（摘要） | `~/.sse-qa/config.yaml` | `chroma.fastqa.vector_db_path` |
+| fastQA MD 向量库 | `~/.sse-qa/config.yaml` | `chroma.fastqa.vector_db_md_path` |
+| thinking 向量库 | `~/.sse-qa/config.yaml` | `chroma.thinking.persist_dir` + `collection_name: sse_literature` |
 | 是否启用 Neo4j | `~/.sse-qa/config.yaml` | `neo4j.enabled` |
 | Neo4j 密码 | `~/.sse-qa/secrets.env` | `NEO4J_PASSWORD`（启用时需要） |
 
@@ -109,7 +125,10 @@ sse-qa doctor --json
 #### 阶段 F — 注册 MCP
 
 ```bash
-SSE_QA_BIN="$(command -v sse-qa)"
+# 推荐：永久写入 ~/.bashrc
+export PATH="$(npm config get prefix)/bin:$PATH"
+
+SSE_QA_BIN="$(command -v sse-qa)"   # 若为空，用绝对路径如 ~/.npm-global/bin/sse-qa
 claude mcp add sse-qa \
   --env SSE_QA_AUTO_START=1 \
   --env SSE_QA_ENABLED_MODES=fast,thinking \
@@ -159,10 +178,7 @@ Cursor / Codex：见 [`packages/sse-qa-cli/examples/`](packages/sse-qa-cli/examp
 由 Coding Agent 安装请直接用 [§0](#0-一键安装给-coding-agent)。
 
 ```bash
-# 已发布 npm
 npm install -g @sse-qa/cli
-
-# 或从仓库本地 link（见 §0.2 阶段 B）
 export PATH="$(npm config get prefix)/bin:$PATH"
 
 sse-qa init
@@ -170,7 +186,7 @@ sse-qa init
 
 sse-qa config validate
 sse-qa server install
-sse-qa server start
+sse-qa server start --mode native   # 入库 Chroma 期间建议 native；稳定后可用 auto/docker
 sse-qa doctor
 ```
 
@@ -183,7 +199,13 @@ claude mcp add sse-qa \
   -- "$SSE_QA_BIN" mcp --auto-start
 ```
 
-npm 已发布时可用：`npx -y @sse-qa/cli mcp --auto-start`（同样建议确认 `command -v` 或绝对路径）。
+npm 安装后也可用：
+
+```bash
+npx -y @sse-qa/cli mcp --auto-start
+```
+
+MCP 注册仍建议使用 `command -v sse-qa` 或绝对路径，避免 PATH 问题。
 
 ---
 
@@ -368,7 +390,7 @@ sse-qa mcp --auto-start
 ```yaml
 llm:
   base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
-  model: deepseek-v4-pro
+  model: qwen3.6-plus
   api_key_file: ~/.sse-qa/secrets.env
 
 embedding:
@@ -379,10 +401,10 @@ embedding:
 
 chroma:
   fastqa:
-    vector_db_path: /abs/path/to/vector_database
-    vector_db_md_path: /abs/path/to/vector_database_md
+    vector_db_path: ~/.sse-qa/data/chroma/fastqa_vector    # collection: lfp_papers
+    vector_db_md_path: ~/.sse-qa/data/chroma/fastqa_md      # collection: md_papers
   thinking:
-    persist_dir: /abs/path/to/vectordb
+    persist_dir: ~/.sse-qa/data/chroma/thinking
     collection_name: sse_literature
 
 neo4j:
@@ -425,18 +447,51 @@ Schema：[`runtime/templates/config.schema.json`](packages/sse-qa-cli/runtime/te
 
 ## 7. 数据准备（Chroma / Neo4j）
 
-npm 包不含向量或图谱数据。
+npm 包**不含**向量或图谱数据，需在本机 ingest。
 
-| 用途 | 配置键 |
-|------|--------|
-| fastQA | `chroma.fastqa.vector_db_path` |
-| fastQA MD | `chroma.fastqa.vector_db_md_path` |
-| thinking | `chroma.thinking.persist_dir` |
+### 7.1 Chroma 目录与 collection
 
-Neo4j 可选：
+| 用途 | 配置键 | Chroma collection |
+|------|--------|-------------------|
+| fastQA 摘要检索 | `chroma.fastqa.vector_db_path` | `lfp_papers` |
+| fastQA MD 扩展 | `chroma.fastqa.vector_db_md_path` | `md_papers` |
+| highThinkingQA | `chroma.thinking.persist_dir` | `sse_literature`（见 `collection_name`） |
+
+路径必须为**绝对路径**（可放在 `~/.sse-qa/data/chroma/` 下）。
+
+### 7.2 从结构化 MD 一键入库
+
+仓库提供脚本，将 `*/vlm/*.md` 文献批量写入上述三个库（Embedding：`text-embedding-v4`，2048 维）：
+
+```bash
+git clone https://github.com/BaBaoZhooou/SSE_QA ~/sse-qa   # 仅需脚本时
+cd ~/sse-qa
+
+# 全量（约 3500 篇，耗时数小时，支持断点续传）
+python3 scripts/ingest_sse_md_chroma.py \
+  --source /path/to/结构化文献/固态电解质_筛选通过 \
+  --out ~/.sse-qa/data/chroma \
+  --workers 2
+
+# 试跑 5 篇
+python3 scripts/ingest_sse_md_chroma.py --limit 5
+
+tail -f ~/.sse-qa/ingest_sse_md.log   # 若后台 nohup 运行
+```
+
+入库完成后更新 `~/.sse-qa/config.yaml` 中 chroma 路径，并：
+
+```bash
+sse-qa server config render
+sse-qa server stop && sse-qa server start --mode native
+sse-qa doctor
+```
+
+### 7.3 Neo4j（可选）
 
 ```bash
 bash scripts/知识图谱/start_neo4j_kg.sh
+# 导入见 知识图谱/neo4j/README.md
 ```
 
 ---
@@ -466,11 +521,22 @@ sse-qa doctor
 
 | 包 | 命令 | 作用 |
 |----|------|------|
-| `@sse-qa/cli` | `sse-qa` | CLI + MCP + 后端启停 + 配置 |
+| [`@sse-qa/cli`](https://www.npmjs.com/package/@sse-qa/cli) | `sse-qa` | CLI + MCP + 后端启停 + 配置 |
 
-仓库内构建：`bash scripts/sync-server-bundle.sh && cd packages/sse-qa-cli && npm run build`
+**用户安装**（已发布）：
 
-发布步骤：[`docs/RELEASE.md`](docs/RELEASE.md) · 自有账号：[`docs/OWN_ACCOUNT_SETUP.md`](docs/OWN_ACCOUNT_SETUP.md)
+```bash
+npm install -g @sse-qa/cli
+```
+
+**维护者**：仓库 [BaBaoZhooou/SSE_QA](https://github.com/BaBaoZhooou/SSE_QA) · 发布流程 [`docs/RELEASE.md`](docs/RELEASE.md) · 账号说明 [`docs/OWN_ACCOUNT_SETUP.md`](docs/OWN_ACCOUNT_SETUP.md)
+
+仓库内开发构建：
+
+```bash
+bash scripts/sync-server-bundle.sh && cd packages/sse-qa-cli && npm run build
+bash scripts/audit-release-safety.sh   # 发布前审计
+```
 
 ---
 
@@ -478,10 +544,12 @@ sse-qa doctor
 
 | 现象 | 处理 |
 |------|------|
-| `sse-qa: command not found` | `export PATH="$(npm config get prefix)/bin:$PATH"` 或 MCP 用绝对路径 |
+| `sse-qa: command not found` | `export PATH="$(npm config get prefix)/bin:$PATH"` 或 `~/.npm-global/bin`；MCP 用绝对路径 |
+| npm `allow-scripts` 警告 | `npm approve-scripts @sse-qa/cli` 后重装 |
 | MCP Failed to connect | MCP 命令用绝对路径；先 `sse-qa server start` |
 | MCP 启动慢 | 首次冷启动 30–120s；可手动 `sse-qa server start` 常驻 |
-| `doctor` Chroma 失败 | 检查绝对路径与 chroma 数据文件 |
+| `doctor` Chroma 失败 | 检查绝对路径与 `chroma.sqlite3`；collection 名见 §7.1 |
+| `Collection [lfp_papers] does not exist` | 未 ingest；运行 `scripts/ingest_sse_md_chroma.py` |
 | 检索无结果 | 向量库未 ingest 或 collection 名不匹配 |
 | Neo4j 失败 | 检查 Bolt URL/密码；Docker 后端用 `host.docker.internal` |
 | Redis 失败（native） | 启动 `:16380` 或改用 Docker compose |
@@ -495,7 +563,10 @@ SSE_QA/
 ├── README.md
 ├── docs/agent-install.md
 ├── config/system.agent.yaml.example
-├── scripts/sync-server-bundle.sh
+├── scripts/
+│   ├── sync-server-bundle.sh
+│   ├── ingest_sse_md_chroma.py   # MD → Chroma 三库入库
+│   └── audit-release-safety.sh
 ├── fastQA/
 ├── highThinkingQA/
 ├── 知识图谱/
