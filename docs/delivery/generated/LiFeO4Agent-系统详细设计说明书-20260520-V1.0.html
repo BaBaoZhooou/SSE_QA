@@ -1,0 +1,487 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LiFeO4Agent-系统详细设计说明书-20260520-V1.0</title>
+
+<style>
+@page {
+  size: A4 portrait;
+  margin: 2.54cm 2.54cm 2.54cm 2.54cm;
+}
+body {
+  font-family: SimSun, "宋体", "Times New Roman", serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: #000;
+  text-align: justify;
+}
+.cover {
+  text-align: center;
+  page-break-after: always;
+  padding-top: 4.5cm;
+}
+.cover .system {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 0.8cm;
+}
+.cover .doc-title {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 22pt;
+  font-weight: bold;
+  margin-bottom: 3cm;
+}
+.cover .meta {
+  font-size: 10.5pt;
+  line-height: 1.8;
+}
+h1 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 16pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h2 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h3 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 10.5pt;
+  font-weight: bold;
+  margin: 6pt 0 3pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+p {
+  margin: 0 0 6pt 0;
+  text-indent: 2em;
+}
+.no-indent,
+table p,
+li p {
+  text-indent: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6pt 0;
+  font-size: 10.5pt;
+  page-break-inside: auto;
+}
+th, td {
+  border: 0.5pt solid #000;
+  padding: 4pt 5pt;
+  vertical-align: middle;
+}
+th {
+  background: #eeeeee;
+  font-weight: bold;
+  text-align: center;
+}
+td.center {
+  text-align: center;
+}
+td.left {
+  text-align: left;
+}
+pre {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.2;
+  background: #f2f2f2;
+  border: 0.5pt solid #cccccc;
+  padding: 6pt;
+  margin: 3pt 0 6pt 0;
+  white-space: pre-wrap;
+}
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+}
+ol, ul {
+  margin-top: 0;
+  margin-bottom: 6pt;
+}
+li {
+  margin-bottom: 3pt;
+}
+.version-table td,
+.version-table th {
+  text-align: center;
+}
+.note {
+  border-left: 3pt solid #999;
+  padding-left: 8pt;
+  margin: 6pt 0;
+}
+.page-break {
+  page-break-before: always;
+}
+.diagram {
+  border: 0.75pt solid #777;
+  background: #fafafa;
+  margin: 8pt 0 10pt 0;
+  padding: 8pt;
+  font-family: SimSun, "宋体", serif;
+}
+.diagram-title {
+  font-family: SimHei, "黑体", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 6pt;
+}
+.diagram pre {
+  border: 0;
+  background: transparent;
+  margin: 0;
+}
+.mermaid {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.25;
+  background: #f7f7f7;
+  border: 0.5pt solid #bfbfbf;
+  padding: 6pt;
+  white-space: pre-wrap;
+}
+</style>
+
+</head>
+<body>
+<div class="cover">
+  <div class="system">LiFeO4Agent</div>
+  <div class="doc-title">系统详细设计说明书</div>
+  <div class="meta">
+    <div>文档版本：V1.0</div>
+    <div>文档日期：2026/05/20</div>
+    <div>适用环境：模块设计、编码实现和接口联调</div>
+    <div>文档对象：开发人员、测试人员、维护人员</div>
+  </div>
+</div>
+<h1>版本记录</h1>
+<table class="version-table">
+  <tr><th>版本</th><th>日期</th><th>修订人</th><th>修订说明</th></tr>
+  <tr><td>V1.0</td><td>2026/05/20</td><td>项目组</td><td>初版</td></tr>
+</table>
+
+<h1>1 功能模块划分</h1>
+<table>
+  <tr><th>一级模块</th><th>子功能</th><th>说明</th></tr>
+  <tr><td>账号认证</td><td>登录、注册、找回密码、修改密码、安全问题、个人中心。</td><td>面向所有用户。</td></tr>
+  <tr><td>问答工作台</td><td>会话管理、文献问答、深度问答、专利问答、文件问答、阶段展示。</td><td>核心业务入口。</td></tr>
+  <tr><td>文件与原文</td><td>上传、列表、下载、删除、论文原文、专利原文、专利 tables。</td><td>支撑知识核对。</td></tr>
+  <tr><td>管理后台</td><td>用户管理、部门管理、人员管理、配额管理。</td><td>管理员使用。</td></tr>
+  <tr><td>部署数据</td><td>MinIO seed、reference seed、Neo4j seed。</td><td>部署初始化。</td></tr>
+</table>
+
+<h1>2 账号认证模块设计</h1>
+<h2>2.1 功能描述</h2>
+<p>账号认证模块负责用户登录、注册、首次登录安全设置、密码修改、安全问题设置和找回密码。普通用户注册必须匹配有效人员记录；管理员账号由 MySQL 初始化脚本创建。</p>
+<h2>2.2 前端页面</h2>
+<table>
+  <tr><th>页面</th><th>路径</th><th>交互细节</th></tr>
+  <tr><td>登录页</td><td><code>/login</code></td><td>输入用户名和密码，登录成功后按角色跳转。</td></tr>
+  <tr><td>注册页</td><td><code>/register</code></td><td>输入用户名、密码、姓名、工号、校验码。</td></tr>
+  <tr><td>找回密码</td><td><code>/forgot-password</code></td><td>通过安全问题验证后重置密码。</td></tr>
+  <tr><td>个人中心</td><td><code>/profile</code></td><td>修改用户名、密码、安全问题和人员绑定。</td></tr>
+</table>
+<div class="diagram">
+  <div class="diagram-title">图 1 登录流程图</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-系统详细设计说明书-20260520-V1.0-diagram-01.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<h2>2.3 库表设计</h2>
+<table>
+  <tr><th>表名</th><th>字段</th><th>类型</th><th>备注</th></tr>
+  <tr><td><code>users</code></td><td><code>id</code></td><td>bigint</td><td>主键。</td></tr>
+  <tr><td><code>users</code></td><td><code>username</code></td><td>varchar(64)</td><td>唯一用户名。</td></tr>
+  <tr><td><code>users</code></td><td><code>password_hash</code></td><td>varchar(255)</td><td>密码哈希。</td></tr>
+  <tr><td><code>users</code></td><td><code>role</code></td><td>enum</td><td><code>user</code> 或 <code>admin</code>。</td></tr>
+  <tr><td><code>users</code></td><td><code>status</code></td><td>enum</td><td><code>active</code> 或 <code>disabled</code>。</td></tr>
+  <tr><td><code>user_security_questions</code></td><td><code>question</code>、<code>answer_hash</code></td><td>varchar</td><td>找回密码使用。</td></tr>
+  <tr><td><code>password_history</code></td><td><code>password_hash</code></td><td>varchar(255)</td><td>密码历史。</td></tr>
+</table>
+<h2>2.4 接口说明</h2>
+<table>
+  <tr><th>接口</th><th>方法</th><th>输入</th><th>输出</th><th>错误码</th></tr>
+  <tr><td><code>/api/auth/login</code></td><td>POST</td><td>用户名、密码。</td><td>token、用户信息、首次登录标志。</td><td>账号不存在、密码错误、账号停用。</td></tr>
+  <tr><td><code>/api/auth/register</code></td><td>POST</td><td>用户名、密码、姓名、工号、校验码。</td><td>注册成功用户信息。</td><td>人员不匹配、用户名重复。</td></tr>
+  <tr><td><code>/api/auth/password</code></td><td>PUT/POST</td><td>旧密码、新密码。</td><td>修改结果。</td><td>旧密码错误、复杂度不足。</td></tr>
+  <tr><td><code>/api/auth/forgot-password/initiate</code></td><td>POST</td><td>用户名。</td><td>安全问题列表。</td><td>未设置安全问题。</td></tr>
+  <tr><td><code>/api/auth/forgot-password/verify</code></td><td>POST</td><td>用户名、安全问题答案、新密码。</td><td>重置结果。</td><td>答案错误。</td></tr>
+</table>
+
+<h1>3 问答工作台模块设计</h1>
+<h2>3.1 功能描述</h2>
+<p>问答工作台负责会话创建、模式选择、问题发送、SSE 事件渲染、引用展示、文件选择和原文查看入口。前端用户可选择“文献”“深度”“专利”三种模式。</p>
+<h2>3.2 处理流程</h2>
+<div class="diagram">
+  <div class="diagram-title">图 2 问答处理流程图</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-系统详细设计说明书-20260520-V1.0-diagram-02.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<h2>3.3 接口说明</h2>
+<table>
+  <tr><th>接口</th><th>方法</th><th>说明</th><th>输出</th></tr>
+  <tr><td><code>/api/fast/ask_stream</code></td><td>POST</td><td>文献流式问答。</td><td>SSE 事件。</td></tr>
+  <tr><td><code>/api/thinking/ask_stream</code></td><td>POST</td><td>深度流式问答。</td><td>SSE 事件。</td></tr>
+  <tr><td><code>/api/patent/ask_stream</code></td><td>POST</td><td>专利流式问答。</td><td>SSE 事件。</td></tr>
+  <tr><td><code>/api/v1/tasks</code></td><td>POST</td><td>创建可恢复任务。</td><td>task_id。</td></tr>
+  <tr><td><code>/api/v1/tasks/{task_id}/events</code></td><td>GET</td><td>读取任务事件。</td><td>SSE 事件。</td></tr>
+</table>
+<h2>3.4 输入输出规范</h2>
+<p>输入至少包含问题文本和模式。输出事件包括阶段开始、阶段结束、文本增量、引用、错误和完成。错误事件应包含用户可理解提示，不应泄漏内部密钥或堆栈。</p>
+
+<h1>4 文件和原文模块设计</h1>
+<h2>4.1 功能描述</h2>
+<p>文件模块支持上传 PDF、Excel、CSV，并将文件元数据绑定到会话。原文模块负责从 MinIO 读取论文 PDF、专利 PDF、专利图片和 structured tables。</p>
+<h2>4.2 库表设计</h2>
+<table>
+  <tr><th>表名</th><th>字段</th><th>类型</th><th>备注</th></tr>
+  <tr><td><code>conversation_files</code></td><td><code>id</code></td><td>bigint</td><td>主键。</td></tr>
+  <tr><td><code>conversation_files</code></td><td><code>conversation_id</code>、<code>user_id</code></td><td>bigint</td><td>所属会话和用户。</td></tr>
+  <tr><td><code>conversation_files</code></td><td><code>file_type</code></td><td>enum</td><td>PDF 或 Excel；CSV 可按表格文件处理。</td></tr>
+  <tr><td><code>conversation_files</code></td><td><code>storage_ref</code></td><td>varchar(1024)</td><td>MinIO 对象引用。</td></tr>
+</table>
+<h2>4.3 异常处理</h2>
+<table>
+  <tr><th>异常</th><th>用户提示</th><th>后端处理</th></tr>
+  <tr><td>文件为空</td><td>请选择有效文件。</td><td>返回 400。</td></tr>
+  <tr><td>格式不支持</td><td>仅支持 PDF、Excel、CSV。</td><td>校验 content type 和扩展名。</td></tr>
+  <tr><td>对象不存在</td><td>原文暂不可用。</td><td>记录 MinIO key 和请求 ID。</td></tr>
+  <tr><td>文件过大</td><td>文件超过限制。</td><td>由前端和 nginx 限制。</td></tr>
+</table>
+
+<h1>5 管理后台模块设计</h1>
+<h2>5.1 用户管理</h2>
+<p>管理员可查询用户、创建用户、修改用户名、重置密码、停用启用、修改用户类型、绑定或解绑人员记录。删除用户属于高风险操作，应在前端二次确认。</p>
+<h2>5.2 部门管理</h2>
+<p>部门按一级、二级、三级维护。当前 seed 包含电池材料技术研究中心、正极材料研究所、装备工程化研究所、材料应用研究所及三级部门。停用部门不删除历史绑定关系。</p>
+<h2>5.3 人员管理</h2>
+<p>人员记录包含工号、姓名、校验码哈希、状态和部门。注册和个人中心绑定必须匹配人员记录。</p>
+<h2>5.4 配额管理</h2>
+<p>配额类型包含 <code>ask_query</code>、<code>file_qa</code>、<code>file_view</code>、<code>doc_assist</code>。系统支持默认配额、周期窗口、用户例外和重置。</p>
+
+<h1>6 非功能设计</h1>
+<table>
+  <tr><th>模块</th><th>性能指标</th><th>安全措施</th><th>可靠性措施</th></tr>
+  <tr><td>认证</td><td>登录接口应快速响应。</td><td>密码哈希、JWT、账号状态。</td><td>失败提示明确，避免泄漏。</td></tr>
+  <tr><td>问答</td><td>记录首 token 和总耗时。</td><td>token 校验、配额控制。</td><td>SSE 错误事件和超时处理。</td></tr>
+  <tr><td>文件</td><td>上传大小受限。</td><td>文件类型校验、对象权限。</td><td>元数据和对象引用分离。</td></tr>
+  <tr><td>管理</td><td>列表分页。</td><td>管理员权限。</td><td>停用优先于物理删除。</td></tr>
+</table>
+
+<h1>7 技术实现规范</h1>
+<table>
+  <tr><th>类别</th><th>规范</th></tr>
+  <tr><td>Python</td><td>4 空格缩进，函数和模块 snake_case，类 PascalCase。</td></tr>
+  <tr><td>Vue/JS</td><td>保留现有组件结构，避免将业务逻辑堆在单一组件。</td></tr>
+  <tr><td>接口</td><td>新增对外接口优先经 gateway 暴露，响应结构保持一致。</td></tr>
+  <tr><td>配置</td><td>新增配置项需同步 shared env、secret env、compose、模板和文档。</td></tr>
+  <tr><td>版本控制</td><td>提交信息使用 <code>feat:</code>、<code>fix:</code>、<code>docs:</code> 等前缀。</td></tr>
+</table>
+
+<h1>8 测试设计</h1>
+<table>
+  <tr><th>测试类型</th><th>覆盖范围</th></tr>
+  <tr><td>单元测试</td><td>配置加载、路由决策、配额服务、数据包校验、核心工具函数。</td></tr>
+  <tr><td>集成测试</td><td>认证接口、管理员接口、问答代理、任务恢复、MinIO 原文代理。</td></tr>
+  <tr><td>前端结构测试</td><td>路由、关键组件、配额卡片、管理面板。</td></tr>
+  <tr><td>部署测试</td><td>preflight、seed job、compose healthcheck。</td></tr>
+</table>
+<p>缺陷等级分为 Blocker、Critical、Major、Minor。Blocker 和 Critical 必须在发布前关闭；Major 需评估是否影响验收；Minor 可记录为遗留优化。</p>
+
+
+<h1>9 文献问答模块设计</h1>
+<h2>9.1 功能描述</h2>
+<p>文献问答模块由 fastQA 后端提供，面向论文知识库进行查询理解、向量检索、候选重排、图谱增强、答案生成和引用整理。该模块依赖 <code>fastqa_ref_data</code> 中的 Chroma 向量库和 MinIO 中的论文原文。</p>
+<h2>9.2 前端页面</h2>
+<p>用户在问答首页选择“文献”模式后输入问题。页面展示阶段进度、耗时、答案、引用和论文原文入口。阶段事件可包含 intent、检索、rerank、生成等步骤。</p>
+<h2>9.3 库表设计</h2>
+<table>
+  <tr><th>对象</th><th>字段或路径</th><th>说明</th></tr>
+  <tr><td>会话消息</td><td><code>conversation_messages</code></td><td>保存用户问题、助手回答和任务状态。</td></tr>
+  <tr><td>文件关联</td><td><code>conversation_files</code></td><td>保存本轮可用文件上下文。</td></tr>
+  <tr><td>向量库</td><td><code>fastqa_ref_data</code></td><td>包含主文献向量库和 MD 向量库。</td></tr>
+  <tr><td>原文对象</td><td><code>papers/</code></td><td>MinIO 中的论文 PDF 权威副本。</td></tr>
+</table>
+<h2>9.4 重点逻辑</h2>
+<pre>resolve_intent(question)
+build_embedding(question)
+retrieve_candidates(vectordb, top_k)
+rerank_candidates(question, candidates)
+optional_graph_context(question)
+generate_answer(question, evidence)
+return citations and original links</pre>
+<h2>9.5 处理流程</h2>
+<div class="diagram">
+  <div class="diagram-title">图 3 文献问答处理流程</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-系统详细设计说明书-20260520-V1.0-diagram-03.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<h2>9.6 接口说明</h2>
+<table>
+  <tr><th>接口</th><th>方法</th><th>输入</th><th>输出</th></tr>
+  <tr><td><code>/api/fast/ask</code>、<code>/api/v1/fast/ask</code></td><td>POST</td><td>问题、会话、文件选择。</td><td>同步回答。</td></tr>
+  <tr><td><code>/api/fast/ask_stream</code>、<code>/api/v1/fast/ask_stream</code></td><td>POST</td><td>问题、会话、文件选择。</td><td>SSE 阶段和答案。</td></tr>
+  <tr><td><code>/api/view_pdf/{doi}</code></td><td>GET/HEAD</td><td>DOI 或原文标识。</td><td>PDF 响应。</td></tr>
+  <tr><td><code>/api/reference_preview</code></td><td>GET/POST</td><td>引用标识。</td><td>引用预览信息。</td></tr>
+</table>
+<h2>9.7 异常处理设计</h2>
+<table>
+  <tr><th>异常</th><th>处理</th><th>用户提示</th></tr>
+  <tr><td>向量库未加载</td><td>记录路径和 collection 信息。</td><td>知识库暂不可用，请联系管理员。</td></tr>
+  <tr><td>rerank 服务失败</td><td>按配置降级为原检索排序或返回错误。</td><td>检索重排异常，请稍后重试。</td></tr>
+  <tr><td>论文原文缺失</td><td>记录 MinIO key。</td><td>原文暂不可用。</td></tr>
+</table>
+
+<h1>10 深度问答模块设计</h1>
+<h2>10.1 功能描述</h2>
+<p>深度问答模块由 highThinkingQA 提供，适合复杂问题的分解、规划、检索、子问题回答和综合生成。该模块依赖独立 <code>highthinking_ref_data</code> 向量库，并通过 LLM 完成多阶段推理。</p>
+<h2>10.2 前端页面</h2>
+<p>用户选择“深度”模式后提交问题。页面应允许长时间流式输出，展示规划、检索、综合等阶段，避免用户误判为卡死。</p>
+<h2>10.3 重点逻辑</h2>
+<pre>stage1_plan(question)
+stage2_generate_queries(plan)
+retrieve_context(queries)
+synthesize_answer(question, plan, context)
+stream_steps_and_final_answer()</pre>
+<h2>10.4 处理流程</h2>
+<div class="diagram">
+  <div class="diagram-title">图 4 深度问答处理流程</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-系统详细设计说明书-20260520-V1.0-diagram-04.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<h2>10.5 接口说明</h2>
+<table>
+  <tr><th>接口</th><th>方法</th><th>说明</th></tr>
+  <tr><td><code>/api/thinking/ask</code>、<code>/api/v1/thinking/ask</code></td><td>POST</td><td>深度同步问答。</td></tr>
+  <tr><td><code>/api/thinking/ask_stream</code>、<code>/api/v1/thinking/ask_stream</code></td><td>POST</td><td>深度流式问答。</td></tr>
+  <tr><td><code>/api/ingest</code>、<code>/api/v1/ingest</code></td><td>POST/GET</td><td>保留的摄取任务接口，生产主要使用离线数据包。</td></tr>
+</table>
+<h2>10.6 异常处理设计</h2>
+<table>
+  <tr><th>异常</th><th>处理</th><th>用户提示</th></tr>
+  <tr><td>LLM 超时</td><td>终止当前阶段并返回错误事件。</td><td>模型响应超时，请缩小问题范围或稍后重试。</td></tr>
+  <tr><td>检索结果为空</td><td>允许模型基于已有上下文说明不足。</td><td>未检索到足够依据。</td></tr>
+  <tr><td>SSE 断开</td><td>gateway 记录 task id，任务接口可查询事件。</td><td>连接中断，请刷新查看结果。</td></tr>
+</table>
+
+<h1>11 专利问答模块设计</h1>
+<h2>11.1 功能描述</h2>
+<p>专利问答模块由 patentQA 提供，负责专利意图识别、专利向量检索、JSON archive 读取、structured tables 读取、专利图谱增强、答案生成和专利原文引用。</p>
+<h2>11.2 库表和数据设计</h2>
+<table>
+  <tr><th>对象</th><th>路径或表</th><th>说明</th></tr>
+  <tr><td>专利 JSON archive</td><td><code>patentqa_ref_data</code></td><td>14006 个专利 JSON 目录，不含 PDF/PNG。</td></tr>
+  <tr><td>专利向量库</td><td><code>patentqa_ref_data</code></td><td>两个 Chroma 向量库。</td></tr>
+  <tr><td>专利原文</td><td><code>patent/originals/{id}/</code></td><td>MinIO 中的 PDF、图片、manifest 和 structured tables。</td></tr>
+  <tr><td>专利图谱</td><td><code>neo4j-patent</code></td><td>专利知识图谱。</td></tr>
+</table>
+<h2>11.3 处理流程</h2>
+<div class="diagram">
+  <div class="diagram-title">图 5 专利问答处理流程</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-系统详细设计说明书-20260520-V1.0-diagram-05.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<h2>11.4 接口说明</h2>
+<table>
+  <tr><th>接口</th><th>方法</th><th>输入</th><th>输出</th></tr>
+  <tr><td><code>/api/patent/ask</code>、<code>/api/v1/patent/ask</code></td><td>POST</td><td>专利问题、会话。</td><td>同步回答。</td></tr>
+  <tr><td><code>/api/patent/ask_stream</code>、<code>/api/v1/patent/ask_stream</code></td><td>POST</td><td>专利问题、会话。</td><td>SSE 阶段和回答。</td></tr>
+  <tr><td><code>/api/patent/original/{canonical_patent_id}</code></td><td>GET/HEAD</td><td>规范化专利 ID。</td><td>专利原文或对象响应。</td></tr>
+</table>
+<h2>11.5 异常处理设计</h2>
+<table>
+  <tr><th>异常</th><th>处理</th><th>用户提示</th></tr>
+  <tr><td>intent 模型不可用</td><td>按默认专利检索策略降级或返回明确错误。</td><td>意图识别异常，已尝试按默认策略处理。</td></tr>
+  <tr><td>tables 不存在</td><td>manifest 中 availability.tables 为 false 时正常跳过。</td><td>该专利暂无结构化表格。</td></tr>
+  <tr><td>图谱不可用</td><td>记录 Neo4j 错误，降级为向量检索回答。</td><td>图谱增强暂不可用。</td></tr>
+</table>
+
+<h1>12 数据导入模块设计</h1>
+<h2>12.1 功能描述</h2>
+<p>数据导入模块由 compose 中的 one-shot seed job 实现，负责 MinIO 原文、reference data 和 Neo4j dump 的自动导入。每个 seed job 写入 marker，避免同版本重复导入；设置 <code>DATA_SEED_FORCE=1</code> 时可强制重导。</p>
+<h2>12.2 数据流程图</h2>
+<div class="diagram">
+  <div class="diagram-title">图 6 数据导入数据流程</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-系统详细设计说明书-20260520-V1.0-diagram-06.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<h2>12.3 异常处理设计</h2>
+<table>
+  <tr><th>异常</th><th>处理</th><th>恢复方式</th></tr>
+  <tr><td>sha256 不一致</td><td>preflight 失败。</td><td>重新传输数据包。</td></tr>
+  <tr><td>同版本 marker 存在</td><td>seed job 跳过。</td><td>确认无需重导；如需重导设置 <code>DATA_SEED_FORCE=1</code>。</td></tr>
+  <tr><td>Neo4j dump 加载失败</td><td>seed job 退出非 0。</td><td>检查 dump 版本和 Neo4j 镜像版本。</td></tr>
+  <tr><td>MinIO bucket 不存在</td><td>minio-seed 失败。</td><td>检查 minio-init 和 MinIO 密码。</td></tr>
+</table>
+
+<h1>13 接口总表</h1>
+<h2>13.1 Gateway 对外接口</h2>
+<table>
+  <tr><th>接口分组</th><th>路径</th><th>方法</th><th>说明</th></tr>
+  <tr><td>认证</td><td><code>/api/auth/login</code>、<code>/api/v1/auth/login</code></td><td>POST</td><td>登录。</td></tr>
+  <tr><td>认证</td><td><code>/api/auth/register</code>、<code>/api/v1/auth/register</code></td><td>POST</td><td>注册。</td></tr>
+  <tr><td>认证</td><td><code>/api/auth/me</code>、<code>/api/v1/auth/me</code></td><td>GET</td><td>当前用户。</td></tr>
+  <tr><td>认证</td><td><code>/api/auth/departments/tree</code>、<code>/api/v1/auth/departments/tree</code></td><td>GET</td><td>注册和个人中心使用的部门树。</td></tr>
+  <tr><td>认证</td><td><code>/api/auth/department</code>、<code>/api/auth/username</code>、<code>/api/auth/personnel-binding</code>、<code>/api/auth/password</code></td><td>PUT/POST</td><td>个人资料、用户名、人员绑定和密码维护。</td></tr>
+  <tr><td>认证</td><td><code>/api/auth/forgot-password/initiate</code>、<code>/api/auth/forgot-password/verify</code>、<code>/api/auth/security-questions</code></td><td>GET/POST/PUT</td><td>找回密码和安全问题。</td></tr>
+  <tr><td>会话</td><td><code>/api/conversations</code>、<code>/api/v1/conversations</code></td><td>GET/POST</td><td>查询和创建会话。</td></tr>
+  <tr><td>会话</td><td><code>/api/conversations/{conversation_id}</code></td><td>GET/DELETE</td><td>获取或删除会话。</td></tr>
+  <tr><td>会话</td><td><code>/api/conversations/{conversation_id}/title</code></td><td>PUT</td><td>修改会话标题。</td></tr>
+  <tr><td>会话</td><td><code>/api/conversations/{conversation_id}/messages</code></td><td>POST</td><td>写入会话消息。</td></tr>
+  <tr><td>文件</td><td><code>/api/conversations/{conversation_id}/files</code></td><td>GET</td><td>会话文件列表。</td></tr>
+  <tr><td>文件</td><td><code>/api/conversations/{conversation_id}/files/{file_id}</code></td><td>GET/DELETE</td><td>文件详情和删除。</td></tr>
+  <tr><td>文件</td><td><code>/api/conversations/{conversation_id}/files/{file_id}/download</code></td><td>GET</td><td>文件下载。</td></tr>
+  <tr><td>上传</td><td><code>/api/upload_pdf</code>、<code>/api/upload_excel</code></td><td>POST</td><td>上传 PDF、Excel 或 CSV。</td></tr>
+  <tr><td>文档辅助</td><td><code>/api/translate</code>、<code>/api/translate_document</code>、<code>/api/summarize_pdf/{doi}</code></td><td>POST</td><td>翻译和摘要。</td></tr>
+  <tr><td>原文</td><td><code>/api/view_pdf/{doi}</code>、<code>/api/patent/original/{canonical_patent_id}</code></td><td>GET/HEAD</td><td>论文和专利原文。</td></tr>
+  <tr><td>原文</td><td><code>/api/check_pdf/{doi}</code>、<code>/api/extract_pdf_text/{doi}</code>、<code>/api/literature_content</code>、<code>/api/reference_preview</code></td><td>GET/POST</td><td>原文检查、文本提取、文献内容和引用预览。</td></tr>
+  <tr><td>系统</td><td><code>/api/health</code>、<code>/api/kb_info</code>、<code>/api/background_status</code>、<code>/api/refresh_kb</code>、<code>/api/clear_cache</code></td><td>GET/POST</td><td>健康、知识库和缓存接口。</td></tr>
+  <tr><td>问答</td><td><code>/api/{fast|thinking|patent}/ask</code>、<code>/api/v1/{fast|thinking|patent}/ask</code></td><td>POST</td><td>同步问答。</td></tr>
+  <tr><td>问答</td><td><code>/api/{fast|thinking|patent}/ask_stream</code>、<code>/api/v1/{fast|thinking|patent}/ask_stream</code></td><td>POST</td><td>流式问答。</td></tr>
+  <tr><td>任务</td><td><code>/api/v1/tasks</code>、<code>/api/v1/tasks/{task_id}</code>、<code>/api/v1/tasks/{task_id}/events</code>、<code>/api/v1/tasks/{task_id}/cancel</code></td><td>GET/POST</td><td>可恢复任务和事件。</td></tr>
+  <tr><td>准入</td><td><code>/api/admission/status</code>、<code>/api/admission/requests/{request_id}</code>、<code>/api/admission/requests/{request_id}/cancel</code>、<code>/api/admission/requests/{request_id}/frames</code></td><td>GET/POST</td><td>请求准入状态、取消和帧信息。</td></tr>
+  <tr><td>健康</td><td><code>/healthz</code></td><td>GET</td><td>gateway 健康检查。</td></tr>
+</table>
+<h2>13.2 管理后台接口</h2>
+<table>
+  <tr><th>分组</th><th>路径</th><th>方法</th><th>说明</th></tr>
+  <tr><td>用户</td><td><code>/api/admin/users</code>、<code>/api/admin/users/{user_id}</code></td><td>GET/POST/DELETE</td><td>用户列表、新增和删除。</td></tr>
+  <tr><td>用户</td><td><code>/api/admin/users/{user_id}/username</code>、<code>/api/admin/users/{user_id}/password</code>、<code>/api/admin/users/{user_id}/status</code>、<code>/api/admin/users/{user_id}/type</code></td><td>GET/PUT</td><td>用户名、密码、状态和类型维护。</td></tr>
+  <tr><td>用户</td><td><code>/api/admin/users/{user_id}/personnel-binding</code></td><td>PUT/DELETE</td><td>人员绑定和解绑。</td></tr>
+  <tr><td>用户</td><td><code>/api/admin/users/batch-delete</code>、<code>/api/admin/users/batch-type</code>、<code>/api/admin/users/batch-import</code>、<code>/api/admin/users/import-template</code></td><td>GET/POST</td><td>批量和模板。</td></tr>
+  <tr><td>人员</td><td><code>/api/admin/personnel</code>、<code>/api/admin/personnel/{personnel_id}</code>、<code>/api/admin/personnel/{personnel_id}/status</code>、<code>/api/admin/personnel/{personnel_id}/bindings</code></td><td>GET/POST/PUT</td><td>人员增删改查、状态和绑定关系。</td></tr>
+  <tr><td>人员</td><td><code>/api/admin/personnel/batch-import</code>、<code>/api/admin/personnel/import-template</code></td><td>GET/POST</td><td>人员批量导入和模板下载。</td></tr>
+  <tr><td>部门</td><td><code>/api/admin/departments/tree</code></td><td>GET</td><td>部门树。</td></tr>
+  <tr><td>部门</td><td><code>/api/admin/departments/primary</code>、<code>/api/admin/departments/primary/{primary_id}</code>、<code>/api/admin/departments/primary/{primary_id}/status</code></td><td>POST/PUT</td><td>一级部门维护。</td></tr>
+  <tr><td>部门</td><td><code>/api/admin/departments/secondary</code>、<code>/api/admin/departments/secondary/{secondary_id}</code>、<code>/api/admin/departments/secondary/{secondary_id}/status</code>、<code>/api/admin/departments/secondary/{secondary_id}/users</code>、<code>/api/admin/departments/secondary/{secondary_id}/legacy-users</code></td><td>GET/POST/PUT</td><td>二级部门和用户关联。</td></tr>
+  <tr><td>部门</td><td><code>/api/admin/departments/tertiary</code>、<code>/api/admin/departments/tertiary/{tertiary_id}</code>、<code>/api/admin/departments/tertiary/{tertiary_id}/status</code>、<code>/api/admin/departments/tertiary/{tertiary_id}/users</code></td><td>GET/POST/PUT</td><td>三级部门和用户关联。</td></tr>
+  <tr><td>部门</td><td><code>/api/admin/departments/batch-import</code>、<code>/api/admin/departments/import-template</code></td><td>GET/POST</td><td>部门批量导入和模板下载。</td></tr>
+  <tr><td>配额</td><td><code>/api/quota/my</code>、<code>/api/quota/configs</code>、<code>/api/quota/configs/{quota_type}</code>、<code>/api/quota/users/{user_id}</code>、<code>/api/quota/reset/{user_id}/{quota_type}</code></td><td>GET/POST/PUT</td><td>个人配额、配置、用户用量和重置。</td></tr>
+</table>
+<h2>13.3 内部和兼容接口</h2>
+<table>
+  <tr><th>接口</th><th>方法</th><th>提供方</th><th>说明</th></tr>
+  <tr><td><code>/internal/quota/grants/precheck</code></td><td>POST</td><td>public-service</td><td>gateway 调用的配额预占。</td></tr>
+  <tr><td><code>/internal/quota/grants/{grant_id}/finalize</code></td><td>POST</td><td>public-service</td><td>gateway 调用的配额结算。</td></tr>
+  <tr><td><code>/internal/conversations/{conversation_id}/messages/user</code></td><td>POST</td><td>public-service</td><td>写用户消息。</td></tr>
+  <tr><td><code>/internal/conversations/{conversation_id}/context-snapshot</code></td><td>GET</td><td>public-service</td><td>读取会话上下文快照。</td></tr>
+  <tr><td><code>/internal/conversations/{conversation_id}/messages/assistant-async</code></td><td>POST</td><td>public-service</td><td>异步写助手消息。</td></tr>
+  <tr><td><code>/internal/conversations/{conversation_id}/messages/assistant-terminal-async</code></td><td>POST</td><td>public-service</td><td>异步写终态助手消息。</td></tr>
+  <tr><td><code>/internal/conversations/{conversation_id}/tasks/{task_id}/assistant-start</code></td><td>POST</td><td>public-service</td><td>任务助手消息开始。</td></tr>
+  <tr><td><code>/internal/conversations/{conversation_id}/tasks/{task_id}/create-turn</code></td><td>POST</td><td>public-service</td><td>创建任务轮次。</td></tr>
+  <tr><td><code>/internal/conversations/{conversation_id}/tasks/{task_id}/assistant-progress</code></td><td>POST</td><td>public-service</td><td>写任务进度。</td></tr>
+  <tr><td><code>/internal/conversations/{conversation_id}/tasks/{task_id}/assistant-terminal</code></td><td>POST</td><td>public-service</td><td>写任务终态。</td></tr>
+  <tr><td><code>/internal/conversations/{conversation_id}/tasks/{task_id}/rollback-create</code></td><td>POST</td><td>public-service</td><td>任务创建失败回滚。</td></tr>
+  <tr><td><code>/api/ask</code>、<code>/api/v1/ask</code>、<code>/api/{mode}/ask</code></td><td>POST</td><td>各 QA 后端</td><td>后端直连或兼容入口，生产优先经 gateway。</td></tr>
+  <tr><td><code>/api/ask_stream</code>、<code>/api/v1/ask_stream</code>、<code>/api/{mode}/ask_stream</code></td><td>POST</td><td>各 QA 后端</td><td>后端直连或兼容流式入口，生产优先经 gateway。</td></tr>
+  <tr><td><code>/api/health</code>、<code>/api/v1/health</code>、<code>/healthz</code></td><td>GET</td><td>各后端</td><td>健康检查。</td></tr>
+</table>
+
+</body>
+</html>

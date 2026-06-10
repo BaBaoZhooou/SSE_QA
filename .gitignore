@@ -1,0 +1,53 @@
+# --- User runtime (never commit) ---
+.sse-qa/
+
+# --- Secrets ---
+**/*.secret.env
+**/.env
+config/config.secret.env
+!**/*.secret.env.example
+!**/env.example
+
+# --- Generated / local config ---
+config/system.agent.yaml
+config/system.yaml
+config/system.lite.yaml
+config/system.generated.env
+
+# --- npm / Node ---
+packages/*/node_modules/
+packages/*/*.tgz
+packages/sse-qa-cli/dist/
+packages/sse-qa-cli/runtime/backend/
+
+# --- Python ---
+**/__pycache__/
+**/.pytest_cache/
+**/.venv/
+**/.tmp/
+*.pyc
+
+# --- Service runtime state ---
+resource/runtime/
+resource/logs/
+resource/state/
+resource/sse/**/*
+!resource/sse/**/.gitkeep
+
+# --- Local data / vectors ---
+data/**/*
+!data/**/.gitkeep
+**/chroma.sqlite3
+
+# --- Neo4j local instance ---
+知识图谱/neo4j/data/
+知识图谱/neo4j/logs/
+
+# --- Large KG export (import via scripts; keep compact CSV/JSON optional) ---
+知识图谱/sse_knowledge_graph_full.json
+
+# --- IDE / agent ---
+.cursor/
+
+# --- OS ---
+.DS_Store

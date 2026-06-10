@@ -1,0 +1,33 @@
+# FastQA Config
+
+Service-level env templates for the `fastQA` backend live here.
+
+Shared infrastructure and model endpoint defaults come from `resource/config/shared/` and
+are loaded before these service-local files. Commit-safe Stage2 retrieval tuning defaults live in
+[`config.shared.env`](config.shared.env) in this directory. Keep other service-local overrides in
+`config.env` only when fastQA intentionally differs from the shared default.
+
+Expected runtime contract:
+
+- `FASTQA_SERVICE_CONFIG_ROOT`
+- `FASTQA_SERVICE_STATE_ROOT`
+- `FASTQA_SERVICE_RUNTIME_ROOT`
+- `FASTQA_SERVICE_ASSET_ROOT`
+
+fastQA owns:
+
+- Gunicorn worker counts
+- QA, graph KB, file-QA, SSE, cache, and retrieval tuning
+- unified LLM choices through shared `LLM_*` settings
+- fastQA vector database, paper, prompt, JSON, cache, and runtime paths
+- `REDIS_KEY_PREFIX=fastqa`
+- fastQA-specific rerank candidates
+
+Shared config owns service ports, Redis/MySQL/MinIO defaults, model endpoints, graph endpoints,
+local embedding aliases, and local rerank endpoint defaults. Put local overrides in `config.env`;
+do not put secrets in committed files.
+
+Runtime expectations:
+
+- trust gateway-normalized `route`
+- do not require conversation/upload/document modules to boot

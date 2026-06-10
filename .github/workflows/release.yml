@@ -1,0 +1,91 @@
+name: Release SSE QA npm package
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  sync-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Sync backend bundle
+        run: bash scripts/sync-server-bundle.sh
+
+      - name: Build and smoke test
+        working-directory: packages/sse-qa-cli
+        run: |
+          npm ci
+          npm run build
+          npm run test:smoke
+          test -f runtime/backend/requirements.txt
+
+  publish-npm:
+    needs: sync-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Sync backend bundle
+        run: bash scripts/sync-server-bundle.sh
+
+      - name: Publish @sse-qa/cli
+        working-directory: packages/sse-qa-cli
+        run: |
+          npm ci
+          npm run build
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  docker-images:
+    needs: sync-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync backend bundle
+        run: bash scripts/sync-server-bundle.sh
+
+      - name: Set version from tag
+        run: echo "SSE_QA_VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_ENV"
+
+      - name: Build Docker images
+        working-directory: packages/sse-qa-cli/runtime
+        run: |
+          docker build -f docker/Dockerfile.fastqa -t sse-qa-fastqa:${SSE_QA_VERSION} .
+          docker build -f docker/Dockerfile.thinking -t sse-qa-thinking:${SSE_QA_VERSION} .
+
+      - name: Log in to GHCR
+        if: ${{ secrets.GITHUB_TOKEN != '' }}
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push images (optional)
+        if: ${{ github.repository != '' }}
+        working-directory: packages/sse-qa-cli/runtime
+        run: |
+          OWNER=$(echo "${{ github.repository }}" | cut -d/ -f1 | tr '[:upper:]' '[:lower:]')
+          for svc in fastqa thinking; do
+            docker tag sse-qa-${svc}:${SSE_QA_VERSION} ghcr.io/${OWNER}/sse-qa-${svc}:${SSE_QA_VERSION}
+            docker push ghcr.io/${OWNER}/sse-qa-${svc}:${SSE_QA_VERSION} || true
+          done

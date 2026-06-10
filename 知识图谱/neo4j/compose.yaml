@@ -1,0 +1,26 @@
+name: sse-kg-neo4j
+
+services:
+  neo4j:
+    image: neo4j:5-community
+    container_name: sse-kg-neo4j
+    restart: unless-stopped
+    ports:
+      - "7476:7474"
+      - "7698:7687"
+    environment:
+      NEO4J_AUTH: ${NEO4J_AUTH:-neo4j/sse-kg-password}
+      NEO4J_server_memory_heap_initial__size: ${NEO4J_HEAP_INITIAL:-2G}
+      NEO4J_server_memory_heap_max__size: ${NEO4J_HEAP_MAX:-4G}
+      NEO4J_server_memory_pagecache_size: ${NEO4J_PAGECACHE:-2G}
+    volumes:
+      - ./data:/data
+      - ./logs:/logs
+      - ./plugins:/plugins
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.31.255.0/24

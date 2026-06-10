@@ -1,0 +1,6984 @@
+{
+  "nodes": [
+    {
+      "id": "c_propertycategory:battery-performance-94e99aa606",
+      "label": "battery_performance",
+      "kind": "PropertyCategory",
+      "count": 10376
+    },
+    {
+      "id": "c_propertycategory:ionic-conductivity-rt-3acdd8919e",
+      "label": "ionic_conductivity_rt",
+      "kind": "PropertyCategory",
+      "count": 7779
+    },
+    {
+      "id": "c_propertycategory:interface-5ea2d81a89",
+      "label": "interface",
+      "kind": "PropertyCategory",
+      "count": 5709
+    },
+    {
+      "id": "corpus",
+      "label": "SSE extraction corpus",
+      "kind": "Corpus",
+      "count": 3504
+    },
+    {
+      "id": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "label": "liquid_phase_synthesis",
+      "kind": "ProcessTag",
+      "count": 3336
+    },
+    {
+      "id": "c_propertycategory:electrochemical-stability-window-336fb11a20",
+      "label": "electrochemical_stability_window",
+      "kind": "PropertyCategory",
+      "count": 3247
+    },
+    {
+      "id": "c_conductingion:li-dd305be3ca",
+      "label": "Li+",
+      "kind": "ConductingIon",
+      "count": 3238
+    },
+    {
+      "id": "c_propertycategory:cation-transference-number-7973c7e42e",
+      "label": "cation_transference_number",
+      "kind": "PropertyCategory",
+      "count": 2927
+    },
+    {
+      "id": "c_propertycategory:li-ion-transference-number-5a21889ca9",
+      "label": "li_ion_transference_number",
+      "kind": "PropertyCategory",
+      "count": 2817
+    },
+    {
+      "id": "c_propertycategory:activation-energy-8b2e04d7ef",
+      "label": "activation_energy",
+      "kind": "PropertyCategory",
+      "count": 2549
+    },
+    {
+      "id": "c_propertycategory:thermal-stability-435243ebfa",
+      "label": "thermal_stability",
+      "kind": "PropertyCategory",
+      "count": 2124
+    },
+    {
+      "id": "c_processtag:solution-casting-e8dd2b7fe7",
+      "label": "solution_casting",
+      "kind": "ProcessTag",
+      "count": 1939
+    },
+    {
+      "id": "c_processtag:film-casting-b30480a6c9",
+      "label": "film_casting",
+      "kind": "ProcessTag",
+      "count": 1886
+    },
+    {
+      "id": "c_materialtype:oxide-solid-electrolyte-8cd32a3f62",
+      "label": "oxide solid electrolyte",
+      "kind": "MaterialType",
+      "count": 1511
+    },
+    {
+      "id": "c_processtag:solid-state-reaction-bcc71d4904",
+      "label": "solid_state_reaction",
+      "kind": "ProcessTag",
+      "count": 1422
+    },
+    {
+      "id": "c_propertycategory:conductivity-temperature-relatio-5960e10e93",
+      "label": "conductivity_temperature_relation",
+      "kind": "PropertyCategory",
+      "count": 1327
+    },
+    {
+      "id": "c_processtag:mechanical-milling-eafdc39c55",
+      "label": "mechanical_milling",
+      "kind": "ProcessTag",
+      "count": 1276
+    },
+    {
+      "id": "c_materialtype:sulfide-solid-electrolyte-a2e08dae24",
+      "label": "sulfide solid electrolyte",
+      "kind": "MaterialType",
+      "count": 1167
+    },
+    {
+      "id": "c_processtag:sintering-88c33e5d3d",
+      "label": "sintering",
+      "kind": "ProcessTag",
+      "count": 1114
+    },
+    {
+      "id": "c_processtag:cold-pressing-6228b3dbb5",
+      "label": "cold_pressing",
+      "kind": "ProcessTag",
+      "count": 1112
+    },
+    {
+      "id": "c_materialtype:composite-solid-electrolyte-8a48a4a6be",
+      "label": "composite solid electrolyte",
+      "kind": "MaterialType",
+      "count": 1064
+    },
+    {
+      "id": "c_precursor:litfsi-8e14276a61",
+      "label": "LiTFSI",
+      "kind": "Precursor",
+      "count": 1053
+    },
+    {
+      "id": "c_ssefamily:polymer-457f0e67b0",
+      "label": "polymer",
+      "kind": "SSEFamily",
+      "count": 1032
+    },
+    {
+      "id": "c_structurefamily:peo-based-485b80c192",
+      "label": "PEO-based",
+      "kind": "StructureFamily",
+      "count": 946
+    },
+    {
+      "id": "c_materialtype:polymer-solid-electrolyte-96ff648b1a",
+      "label": "polymer solid electrolyte",
+      "kind": "MaterialType",
+      "count": 942
+    },
+    {
+      "id": "c_ssefamily:composite-6288c74c29",
+      "label": "composite",
+      "kind": "SSEFamily",
+      "count": 920
+    },
+    {
+      "id": "c_propertycategory:relative-density-e379d3987d",
+      "label": "relative_density",
+      "kind": "PropertyCategory",
+      "count": 834
+    },
+    {
+      "id": "c_structurefamily:garnet-bcc1e0f086",
+      "label": "Garnet",
+      "kind": "StructureFamily",
+      "count": 833
+    },
+    {
+      "id": "c_processtag:annealing-9aa85dcd1f",
+      "label": "annealing",
+      "kind": "ProcessTag",
+      "count": 788
+    },
+    {
+      "id": "c_processtag:coating-600f8f6dab",
+      "label": "coating",
+      "kind": "ProcessTag",
+      "count": 783
+    },
+    {
+      "id": "c_materialtype:composite-polymer-electrolyte-edc43c97ac",
+      "label": "composite polymer electrolyte",
+      "kind": "MaterialType",
+      "count": 718
+    },
+    {
+      "id": "c_polymercomponent:peo-b304c0d69e",
+      "label": "PEO",
+      "kind": "PolymerComponent",
+      "count": 688
+    },
+    {
+      "id": "c_structurefamily:argyrodite-0cbee07850",
+      "label": "Argyrodite",
+      "kind": "StructureFamily",
+      "count": 651
+    },
+    {
+      "id": "c_year:2024-7e79a3af26",
+      "label": "2024",
+      "kind": "Year",
+      "count": 601
+    },
+    {
+      "id": "c_ssefamily:oxide-53e59bffe5",
+      "label": "oxide",
+      "kind": "SSEFamily",
+      "count": 586
+    },
+    {
+      "id": "c_materialtype:gel-polymer-electrolyte-4d6907a4c0",
+      "label": "gel polymer electrolyte",
+      "kind": "MaterialType",
+      "count": 562
+    },
+    {
+      "id": "c_processtag:in-situ-polymerization-42b2e1555f",
+      "label": "in_situ_polymerization",
+      "kind": "ProcessTag",
+      "count": 554
+    },
+    {
+      "id": "c_propertycategory:air-stability-359d2cac71",
+      "label": "air_stability",
+      "kind": "PropertyCategory",
+      "count": 551
+    },
+    {
+      "id": "c_precursor:peo-b304c0d69e",
+      "label": "PEO",
+      "kind": "Precursor",
+      "count": 508
+    },
+    {
+      "id": "c_materialtype:solid-polymer-electrolyte-d6c56181e9",
+      "label": "solid polymer electrolyte",
+      "kind": "MaterialType",
+      "count": 486
+    },
+    {
+      "id": "c_year:2023-445cd2fd32",
+      "label": "2023",
+      "kind": "Year",
+      "count": 478
+    },
+    {
+      "id": "c_structurefamily:nasicon-dab3fdb158",
+      "label": "NASICON",
+      "kind": "StructureFamily",
+      "count": 468
+    },
+    {
+      "id": "c_ssefamily:sulfide-67e7d261c3",
+      "label": "sulfide",
+      "kind": "SSEFamily",
+      "count": 465
+    },
+    {
+      "id": "c_propertycategory:density-bbbf26a1fb",
+      "label": "density",
+      "kind": "PropertyCategory",
+      "count": 449
+    },
+    {
+      "id": "c_processtag:calcination-1790e967f2",
+      "label": "calcination",
+      "kind": "ProcessTag",
+      "count": 414
+    },
+    {
+      "id": "c_processtag:thermal-polymerization-52e403ffc2",
+      "label": "thermal_polymerization",
+      "kind": "ProcessTag",
+      "count": 413
+    },
+    {
+      "id": "c_journal:j-mater-chem-a-d0aadf9812",
+      "label": "J. Mater. Chem. A",
+      "kind": "Journal",
+      "count": 392
+    },
+    {
+      "id": "c_precursor:li2s-8d4097b90e",
+      "label": "Li2S",
+      "kind": "Precursor",
+      "count": 386
+    },
+    {
+      "id": "c_solvent:acetonitrile-d99ffd75c2",
+      "label": "acetonitrile",
+      "kind": "Solvent",
+      "count": 386
+    },
+    {
+      "id": "c_year:2022-e575dccc71",
+      "label": "2022",
+      "kind": "Year",
+      "count": 381
+    },
+    {
+      "id": "c_processtag:vacuum-drying-690901f780",
+      "label": "vacuum_drying",
+      "kind": "ProcessTag",
+      "count": 367
+    },
+    {
+      "id": "c_processtag:drying-2e0f07d2a1",
+      "label": "drying",
+      "kind": "ProcessTag",
+      "count": 363
+    },
+    {
+      "id": "c_precursor:p2s5-573ed3c812",
+      "label": "P2S5",
+      "kind": "Precursor",
+      "count": 345
+    },
+    {
+      "id": "c_materialtype:halide-solid-electrolyte-a1a98a6ab3",
+      "label": "halide solid electrolyte",
+      "kind": "MaterialType",
+      "count": 344
+    },
+    {
+      "id": "c_additive:litfsi-8e14276a61",
+      "label": "LiTFSI",
+      "kind": "Additive",
+      "count": 323
+    },
+    {
+      "id": "c_year:2021-fd93ac4614",
+      "label": "2021",
+      "kind": "Year",
+      "count": 321
+    },
+    {
+      "id": "c_polymercomponent:pvdf-hfp-1412ef6876",
+      "label": "PVDF-HFP",
+      "kind": "PolymerComponent",
+      "count": 285
+    },
+    {
+      "id": "c_formula:li6ps5cl-5ff9f9185c",
+      "label": "Li6PS5Cl",
+      "kind": "Formula",
+      "count": 275
+    },
+    {
+      "id": "c_structurefamily:peo-based-composite-1adaf3805c",
+      "label": "PEO-based composite",
+      "kind": "StructureFamily",
+      "count": 275
+    },
+    {
+      "id": "c_processtag:ball-milling-6264a3a594",
+      "label": "ball_milling",
+      "kind": "ProcessTag",
+      "count": 259
+    },
+    {
+      "id": "c_precursor:pvdf-hfp-1412ef6876",
+      "label": "PVDF-HFP",
+      "kind": "Precursor",
+      "count": 252
+    },
+    {
+      "id": "c_solvent:dmf-641fd7e517",
+      "label": "DMF",
+      "kind": "Solvent",
+      "count": 249
+    },
+    {
+      "id": "c_precursor:licl-fd888b4262",
+      "label": "LiCl",
+      "kind": "Precursor",
+      "count": 239
+    },
+    {
+      "id": "c_year:2020-85568b20c3",
+      "label": "2020",
+      "kind": "Year",
+      "count": 237
+    },
+    {
+      "id": "c_year:2025-004be89dd9",
+      "label": "2025",
+      "kind": "Year",
+      "count": 232
+    },
+    {
+      "id": "c_year:2019-0c422ba644",
+      "label": "2019",
+      "kind": "Year",
+      "count": 221
+    },
+    {
+      "id": "c_processtag:hot-pressing-c584632c15",
+      "label": "hot_pressing",
+      "kind": "ProcessTag",
+      "count": 220
+    },
+    {
+      "id": "c_journal:acs-appl-mater-interfaces-69e6859ea7",
+      "label": "ACS Appl. Mater. Interfaces",
+      "kind": "Journal",
+      "count": 219
+    },
+    {
+      "id": "c_solvent:deionized-water-f0c7ef4fd4",
+      "label": "deionized water",
+      "kind": "Solvent",
+      "count": 216
+    },
+    {
+      "id": "c_processtag:uv-curing-b468a67694",
+      "label": "uv_curing",
+      "kind": "ProcessTag",
+      "count": 212
+    },
+    {
+      "id": "c_polymercomponent:pvdf-6b6075dfb8",
+      "label": "PVDF",
+      "kind": "PolymerComponent",
+      "count": 211
+    },
+    {
+      "id": "c_processtag:solution-mixing-d614ef6249",
+      "label": "solution_mixing",
+      "kind": "ProcessTag",
+      "count": 211
+    },
+    {
+      "id": "c_processtag:electrospinning-ce77110b9e",
+      "label": "electrospinning",
+      "kind": "ProcessTag",
+      "count": 209
+    },
+    {
+      "id": "c_processtag:heat-treatment-cd794f319d",
+      "label": "heat_treatment",
+      "kind": "ProcessTag",
+      "count": 209
+    },
+    {
+      "id": "c_journal:acs-appl-energy-mater-230eece18e",
+      "label": "ACS Appl. Energy Mater.",
+      "kind": "Journal",
+      "count": 205
+    },
+    {
+      "id": "c_precursor:zro2-f08e80789c",
+      "label": "ZrO2",
+      "kind": "Precursor",
+      "count": 196
+    },
+    {
+      "id": "c_solvent:ethanol-d853a1aecb",
+      "label": "ethanol",
+      "kind": "Solvent",
+      "count": 195
+    },
+    {
+      "id": "c_materialtype:composite-solid-polymer-electrol-4873f6a2fc",
+      "label": "composite solid polymer electrolyte",
+      "kind": "MaterialType",
+      "count": 190
+    },
+    {
+      "id": "c_materialtype:polymer-electrolyte-06f57a9bca",
+      "label": "polymer electrolyte",
+      "kind": "MaterialType",
+      "count": 188
+    },
+    {
+      "id": "c_precursor:lithium-bis-trifluoromethanesulf-ecd6298dbd",
+      "label": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "kind": "Precursor",
+      "count": 183
+    },
+    {
+      "id": "c_journal:advanced-energy-materials-7221e15e28",
+      "label": "Advanced Energy Materials",
+      "kind": "Journal",
+      "count": 182
+    },
+    {
+      "id": "c_journal:advanced-functional-materials-e9fcbbda0b",
+      "label": "Advanced Functional Materials",
+      "kind": "Journal",
+      "count": 182
+    },
+    {
+      "id": "c_processtag:thermal-curing-56d1a3a090",
+      "label": "thermal_curing",
+      "kind": "ProcessTag",
+      "count": 176
+    },
+    {
+      "id": "c_processtag:mixing-3187876867",
+      "label": "mixing",
+      "kind": "ProcessTag",
+      "count": 173
+    },
+    {
+      "id": "c_year:2018-66efd9eefe",
+      "label": "2018",
+      "kind": "Year",
+      "count": 169
+    },
+    {
+      "id": "c_precursor:pvdf-6b6075dfb8",
+      "label": "PVDF",
+      "kind": "Precursor",
+      "count": 164
+    },
+    {
+      "id": "c_processtag:sol-gel-7f8f70f0ea",
+      "label": "sol_gel",
+      "kind": "ProcessTag",
+      "count": 164
+    },
+    {
+      "id": "c_precursor:la2o3-9b0c2d6ce2",
+      "label": "La2O3",
+      "kind": "Precursor",
+      "count": 161
+    },
+    {
+      "id": "c_formula:li7la3zr2o12-6a0c412ce7",
+      "label": "Li7La3Zr2O12",
+      "kind": "Formula",
+      "count": 150
+    },
+    {
+      "id": "c_processtag:impregnation-d677e2254f",
+      "label": "impregnation",
+      "kind": "ProcessTag",
+      "count": 150
+    },
+    {
+      "id": "c_processtag:ion-exchange-1a1abde68e",
+      "label": "ion_exchange",
+      "kind": "ProcessTag",
+      "count": 149
+    },
+    {
+      "id": "c_processtag:solvent-evaporation-79989c64cb",
+      "label": "solvent_evaporation",
+      "kind": "ProcessTag",
+      "count": 149
+    },
+    {
+      "id": "c_solvent:thf-d9b3b1daf4",
+      "label": "THF",
+      "kind": "Solvent",
+      "count": 146
+    },
+    {
+      "id": "c_precursor:li2co3-22038978c0",
+      "label": "Li2CO3",
+      "kind": "Precursor",
+      "count": 142
+    },
+    {
+      "id": "c_materialtype:composite-6288c74c29",
+      "label": "composite",
+      "kind": "MaterialType",
+      "count": 142
+    },
+    {
+      "id": "c_solvent:water-6d5a45920a",
+      "label": "water",
+      "kind": "Solvent",
+      "count": 135
+    },
+    {
+      "id": "c_journal:angewandte-chemie-international-eb7cf982b2",
+      "label": "Angewandte Chemie International Edition",
+      "kind": "Journal",
+      "count": 134
+    },
+    {
+      "id": "c_processtag:solvothermal-6defe64b00",
+      "label": "solvothermal",
+      "kind": "ProcessTag",
+      "count": 130
+    },
+    {
+      "id": "c_processtag:polymerization-566542b796",
+      "label": "polymerization",
+      "kind": "ProcessTag",
+      "count": 127
+    },
+    {
+      "id": "c_ssefamily:other-d0941e68da",
+      "label": "other",
+      "kind": "SSEFamily",
+      "count": 125
+    },
+    {
+      "id": "c_formula:li6-4la3zr1-4ta0-6o12-577e23209d",
+      "label": "Li6.4La3Zr1.4Ta0.6O12",
+      "kind": "Formula",
+      "count": 124
+    },
+    {
+      "id": "c_solvent:anhydrous-acetonitrile-17beaca73f",
+      "label": "anhydrous acetonitrile",
+      "kind": "Solvent",
+      "count": 124
+    },
+    {
+      "id": "c_solvent:acetone-fdd7bfd96d",
+      "label": "acetone",
+      "kind": "Solvent",
+      "count": 121
+    },
+    {
+      "id": "c_ssefamily:halide-5bac6ecf19",
+      "label": "halide",
+      "kind": "SSEFamily",
+      "count": 113
+    },
+    {
+      "id": "c_year:2017-04e8696e64",
+      "label": "2017",
+      "kind": "Year",
+      "count": 111
+    },
+    {
+      "id": "c_processtag:surface-modification-f2ce4e124b",
+      "label": "surface_modification",
+      "kind": "ProcessTag",
+      "count": 111
+    },
+    {
+      "id": "c_solvent:n-n-dimethylformamide-8bd5c5e284",
+      "label": "N,N-dimethylformamide",
+      "kind": "Solvent",
+      "count": 109
+    },
+    {
+      "id": "c_processtag:solvent-casting-74a6d81c2b",
+      "label": "solvent_casting",
+      "kind": "ProcessTag",
+      "count": 108
+    },
+    {
+      "id": "c_structurefamily:thio-lisicon-35b881b065",
+      "label": "Thio-LISICON",
+      "kind": "StructureFamily",
+      "count": 105
+    },
+    {
+      "id": "c_journal:small-89f6229a11",
+      "label": "Small",
+      "kind": "Journal",
+      "count": 103
+    },
+    {
+      "id": "c_additive:aibn-c53401a133",
+      "label": "AIBN",
+      "kind": "Additive",
+      "count": 102
+    },
+    {
+      "id": "c_precursor:poly-ethylene-oxide-032606764e",
+      "label": "Poly(ethylene oxide)",
+      "kind": "Precursor",
+      "count": 102
+    },
+    {
+      "id": "c_processtag:sol-gel-67d4867818",
+      "label": "sol-gel",
+      "kind": "ProcessTag",
+      "count": 102
+    },
+    {
+      "id": "c_conductingion:na-edb4f9efc8",
+      "label": "Na+",
+      "kind": "ConductingIon",
+      "count": 101
+    },
+    {
+      "id": "c_processtag:thin-film-deposition-ebde708584",
+      "label": "thin_film_deposition",
+      "kind": "ProcessTag",
+      "count": 101
+    },
+    {
+      "id": "c_formula:li3ps4-77ba85194d",
+      "label": "Li3PS4",
+      "kind": "Formula",
+      "count": 100
+    },
+    {
+      "id": "c_precursor:ta2o5-5056ba18be",
+      "label": "Ta2O5",
+      "kind": "Precursor",
+      "count": 99
+    },
+    {
+      "id": "c_processtag:ring-opening-polymerization-ddfeb52f0e",
+      "label": "ring_opening_polymerization",
+      "kind": "ProcessTag",
+      "count": 99
+    },
+    {
+      "id": "c_precursor:liclo4-c36baca58a",
+      "label": "LiClO4",
+      "kind": "Precursor",
+      "count": 98
+    },
+    {
+      "id": "c_precursor:llzto-38f7b82fb1",
+      "label": "LLZTO",
+      "kind": "Precursor",
+      "count": 97
+    },
+    {
+      "id": "c_formula:li1-3al0-3ti1-7-po4-3-99d205fb72",
+      "label": "Li1.3Al0.3Ti1.7(PO4)3",
+      "kind": "Formula",
+      "count": 97
+    },
+    {
+      "id": "c_journal:rsc-adv-376b01396d",
+      "label": "RSC Adv.",
+      "kind": "Journal",
+      "count": 97
+    },
+    {
+      "id": "c_precursor:al2o3-3848258807",
+      "label": "Al2O3",
+      "kind": "Precursor",
+      "count": 96
+    },
+    {
+      "id": "c_precursor:lioh-bdd579fd95",
+      "label": "LiOH",
+      "kind": "Precursor",
+      "count": 95
+    },
+    {
+      "id": "c_processtag:solution-synthesis-e4cd63faa2",
+      "label": "solution_synthesis",
+      "kind": "ProcessTag",
+      "count": 95
+    },
+    {
+      "id": "c_precursor:li6ps5cl-5ff9f9185c",
+      "label": "Li6PS5Cl",
+      "kind": "Precursor",
+      "count": 94
+    },
+    {
+      "id": "c_structurefamily:pvdf-based-c80762ad53",
+      "label": "PVDF-based",
+      "kind": "StructureFamily",
+      "count": 94
+    },
+    {
+      "id": "c_journal:advanced-materials-5c6be3f42d",
+      "label": "Advanced Materials",
+      "kind": "Journal",
+      "count": 93
+    },
+    {
+      "id": "c_precursor:lino3-ebf8e29e0a",
+      "label": "LiNO3",
+      "kind": "Precursor",
+      "count": 93
+    },
+    {
+      "id": "c_materialtype:quasi-solid-polymer-electrolyte-43a392205d",
+      "label": "quasi-solid polymer electrolyte",
+      "kind": "MaterialType",
+      "count": 93
+    },
+    {
+      "id": "c_precursor:lithium-nitrate-fe5c7b7e49",
+      "label": "Lithium nitrate",
+      "kind": "Precursor",
+      "count": 92
+    },
+    {
+      "id": "c_solvent:nmp-a3f1fd9564",
+      "label": "NMP",
+      "kind": "Solvent",
+      "count": 92
+    },
+    {
+      "id": "c_processtag:hydrothermal-462d554cc4",
+      "label": "hydrothermal",
+      "kind": "ProcessTag",
+      "count": 92
+    },
+    {
+      "id": "c_materialtype:oxide-53e59bffe5",
+      "label": "oxide",
+      "kind": "MaterialType",
+      "count": 92
+    },
+    {
+      "id": "c_journal:acs-applied-materials-interfaces-c9665d9434",
+      "label": "ACS Applied Materials & Interfaces",
+      "kind": "Journal",
+      "count": 91
+    },
+    {
+      "id": "c_polymercomponent:pegda-905e1a9848",
+      "label": "PEGDA",
+      "kind": "PolymerComponent",
+      "count": 91
+    },
+    {
+      "id": "c_processtag:melt-quenching-56a10cada4",
+      "label": "melt_quenching",
+      "kind": "ProcessTag",
+      "count": 90
+    },
+    {
+      "id": "c_processtag:slurry-casting-56658dac86",
+      "label": "slurry_casting",
+      "kind": "ProcessTag",
+      "count": 85
+    },
+    {
+      "id": "c_year:2016-ab39c54239",
+      "label": "2016",
+      "kind": "Year",
+      "count": 84
+    },
+    {
+      "id": "c_precursor:lii-870f668087",
+      "label": "LiI",
+      "kind": "Precursor",
+      "count": 84
+    },
+    {
+      "id": "c_structurefamily:polymer-ceramic-composite-7e3418058e",
+      "label": "polymer-ceramic composite",
+      "kind": "StructureFamily",
+      "count": 84
+    },
+    {
+      "id": "c_precursor:lifsi-ae32f46cdd",
+      "label": "LiFSI",
+      "kind": "Precursor",
+      "count": 83
+    },
+    {
+      "id": "c_processtag:infiltration-3c60aac9e8",
+      "label": "infiltration",
+      "kind": "ProcessTag",
+      "count": 83
+    },
+    {
+      "id": "c_precursor:lioh-h2o-9eb31b6a76",
+      "label": "LiOH·H2O",
+      "kind": "Precursor",
+      "count": 82
+    },
+    {
+      "id": "c_processtag:tape-casting-d37b1a7856",
+      "label": "tape_casting",
+      "kind": "ProcessTag",
+      "count": 82
+    },
+    {
+      "id": "c_year:2014-39e21432a7",
+      "label": "2014",
+      "kind": "Year",
+      "count": 81
+    },
+    {
+      "id": "c_precursor:nh4h2po4-920f4d7b00",
+      "label": "NH4H2PO4",
+      "kind": "Precursor",
+      "count": 81
+    },
+    {
+      "id": "c_solvent:isopropanol-2be7a78576",
+      "label": "isopropanol",
+      "kind": "Solvent",
+      "count": 81
+    },
+    {
+      "id": "c_solvent:methanol-81de7a2f5d",
+      "label": "methanol",
+      "kind": "Solvent",
+      "count": 81
+    },
+    {
+      "id": "c_processtag:solution-reaction-f7334664b4",
+      "label": "solution_reaction",
+      "kind": "ProcessTag",
+      "count": 81
+    },
+    {
+      "id": "c_precursor:aibn-c53401a133",
+      "label": "AIBN",
+      "kind": "Precursor",
+      "count": 80
+    },
+    {
+      "id": "c_structurefamily:pvdf-hfp-based-934e95721c",
+      "label": "PVDF-HFP based",
+      "kind": "StructureFamily",
+      "count": 80
+    },
+    {
+      "id": "c_precursor:lithium-carbonate-05e2bbb0be",
+      "label": "Lithium carbonate",
+      "kind": "Precursor",
+      "count": 79
+    },
+    {
+      "id": "c_journal:j-am-chem-soc-feb20033b1",
+      "label": "J. Am. Chem. Soc.",
+      "kind": "Journal",
+      "count": 78
+    },
+    {
+      "id": "c_processtag:composite-fabrication-553918b726",
+      "label": "composite_fabrication",
+      "kind": "ProcessTag",
+      "count": 76
+    },
+    {
+      "id": "c_processtag:doctor-blade-e23624774d",
+      "label": "doctor_blade",
+      "kind": "ProcessTag",
+      "count": 76
+    },
+    {
+      "id": "c_year:2015-9cdda67ded",
+      "label": "2015",
+      "kind": "Year",
+      "count": 72
+    },
+    {
+      "id": "c_precursor:polyethylene-oxide-d63d7a638e",
+      "label": "Polyethylene oxide",
+      "kind": "Precursor",
+      "count": 72
+    },
+    {
+      "id": "c_formula:li7p3s11-315bd96d09",
+      "label": "Li7P3S11",
+      "kind": "Formula",
+      "count": 71
+    },
+    {
+      "id": "c_processtag:sps-e1dacd3dd0",
+      "label": "SPS",
+      "kind": "ProcessTag",
+      "count": 70
+    },
+    {
+      "id": "c_processtag:soaking-3f909ad99f",
+      "label": "soaking",
+      "kind": "ProcessTag",
+      "count": 70
+    },
+    {
+      "id": "c_processtag:uniaxial-pressing-deb885d9b4",
+      "label": "uniaxial_pressing",
+      "kind": "ProcessTag",
+      "count": 68
+    },
+    {
+      "id": "c_formula:li10gep2s12-1aca60c0ee",
+      "label": "Li10GeP2S12",
+      "kind": "Formula",
+      "count": 66
+    },
+    {
+      "id": "c_processtag:crosslinking-aa8fbe0335",
+      "label": "crosslinking",
+      "kind": "ProcessTag",
+      "count": 66
+    },
+    {
+      "id": "c_processtag:gelation-a51556615e",
+      "label": "gelation",
+      "kind": "ProcessTag",
+      "count": 66
+    },
+    {
+      "id": "c_structurefamily:perovskite-f6eb9e126b",
+      "label": "Perovskite",
+      "kind": "StructureFamily",
+      "count": 65
+    },
+    {
+      "id": "c_processtag:composite-electrolyte-a5ca3e869a",
+      "label": "composite_electrolyte",
+      "kind": "ProcessTag",
+      "count": 64
+    },
+    {
+      "id": "c_structurefamily:amorphous-822b166a0c",
+      "label": "Amorphous",
+      "kind": "StructureFamily",
+      "count": 63
+    },
+    {
+      "id": "c_solvent:dmso-df72dba955",
+      "label": "DMSO",
+      "kind": "Solvent",
+      "count": 63
+    },
+    {
+      "id": "c_processtag:gel-polymer-electrolyte-4d6907a4c0",
+      "label": "gel_polymer_electrolyte",
+      "kind": "ProcessTag",
+      "count": 63
+    },
+    {
+      "id": "c_solvent:tetrahydrofuran-f2a274db31",
+      "label": "tetrahydrofuran",
+      "kind": "Solvent",
+      "count": 63
+    },
+    {
+      "id": "c_processtag:solution-processing-06d823138a",
+      "label": "solution_processing",
+      "kind": "ProcessTag",
+      "count": 62
+    },
+    {
+      "id": "c_processtag:sputtering-0ea91b4ef8",
+      "label": "sputtering",
+      "kind": "ProcessTag",
+      "count": 62
+    },
+    {
+      "id": "c_formula:li6-5la3zr1-5ta0-5o12-1cdf270791",
+      "label": "Li6.5La3Zr1.5Ta0.5O12",
+      "kind": "Formula",
+      "count": 61
+    },
+    {
+      "id": "c_materialtype:polymer-457f0e67b0",
+      "label": "polymer",
+      "kind": "MaterialType",
+      "count": 61
+    },
+    {
+      "id": "c_precursor:succinonitrile-f9b8cbd23d",
+      "label": "Succinonitrile",
+      "kind": "Precursor",
+      "count": 60
+    },
+    {
+      "id": "c_materialtype:polymer-composite-electrolyte-cab5920dd3",
+      "label": "polymer composite electrolyte",
+      "kind": "MaterialType",
+      "count": 60
+    },
+    {
+      "id": "c_solvent:2-propanol-8bf72d11ac",
+      "label": "2-propanol",
+      "kind": "Solvent",
+      "count": 59
+    },
+    {
+      "id": "c_precursor:latp-powder-854ed80564",
+      "label": "LATP powder",
+      "kind": "Precursor",
+      "count": 59
+    },
+    {
+      "id": "c_journal:phys-chem-chem-phys-43a3645e2f",
+      "label": "Phys. Chem. Chem. Phys.",
+      "kind": "Journal",
+      "count": 59
+    },
+    {
+      "id": "c_solvent:toluene-30808f011e",
+      "label": "toluene",
+      "kind": "Solvent",
+      "count": 59
+    },
+    {
+      "id": "c_formula:li1-5al0-5ge1-5-po4-3-564dbd5803",
+      "label": "Li1.5Al0.5Ge1.5(PO4)3",
+      "kind": "Formula",
+      "count": 57
+    },
+    {
+      "id": "c_processtag:crystallization-55da0e25a0",
+      "label": "crystallization",
+      "kind": "ProcessTag",
+      "count": 57
+    },
+    {
+      "id": "c_processtag:free-radical-polymerization-eb1ba6e9b0",
+      "label": "free_radical_polymerization",
+      "kind": "ProcessTag",
+      "count": 57
+    },
+    {
+      "id": "c_structurefamily:polymer-457f0e67b0",
+      "label": "polymer",
+      "kind": "StructureFamily",
+      "count": 57
+    },
+    {
+      "id": "c_materialtype:hydride-solid-electrolyte-927290d77e",
+      "label": "hydride solid electrolyte",
+      "kind": "MaterialType",
+      "count": 56
+    },
+    {
+      "id": "c_processtag:organic-synthesis-afc309a64e",
+      "label": "organic_synthesis",
+      "kind": "ProcessTag",
+      "count": 56
+    },
+    {
+      "id": "c_formula:li3incl6-06f678bb1b",
+      "label": "Li3InCl6",
+      "kind": "Formula",
+      "count": 55
+    },
+    {
+      "id": "c_polymercomponent:pan-bd2bd8216b",
+      "label": "PAN",
+      "kind": "PolymerComponent",
+      "count": 55
+    },
+    {
+      "id": "c_structurefamily:block-copolymer-750d81cc16",
+      "label": "block copolymer",
+      "kind": "StructureFamily",
+      "count": 55
+    },
+    {
+      "id": "c_processtag:photopolymerization-0c1af38483",
+      "label": "photopolymerization",
+      "kind": "ProcessTag",
+      "count": 55
+    },
+    {
+      "id": "c_precursor:aluminum-nitrate-nonahydrate-4d0fd8ccd9",
+      "label": "Aluminum nitrate nonahydrate",
+      "kind": "Precursor",
+      "count": 54
+    },
+    {
+      "id": "c_formula:peo-litfsi-e016f53e6c",
+      "label": "PEO-LiTFSI",
+      "kind": "Formula",
+      "count": 54
+    },
+    {
+      "id": "c_polymercomponent:ptfe-ce07902638",
+      "label": "PTFE",
+      "kind": "PolymerComponent",
+      "count": 54
+    },
+    {
+      "id": "c_precursor:tio2-f840763400",
+      "label": "TiO2",
+      "kind": "Precursor",
+      "count": 54
+    },
+    {
+      "id": "c_processtag:solvent-free-70252d9c87",
+      "label": "solvent_free",
+      "kind": "ProcessTag",
+      "count": 54
+    },
+    {
+      "id": "c_precursor:1-3-dioxolane-c5d0d3ce05",
+      "label": "1,3-dioxolane",
+      "kind": "Precursor",
+      "count": 53
+    },
+    {
+      "id": "c_precursor:pegda-905e1a9848",
+      "label": "PEGDA",
+      "kind": "Precursor",
+      "count": 52
+    },
+    {
+      "id": "c_precursor:ammonium-dihydrogen-phosphate-dbd9e89c50",
+      "label": "Ammonium dihydrogen phosphate",
+      "kind": "Precursor",
+      "count": 51
+    },
+    {
+      "id": "c_journal:energy-environ-sci-2d8e384b8d",
+      "label": "Energy Environ. Sci.",
+      "kind": "Journal",
+      "count": 51
+    },
+    {
+      "id": "c_structurefamily:mof-polymer-composite-914a0583b2",
+      "label": "MOF-polymer composite",
+      "kind": "StructureFamily",
+      "count": 51
+    },
+    {
+      "id": "c_processtag:polishing-d4bc089263",
+      "label": "polishing",
+      "kind": "ProcessTag",
+      "count": 51
+    },
+    {
+      "id": "c_structurefamily:composite-6288c74c29",
+      "label": "Composite",
+      "kind": "StructureFamily",
+      "count": 50
+    },
+    {
+      "id": "c_structurefamily:lgps-type-5bebc51ac2",
+      "label": "LGPS-type",
+      "kind": "StructureFamily",
+      "count": 50
+    },
+    {
+      "id": "c_precursor:lithium-sulfide-5a7c32cfb5",
+      "label": "Lithium sulfide",
+      "kind": "Precursor",
+      "count": 49
+    },
+    {
+      "id": "c_processtag:cell-assembly-b902fc074b",
+      "label": "cell_assembly",
+      "kind": "ProcessTag",
+      "count": 49
+    },
+    {
+      "id": "c_structurefamily:polyether-baf41ce050",
+      "label": "polyether",
+      "kind": "StructureFamily",
+      "count": 49
+    },
+    {
+      "id": "c_processtag:surface-coating-fe263d7853",
+      "label": "surface_coating",
+      "kind": "ProcessTag",
+      "count": 49
+    },
+    {
+      "id": "c_year:2026-aee655773d",
+      "label": "2026",
+      "kind": "Year",
+      "count": 48
+    },
+    {
+      "id": "c_journal:acs-nano-03666250db",
+      "label": "ACS Nano",
+      "kind": "Journal",
+      "count": 48
+    },
+    {
+      "id": "c_additive:fec-6d65e329fc",
+      "label": "FEC",
+      "kind": "Additive",
+      "count": 48
+    },
+    {
+      "id": "c_structurefamily:peo-based-d32451dfa2",
+      "label": "PEO based",
+      "kind": "StructureFamily",
+      "count": 48
+    },
+    {
+      "id": "c_precursor:lanthanum-oxide-fdf240f0b5",
+      "label": "Lanthanum oxide",
+      "kind": "Precursor",
+      "count": 47
+    },
+    {
+      "id": "c_additive:lino3-ebf8e29e0a",
+      "label": "LiNO3",
+      "kind": "Additive",
+      "count": 47
+    },
+    {
+      "id": "c_processtag:composite-mixing-bdcb421490",
+      "label": "composite_mixing",
+      "kind": "ProcessTag",
+      "count": 47
+    },
+    {
+      "id": "c_materialtype:polymer-solid-state-electrolyte-4e982476bf",
+      "label": "polymer solid state electrolyte",
+      "kind": "MaterialType",
+      "count": 47
+    },
+    {
+      "id": "c_processtag:thin-film-c83c4fdbde",
+      "label": "thin_film",
+      "kind": "ProcessTag",
+      "count": 47
+    },
+    {
+      "id": "c_year:2013-d08b10a326",
+      "label": "2013",
+      "kind": "Year",
+      "count": 46
+    },
+    {
+      "id": "c_formula:li6ps5br-cd0f71f551",
+      "label": "Li6PS5Br",
+      "kind": "Formula",
+      "count": 46
+    },
+    {
+      "id": "c_processtag:pulsed-laser-deposition-542e74ed70",
+      "label": "pulsed_laser_deposition",
+      "kind": "ProcessTag",
+      "count": 46
+    },
+    {
+      "id": "c_materialtype:sulfide-67e7d261c3",
+      "label": "sulfide",
+      "kind": "MaterialType",
+      "count": 46
+    },
+    {
+      "id": "c_structurefamily:antiperovskite-4b21703183",
+      "label": "Antiperovskite",
+      "kind": "StructureFamily",
+      "count": 45
+    },
+    {
+      "id": "c_formula:na3zr2si2po12-057afd267d",
+      "label": "Na3Zr2Si2PO12",
+      "kind": "Formula",
+      "count": 44
+    },
+    {
+      "id": "c_processtag:composite-preparation-c3911c2ea5",
+      "label": "composite_preparation",
+      "kind": "ProcessTag",
+      "count": 44
+    },
+    {
+      "id": "c_structurefamily:other-d0941e68da",
+      "label": "other",
+      "kind": "StructureFamily",
+      "count": 44
+    },
+    {
+      "id": "c_precursor:llzto-powder-24a2710244",
+      "label": "LLZTO powder",
+      "kind": "Precursor",
+      "count": 43
+    },
+    {
+      "id": "c_ssefamily:borate-phosphate-226868e481",
+      "label": "borate/phosphate",
+      "kind": "SSEFamily",
+      "count": 43
+    },
+    {
+      "id": "c_structurefamily:cross-linked-polymer-network-6aba16b692",
+      "label": "cross-linked polymer network",
+      "kind": "StructureFamily",
+      "count": 43
+    },
+    {
+      "id": "c_structurefamily:garnet-polymer-composite-e702f761fa",
+      "label": "garnet-polymer composite",
+      "kind": "StructureFamily",
+      "count": 43
+    },
+    {
+      "id": "c_precursor:citric-acid-d405e014d6",
+      "label": "Citric acid",
+      "kind": "Precursor",
+      "count": 42
+    },
+    {
+      "id": "c_formula:li5-5ps4-5cl1-5-c0fcd9a615",
+      "label": "Li5.5PS4.5Cl1.5",
+      "kind": "Formula",
+      "count": 42
+    },
+    {
+      "id": "c_structurefamily:mof-1b36c5ae7e",
+      "label": "MOF",
+      "kind": "StructureFamily",
+      "count": 42
+    },
+    {
+      "id": "c_precursor:zirconium-dioxide-7a87730496",
+      "label": "Zirconium dioxide",
+      "kind": "Precursor",
+      "count": 42
+    },
+    {
+      "id": "c_solvent:anhydrous-ethanol-7d7e8d47fc",
+      "label": "anhydrous ethanol",
+      "kind": "Solvent",
+      "count": 42
+    },
+    {
+      "id": "c_processtag:pressing-c5cddf20ad",
+      "label": "pressing",
+      "kind": "ProcessTag",
+      "count": 42
+    },
+    {
+      "id": "c_materialtype:quasi-solid-state-electrolyte-bb07b375a7",
+      "label": "quasi-solid-state electrolyte",
+      "kind": "MaterialType",
+      "count": 42
+    },
+    {
+      "id": "c_solvent:n-n-dimethylformamide-dmf-0ac197be34",
+      "label": "N,N-dimethylformamide (DMF)",
+      "kind": "Solvent",
+      "count": 41
+    },
+    {
+      "id": "c_precursor:pan-bd2bd8216b",
+      "label": "PAN",
+      "kind": "Precursor",
+      "count": 41
+    },
+    {
+      "id": "c_precursor:s-a0f1490a20",
+      "label": "S",
+      "kind": "Precursor",
+      "count": 41
+    },
+    {
+      "id": "c_precursor:zrcl4-55d76e978a",
+      "label": "ZrCl4",
+      "kind": "Precursor",
+      "count": 41
+    },
+    {
+      "id": "c_processtag:gel-formation-4888c363d2",
+      "label": "gel_formation",
+      "kind": "ProcessTag",
+      "count": 41
+    },
+    {
+      "id": "c_precursor:libh4-80277fae40",
+      "label": "LiBH4",
+      "kind": "Precursor",
+      "count": 40
+    },
+    {
+      "id": "c_processtag:atomic-layer-deposition-7f36f7bedb",
+      "label": "atomic_layer_deposition",
+      "kind": "ProcessTag",
+      "count": 40
+    },
+    {
+      "id": "c_solvent:dichloromethane-aab1c7982b",
+      "label": "dichloromethane",
+      "kind": "Solvent",
+      "count": 40
+    },
+    {
+      "id": "c_journal:chem-mater-d923c122e2",
+      "label": "Chem. Mater.",
+      "kind": "Journal",
+      "count": 39
+    },
+    {
+      "id": "c_precursor:libr-bc58a4ddc7",
+      "label": "LiBr",
+      "kind": "Precursor",
+      "count": 39
+    },
+    {
+      "id": "c_precursor:lithium-perchlorate-8542ced667",
+      "label": "Lithium perchlorate",
+      "kind": "Precursor",
+      "count": 39
+    },
+    {
+      "id": "c_processtag:freeze-drying-a6d84c887e",
+      "label": "freeze_drying",
+      "kind": "ProcessTag",
+      "count": 39
+    },
+    {
+      "id": "c_processtag:grafting-084f4467eb",
+      "label": "grafting",
+      "kind": "ProcessTag",
+      "count": 39
+    },
+    {
+      "id": "c_precursor:la-no3-3-6h2o-f5ee57e430",
+      "label": "La(NO3)3·6H2O",
+      "kind": "Precursor",
+      "count": 38
+    },
+    {
+      "id": "c_precursor:lipf6-cf34ed361a",
+      "label": "LiPF6",
+      "kind": "Precursor",
+      "count": 38
+    },
+    {
+      "id": "c_precursor:phosphorus-pentasulfide-8a47e9690d",
+      "label": "Phosphorus pentasulfide",
+      "kind": "Precursor",
+      "count": 38
+    },
+    {
+      "id": "c_processtag:copolymerization-f59036ca90",
+      "label": "copolymerization",
+      "kind": "ProcessTag",
+      "count": 38
+    },
+    {
+      "id": "c_structurefamily:halide-5bac6ecf19",
+      "label": "Halide",
+      "kind": "StructureFamily",
+      "count": 37
+    },
+    {
+      "id": "c_formula:li6-4ga0-2la3zr2o12-47c119edfb",
+      "label": "Li6.4Ga0.2La3Zr2O12",
+      "kind": "Formula",
+      "count": 37
+    },
+    {
+      "id": "c_precursor:lif-50c142f612",
+      "label": "LiF",
+      "kind": "Precursor",
+      "count": 37
+    },
+    {
+      "id": "c_ssefamily:hydride-ed2fa4b19e",
+      "label": "hydride",
+      "kind": "SSEFamily",
+      "count": 37
+    },
+    {
+      "id": "c_polymercomponent:1-3-dioxolane-dol-d4364f7591",
+      "label": "1,3-dioxolane (DOL)",
+      "kind": "PolymerComponent",
+      "count": 36
+    },
+    {
+      "id": "c_formula:lipon-61640ff5eb",
+      "label": "LiPON",
+      "kind": "Formula",
+      "count": 36
+    },
+    {
+      "id": "c_processtag:composite-formation-3f3a7e86dc",
+      "label": "composite_formation",
+      "kind": "ProcessTag",
+      "count": 36
+    },
+    {
+      "id": "c_solvent:distilled-water-95a176852d",
+      "label": "distilled water",
+      "kind": "Solvent",
+      "count": 36
+    },
+    {
+      "id": "c_processtag:interface-engineering-bd850e9037",
+      "label": "interface_engineering",
+      "kind": "ProcessTag",
+      "count": 36
+    },
+    {
+      "id": "c_solvent:isopropyl-alcohol-97646bda26",
+      "label": "isopropyl alcohol",
+      "kind": "Solvent",
+      "count": 36
+    },
+    {
+      "id": "c_processtag:polycondensation-5543170a0a",
+      "label": "polycondensation",
+      "kind": "ProcessTag",
+      "count": 36
+    },
+    {
+      "id": "c_journal:acs-sustainable-chem-eng-b1cec81a10",
+      "label": "ACS Sustainable Chem. Eng.",
+      "kind": "Journal",
+      "count": 35
+    },
+    {
+      "id": "c_processtag:blending-ac954cd33a",
+      "label": "blending",
+      "kind": "ProcessTag",
+      "count": 35
+    },
+    {
+      "id": "c_processtag:doping-1f0233498a",
+      "label": "doping",
+      "kind": "ProcessTag",
+      "count": 35
+    },
+    {
+      "id": "c_processtag:precipitation-3cceb67f7e",
+      "label": "precipitation",
+      "kind": "ProcessTag",
+      "count": 35
+    },
+    {
+      "id": "c_year:2012-084b3af47a",
+      "label": "2012",
+      "kind": "Year",
+      "count": 34
+    },
+    {
+      "id": "c_precursor:al-no3-3-9h2o-5afb012f12",
+      "label": "Al(NO3)3·9H2O",
+      "kind": "Precursor",
+      "count": 34
+    },
+    {
+      "id": "c_polymercomponent:etpta-d6ebe0bb17",
+      "label": "ETPTA",
+      "kind": "PolymerComponent",
+      "count": 34
+    },
+    {
+      "id": "c_precursor:latp-d73a3c9e9d",
+      "label": "LATP",
+      "kind": "Precursor",
+      "count": 34
+    },
+    {
+      "id": "c_structurefamily:lisicon-c99180fbba",
+      "label": "LISICON",
+      "kind": "StructureFamily",
+      "count": 34
+    },
+    {
+      "id": "c_precursor:sio2-1aab990f48",
+      "label": "SiO2",
+      "kind": "Precursor",
+      "count": 34
+    },
+    {
+      "id": "c_structurefamily:ionogel-e7888ba5e1",
+      "label": "ionogel",
+      "kind": "StructureFamily",
+      "count": 34
+    },
+    {
+      "id": "c_materialtype:quasi-solid-composite-electrolyt-eba43086fd",
+      "label": "quasi-solid composite electrolyte",
+      "kind": "MaterialType",
+      "count": 34
+    },
+    {
+      "id": "c_processtag:surface-treatment-261b9504ec",
+      "label": "surface_treatment",
+      "kind": "ProcessTag",
+      "count": 34
+    },
+    {
+      "id": "c_processtag:ald-24a7cb4a8a",
+      "label": "ALD",
+      "kind": "ProcessTag",
+      "count": 33
+    },
+    {
+      "id": "c_precursor:incl3-b9e3ea3865",
+      "label": "InCl3",
+      "kind": "Precursor",
+      "count": 33
+    },
+    {
+      "id": "c_precursor:la-oh-3-f58e169966",
+      "label": "La(OH)3",
+      "kind": "Precursor",
+      "count": 33
+    },
+    {
+      "id": "c_precursor:li2o-f12c8e858f",
+      "label": "Li2O",
+      "kind": "Precursor",
+      "count": 33
+    },
+    {
+      "id": "c_precursor:lithium-chloride-6dca0010a4",
+      "label": "Lithium chloride",
+      "kind": "Precursor",
+      "count": 33
+    },
+    {
+      "id": "c_processtag:lithiation-2c6c0157c7",
+      "label": "lithiation",
+      "kind": "ProcessTag",
+      "count": 33
+    },
+    {
+      "id": "c_processtag:melting-f3fce5c214",
+      "label": "melting",
+      "kind": "ProcessTag",
+      "count": 33
+    },
+    {
+      "id": "c_processtag:atrp-00acd9bb73",
+      "label": "ATRP",
+      "kind": "ProcessTag",
+      "count": 32
+    },
+    {
+      "id": "c_structurefamily:cof-e86900254f",
+      "label": "COF",
+      "kind": "StructureFamily",
+      "count": 32
+    },
+    {
+      "id": "c_journal:journal-of-power-sources-6d82ea877d",
+      "label": "Journal of Power Sources",
+      "kind": "Journal",
+      "count": 32
+    },
+    {
+      "id": "c_precursor:llzo-powder-b720986345",
+      "label": "LLZO powder",
+      "kind": "Precursor",
+      "count": 32
+    },
+    {
+      "id": "c_structurefamily:nasicon-polymer-composite-b5d52e7b8a",
+      "label": "NASICON-polymer composite",
+      "kind": "StructureFamily",
+      "count": 32
+    },
+    {
+      "id": "c_processtag:lamination-51ec4952c1",
+      "label": "lamination",
+      "kind": "ProcessTag",
+      "count": 32
+    },
+    {
+      "id": "c_processtag:magnetron-sputtering-3df0c0e5d5",
+      "label": "magnetron_sputtering",
+      "kind": "ProcessTag",
+      "count": 32
+    },
+    {
+      "id": "c_processtag:mechanical-mixing-963336788d",
+      "label": "mechanical_mixing",
+      "kind": "ProcessTag",
+      "count": 32
+    },
+    {
+      "id": "c_materialtype:organic-ionic-plastic-crystal-70745029e8",
+      "label": "organic ionic plastic crystal",
+      "kind": "MaterialType",
+      "count": 32
+    },
+    {
+      "id": "c_processtag:polymer-electrolyte-06f57a9bca",
+      "label": "polymer_electrolyte",
+      "kind": "ProcessTag",
+      "count": 32
+    },
+    {
+      "id": "c_processtag:radical-polymerization-919f2de909",
+      "label": "radical_polymerization",
+      "kind": "ProcessTag",
+      "count": 32
+    },
+    {
+      "id": "c_processtag:solution-polymerization-fa1ffd8f49",
+      "label": "solution_polymerization",
+      "kind": "ProcessTag",
+      "count": 32
+    },
+    {
+      "id": "c_processtag:spark-plasma-sintering-dee21a61fd",
+      "label": "spark_plasma_sintering",
+      "kind": "ProcessTag",
+      "count": 32
+    },
+    {
+      "id": "c_processtag:swelling-99cc5cc078",
+      "label": "swelling",
+      "kind": "ProcessTag",
+      "count": 32
+    },
+    {
+      "id": "c_processtag:thermal-initiation-d54ed879b1",
+      "label": "thermal_initiation",
+      "kind": "ProcessTag",
+      "count": 32
+    },
+    {
+      "id": "c_polymercomponent:aibn-c53401a133",
+      "label": "AIBN",
+      "kind": "PolymerComponent",
+      "count": 31
+    },
+    {
+      "id": "c_additive:liclo4-c36baca58a",
+      "label": "LiClO4",
+      "kind": "Additive",
+      "count": 31
+    },
+    {
+      "id": "c_solvent:acetic-acid-3cc4d7bf61",
+      "label": "acetic acid",
+      "kind": "Solvent",
+      "count": 31
+    },
+    {
+      "id": "c_journal:acs-omega-f4a98496aa",
+      "label": "ACS Omega",
+      "kind": "Journal",
+      "count": 30
+    },
+    {
+      "id": "c_journal:angew-chem-int-ed-6ac96fe21a",
+      "label": "Angew. Chem. Int. Ed.",
+      "kind": "Journal",
+      "count": 30
+    },
+    {
+      "id": "c_journal:dalton-trans-dbc61df300",
+      "label": "Dalton Trans.",
+      "kind": "Journal",
+      "count": 30
+    },
+    {
+      "id": "c_precursor:fluoroethylene-carbonate-df56bf0852",
+      "label": "Fluoroethylene carbonate",
+      "kind": "Precursor",
+      "count": 30
+    },
+    {
+      "id": "c_additive:hmpp-0e0163c6dc",
+      "label": "HMPP",
+      "kind": "Additive",
+      "count": 30
+    },
+    {
+      "id": "c_formula:li6-75la3zr1-75ta0-25o12-e41a3b2724",
+      "label": "Li6.75La3Zr1.75Ta0.25O12",
+      "kind": "Formula",
+      "count": 30
+    },
+    {
+      "id": "c_precursor:nb2o5-e2d3b9dc27",
+      "label": "Nb2O5",
+      "kind": "Precursor",
+      "count": 30
+    },
+    {
+      "id": "c_formula:peo-litfsi-f565c3b585",
+      "label": "PEO/LiTFSI",
+      "kind": "Formula",
+      "count": 30
+    },
+    {
+      "id": "c_precursor:sulfur-a3fed182cd",
+      "label": "Sulfur",
+      "kind": "Precursor",
+      "count": 30
+    },
+    {
+      "id": "c_materialtype:composite-solid-state-electrolyt-cde305020d",
+      "label": "composite solid-state electrolyte",
+      "kind": "MaterialType",
+      "count": 30
+    },
+    {
+      "id": "c_structurefamily:glass-170fd7e84a",
+      "label": "glass",
+      "kind": "StructureFamily",
+      "count": 30
+    },
+    {
+      "id": "c_materialtype:sulfide-glass-5826c555a5",
+      "label": "sulfide glass",
+      "kind": "MaterialType",
+      "count": 30
+    },
+    {
+      "id": "c_precursor:ges2-335a6e97cb",
+      "label": "GeS2",
+      "kind": "Precursor",
+      "count": 29
+    },
+    {
+      "id": "c_additive:llzto-38f7b82fb1",
+      "label": "LLZTO",
+      "kind": "Additive",
+      "count": 29
+    },
+    {
+      "id": "c_precursor:lanthanum-nitrate-hexahydrate-a9c82a9477",
+      "label": "Lanthanum nitrate hexahydrate",
+      "kind": "Precursor",
+      "count": 29
+    },
+    {
+      "id": "c_conductingion:zn2-2d3def1107",
+      "label": "Zn2+",
+      "kind": "ConductingIon",
+      "count": 29
+    },
+    {
+      "id": "c_structurefamily:glass-ceramic-7651ed1a91",
+      "label": "glass-ceramic",
+      "kind": "StructureFamily",
+      "count": 29
+    },
+    {
+      "id": "c_structurefamily:semi-interpenetrating-network-8e0e7e3a65",
+      "label": "semi-interpenetrating network",
+      "kind": "StructureFamily",
+      "count": 29
+    },
+    {
+      "id": "c_year:2011-32a70a32da",
+      "label": "2011",
+      "kind": "Year",
+      "count": 28
+    },
+    {
+      "id": "c_precursor:ga2o3-c087b84f8a",
+      "label": "Ga2O3",
+      "kind": "Precursor",
+      "count": 28
+    },
+    {
+      "id": "c_additive:lidfob-a58b80335a",
+      "label": "LiDFOB",
+      "kind": "Additive",
+      "count": 28
+    },
+    {
+      "id": "c_precursor:ptfe-ce07902638",
+      "label": "PTFE",
+      "kind": "Precursor",
+      "count": 28
+    },
+    {
+      "id": "c_structurefamily:plastic-crystal-abc115cd98",
+      "label": "plastic crystal",
+      "kind": "StructureFamily",
+      "count": 28
+    },
+    {
+      "id": "c_polymercomponent:poly-ethylene-oxide-032606764e",
+      "label": "poly(ethylene oxide)",
+      "kind": "PolymerComponent",
+      "count": 28
+    },
+    {
+      "id": "c_journal:acs-appl-polym-mater-ca0151537e",
+      "label": "ACS Appl. Polym. Mater.",
+      "kind": "Journal",
+      "count": 27
+    },
+    {
+      "id": "c_journal:energy-storage-materials-5a9738b436",
+      "label": "Energy Storage Materials",
+      "kind": "Journal",
+      "count": 27
+    },
+    {
+      "id": "c_precursor:li-foil-127873d591",
+      "label": "Li foil",
+      "kind": "Precursor",
+      "count": 27
+    },
+    {
+      "id": "c_formula:li1-4al0-4ti1-6-po4-3-e8c18654c0",
+      "label": "Li1.4Al0.4Ti1.6(PO4)3",
+      "kind": "Formula",
+      "count": 27
+    },
+    {
+      "id": "c_precursor:na2co3-d0f6a22ac9",
+      "label": "Na2CO3",
+      "kind": "Precursor",
+      "count": 27
+    },
+    {
+      "id": "c_solvent:dimethylformamide-4439853069",
+      "label": "dimethylformamide",
+      "kind": "Solvent",
+      "count": 27
+    },
+    {
+      "id": "c_precursor:poly-ethylene-glycol-diacrylate-9a35fb9967",
+      "label": "poly(ethylene glycol) diacrylate",
+      "kind": "Precursor",
+      "count": 27
+    },
+    {
+      "id": "c_journal:acs-applied-energy-materials-d57960b9df",
+      "label": "ACS Applied Energy Materials",
+      "kind": "Journal",
+      "count": 26
+    },
+    {
+      "id": "c_precursor:fec-6d65e329fc",
+      "label": "FEC",
+      "kind": "Precursor",
+      "count": 26
+    },
+    {
+      "id": "c_precursor:geo2-75ce8b97cb",
+      "label": "GeO2",
+      "kind": "Precursor",
+      "count": 26
+    },
+    {
+      "id": "c_precursor:lidfob-a58b80335a",
+      "label": "LiDFOB",
+      "kind": "Precursor",
+      "count": 26
+    },
+    {
+      "id": "c_precursor:lithium-difluoro-oxalato-borate-6bf382d730",
+      "label": "Lithium difluoro(oxalato)borate",
+      "kind": "Precursor",
+      "count": 26
+    },
+    {
+      "id": "c_polymercomponent:pegmea-2c9db0d374",
+      "label": "PEGMEA",
+      "kind": "PolymerComponent",
+      "count": 26
+    },
+    {
+      "id": "c_journal:chemistry-of-materials-655d1aabb3",
+      "label": "Chemistry of Materials",
+      "kind": "Journal",
+      "count": 25
+    },
+    {
+      "id": "c_precursor:dmf-641fd7e517",
+      "label": "DMF",
+      "kind": "Precursor",
+      "count": 25
+    },
+    {
+      "id": "c_formula:li3ycl6-674b247814",
+      "label": "Li3YCl6",
+      "kind": "Formula",
+      "count": 25
+    },
+    {
+      "id": "c_precursor:liquid-electrolyte-55c4816f48",
+      "label": "Liquid electrolyte",
+      "kind": "Precursor",
+      "count": 25
+    },
+    {
+      "id": "c_journal:macromolecules-2ea09a162a",
+      "label": "Macromolecules",
+      "kind": "Journal",
+      "count": 25
+    },
+    {
+      "id": "c_polymercomponent:pegma-453f16aea5",
+      "label": "PEGMA",
+      "kind": "PolymerComponent",
+      "count": 25
+    },
+    {
+      "id": "c_structurefamily:pvdf-based-composite-1b967dbdff",
+      "label": "PVDF-based composite",
+      "kind": "StructureFamily",
+      "count": 25
+    },
+    {
+      "id": "c_structurefamily:crosslinked-polymer-network-f2bddda90c",
+      "label": "crosslinked polymer network",
+      "kind": "StructureFamily",
+      "count": 25
+    },
+    {
+      "id": "c_precursor:2-methylimidazole-d92a7fc52d",
+      "label": "2-methylimidazole",
+      "kind": "Precursor",
+      "count": 24
+    },
+    {
+      "id": "c_solvent:di-water-2ec913dab5",
+      "label": "DI water",
+      "kind": "Solvent",
+      "count": 24
+    },
+    {
+      "id": "c_solvent:dmac-7e4a636045",
+      "label": "DMAc",
+      "kind": "Solvent",
+      "count": 24
+    },
+    {
+      "id": "c_precursor:li6ps5cl-powder-2e37c28aa0",
+      "label": "Li6PS5Cl powder",
+      "kind": "Precursor",
+      "count": 24
+    },
+    {
+      "id": "c_additive:lifsi-ae32f46cdd",
+      "label": "LiFSI",
+      "kind": "Additive",
+      "count": 24
+    },
+    {
+      "id": "c_structurefamily:mof-based-fda8f84ba2",
+      "label": "MOF-based",
+      "kind": "StructureFamily",
+      "count": 24
+    },
+    {
+      "id": "c_materialtype:composite-gel-polymer-electrolyt-6b6e8fde99",
+      "label": "composite gel polymer electrolyte",
+      "kind": "MaterialType",
+      "count": 24
+    },
+    {
+      "id": "c_materialtype:composite-solid-state-electrolyt-d7a4faf94c",
+      "label": "composite solid state electrolyte",
+      "kind": "MaterialType",
+      "count": 24
+    },
+    {
+      "id": "c_materialtype:polymer-composite-solid-electrol-f6b22f5a71",
+      "label": "polymer composite solid electrolyte",
+      "kind": "MaterialType",
+      "count": 24
+    },
+    {
+      "id": "c_materialtype:quasi-solid-electrolyte-bd31dc50ee",
+      "label": "quasi-solid electrolyte",
+      "kind": "MaterialType",
+      "count": 24
+    },
+    {
+      "id": "c_materialtype:sulfide-glass-ceramic-af5ce6dbe4",
+      "label": "sulfide glass-ceramic",
+      "kind": "MaterialType",
+      "count": 24
+    },
+    {
+      "id": "c_precursor:acetonitrile-d99ffd75c2",
+      "label": "Acetonitrile",
+      "kind": "Precursor",
+      "count": 23
+    },
+    {
+      "id": "c_precursor:aluminum-oxide-cd835fdd91",
+      "label": "Aluminum oxide",
+      "kind": "Precursor",
+      "count": 23
+    },
+    {
+      "id": "c_additive:lipf6-cf34ed361a",
+      "label": "LiPF6",
+      "kind": "Additive",
+      "count": 23
+    },
+    {
+      "id": "c_structurefamily:monoclinic-b169f5674d",
+      "label": "Monoclinic",
+      "kind": "StructureFamily",
+      "count": 23
+    },
+    {
+      "id": "c_precursor:sns2-63ff1b953f",
+      "label": "SnS2",
+      "kind": "Precursor",
+      "count": 23
+    },
+    {
+      "id": "c_solvent:hexane-634fbe97c0",
+      "label": "hexane",
+      "kind": "Solvent",
+      "count": 23
+    },
+    {
+      "id": "c_polymercomponent:succinonitrile-sn-2b6586d341",
+      "label": "succinonitrile (SN)",
+      "kind": "PolymerComponent",
+      "count": 23
+    },
+    {
+      "id": "c_year:2010-e22cd461c0",
+      "label": "2010",
+      "kind": "Year",
+      "count": 22
+    },
+    {
+      "id": "c_precursor:li-metal-a076ae3d44",
+      "label": "Li metal",
+      "kind": "Precursor",
+      "count": 22
+    },
+    {
+      "id": "c_precursor:licoo2-3c9a44365b",
+      "label": "LiCoO2",
+      "kind": "Precursor",
+      "count": 22
+    },
+    {
+      "id": "c_solvent:n-methyl-2-pyrrolidone-fb03d82386",
+      "label": "N-methyl-2-pyrrolidone",
+      "kind": "Solvent",
+      "count": 22
+    },
+    {
+      "id": "c_polymercomponent:pva-e5a065d1c0",
+      "label": "PVA",
+      "kind": "PolymerComponent",
+      "count": 22
+    },
+    {
+      "id": "c_precursor:polyacrylonitrile-39f0fa68de",
+      "label": "Polyacrylonitrile",
+      "kind": "Precursor",
+      "count": 22
+    },
+    {
+      "id": "c_precursor:tacl5-087ebd455c",
+      "label": "TaCl5",
+      "kind": "Precursor",
+      "count": 22
+    },
+    {
+      "id": "c_precursor:azobisisobutyronitrile-a4d6cdfc61",
+      "label": "azobisisobutyronitrile",
+      "kind": "Precursor",
+      "count": 22
+    },
+    {
+      "id": "c_materialtype:oxynitride-solid-electrolyte-e9d59b8aed",
+      "label": "oxynitride solid electrolyte",
+      "kind": "MaterialType",
+      "count": 22
+    },
+    {
+      "id": "c_structurefamily:polycarbonate-a09861aaed",
+      "label": "polycarbonate",
+      "kind": "StructureFamily",
+      "count": 22
+    },
+    {
+      "id": "c_solvent:propylene-carbonate-088f410620",
+      "label": "propylene carbonate",
+      "kind": "Solvent",
+      "count": 22
+    },
+    {
+      "id": "c_journal:journal-of-materials-chemistry-a-4b8765dca3",
+      "label": "Journal of Materials Chemistry A",
+      "kind": "Journal",
+      "count": 21
+    },
+    {
+      "id": "c_formula:li2zrcl6-755d0dc50b",
+      "label": "Li2ZrCl6",
+      "kind": "Formula",
+      "count": 21
+    },
+    {
+      "id": "c_formula:li6-25al0-25la3zr2o12-2760c411c9",
+      "label": "Li6.25Al0.25La3Zr2O12",
+      "kind": "Formula",
+      "count": 21
+    },
+    {
+      "id": "c_journal:mater-adv-0f805722b7",
+      "label": "Mater. Adv.",
+      "kind": "Journal",
+      "count": 21
+    },
+    {
+      "id": "c_structurefamily:nanocomposite-df78985483",
+      "label": "nanocomposite",
+      "kind": "StructureFamily",
+      "count": 21
+    },
+    {
+      "id": "c_solvent:1-3-dioxolane-c5d0d3ce05",
+      "label": "1,3-dioxolane",
+      "kind": "Solvent",
+      "count": 20
+    },
+    {
+      "id": "c_formula:75li2s-25p2s5-9d5f414a5d",
+      "label": "75Li2S·25P2S5",
+      "kind": "Formula",
+      "count": 20
+    },
+    {
+      "id": "c_structurefamily:pan-based-b9336a92dc",
+      "label": "PAN-based",
+      "kind": "StructureFamily",
+      "count": 20
+    },
+    {
+      "id": "c_additive:succinonitrile-f9b8cbd23d",
+      "label": "Succinonitrile",
+      "kind": "Additive",
+      "count": 20
+    },
+    {
+      "id": "c_solvent:dimethylacetamide-a27798feee",
+      "label": "dimethylacetamide",
+      "kind": "Solvent",
+      "count": 20
+    },
+    {
+      "id": "c_structurefamily:semi-interpenetrating-polymer-ne-d35d7c1376",
+      "label": "semi-interpenetrating polymer network",
+      "kind": "StructureFamily",
+      "count": 20
+    },
+    {
+      "id": "c_structurefamily:li3mx6-aefc021e1f",
+      "label": "Li3MX6",
+      "kind": "StructureFamily",
+      "count": 19
+    },
+    {
+      "id": "c_formula:li4sns4-b73ac77ee2",
+      "label": "Li4SnS4",
+      "kind": "Formula",
+      "count": 19
+    },
+    {
+      "id": "c_formula:li6ps5i-3aa7f7d8be",
+      "label": "Li6PS5I",
+      "kind": "Formula",
+      "count": 19
+    },
+    {
+      "id": "c_journal:polym-chem-64411dd1d8",
+      "label": "Polym. Chem.",
+      "kind": "Journal",
+      "count": 19
+    },
+    {
+      "id": "c_structurefamily:thio-lisicon-li7p3s11-type-001dc73f3c",
+      "label": "Thio-LISICON / Li7P3S11-type",
+      "kind": "StructureFamily",
+      "count": 19
+    },
+    {
+      "id": "c_materialtype:quasi-solid-state-polymer-electr-2653e10310",
+      "label": "quasi-solid-state polymer electrolyte",
+      "kind": "MaterialType",
+      "count": 19
+    },
+    {
+      "id": "c_journal:advanced-science-cf2314f3cb",
+      "label": "Advanced Science",
+      "kind": "Journal",
+      "count": 18
+    },
+    {
+      "id": "c_journal:chemical-engineering-journal-c17cd49e89",
+      "label": "Chemical Engineering Journal",
+      "kind": "Journal",
+      "count": 18
+    },
+    {
+      "id": "c_solvent:dme-c293e84f00",
+      "label": "DME",
+      "kind": "Solvent",
+      "count": 18
+    },
+    {
+      "id": "c_structurefamily:layered-honeycomb-aabd535943",
+      "label": "Layered honeycomb",
+      "kind": "StructureFamily",
+      "count": 18
+    },
+    {
+      "id": "c_polymercomponent:litfsi-8e14276a61",
+      "label": "LiTFSI",
+      "kind": "PolymerComponent",
+      "count": 18
+    },
+    {
+      "id": "c_formula:na3ps4-640ee25d20",
+      "label": "Na3PS4",
+      "kind": "Formula",
+      "count": 18
+    },
+    {
+      "id": "c_polymercomponent:p-vdf-hfp-81f4a4d38a",
+      "label": "P(VDF-HFP)",
+      "kind": "PolymerComponent",
+      "count": 18
+    },
+    {
+      "id": "c_polymercomponent:pmma-19d4df1e34",
+      "label": "PMMA",
+      "kind": "PolymerComponent",
+      "count": 18
+    },
+    {
+      "id": "c_polymercomponent:pvp-be34968670",
+      "label": "PVP",
+      "kind": "PolymerComponent",
+      "count": 18
+    },
+    {
+      "id": "c_additive:sn-c3ecef83d0",
+      "label": "SN",
+      "kind": "Additive",
+      "count": 18
+    },
+    {
+      "id": "c_propertycategory:electronic-conductivity-6f22187716",
+      "label": "electronic_conductivity",
+      "kind": "PropertyCategory",
+      "count": 18
+    },
+    {
+      "id": "c_structurefamily:polyester-3e55d9eb3b",
+      "label": "polyester",
+      "kind": "StructureFamily",
+      "count": 18
+    },
+    {
+      "id": "c_structurefamily:polyurethane-00498a4493",
+      "label": "polyurethane",
+      "kind": "StructureFamily",
+      "count": 18
+    },
+    {
+      "id": "c_conductingion:li-na-b4e3cafbb9",
+      "label": "Li+, Na+",
+      "kind": "ConductingIon",
+      "count": 17
+    },
+    {
+      "id": "c_formula:li6-25ga0-25la3zr2o12-2511b542ee",
+      "label": "Li6.25Ga0.25La3Zr2O12",
+      "kind": "Formula",
+      "count": 17
+    },
+    {
+      "id": "c_formula:lita2po8-2bc455646c",
+      "label": "LiTa2PO8",
+      "kind": "Formula",
+      "count": 17
+    },
+    {
+      "id": "c_polymercomponent:ppc-f08295862b",
+      "label": "PPC",
+      "kind": "PolymerComponent",
+      "count": 17
+    },
+    {
+      "id": "c_structurefamily:pva-based-7cb9307477",
+      "label": "PVA-based",
+      "kind": "StructureFamily",
+      "count": 17
+    },
+    {
+      "id": "c_structurefamily:copolymer-20769909cb",
+      "label": "copolymer",
+      "kind": "StructureFamily",
+      "count": 17
+    },
+    {
+      "id": "c_solvent:dimethylformamide-dmf-6f505bd4ac",
+      "label": "dimethylformamide (DMF)",
+      "kind": "Solvent",
+      "count": 17
+    },
+    {
+      "id": "c_materialtype:oxide-ceramic-electrolyte-73629488fd",
+      "label": "oxide ceramic electrolyte",
+      "kind": "MaterialType",
+      "count": 17
+    },
+    {
+      "id": "c_materialtype:polymer-blend-solid-electrolyte-9de2e8cdf3",
+      "label": "polymer blend solid electrolyte",
+      "kind": "MaterialType",
+      "count": 17
+    },
+    {
+      "id": "c_solvent:dol-b34ad64012",
+      "label": "DOL",
+      "kind": "Solvent",
+      "count": 16
+    },
+    {
+      "id": "c_journal:inorg-chem-front-c806e27b63",
+      "label": "Inorg. Chem. Front.",
+      "kind": "Journal",
+      "count": 16
+    },
+    {
+      "id": "c_solvent:n-n-dimethylacetamide-493673253a",
+      "label": "N,N-dimethylacetamide",
+      "kind": "Solvent",
+      "count": 16
+    },
+    {
+      "id": "c_journal:nanoscale-6b791553de",
+      "label": "Nanoscale",
+      "kind": "Journal",
+      "count": 16
+    },
+    {
+      "id": "c_structurefamily:pvdf-hfp-based-composite-42f32f970b",
+      "label": "PVDF-HFP based composite",
+      "kind": "StructureFamily",
+      "count": 16
+    },
+    {
+      "id": "c_structurefamily:anti-perovskite-002783462e",
+      "label": "anti-perovskite",
+      "kind": "StructureFamily",
+      "count": 16
+    },
+    {
+      "id": "c_structurefamily:graft-copolymer-6ae44da3bb",
+      "label": "graft copolymer",
+      "kind": "StructureFamily",
+      "count": 16
+    },
+    {
+      "id": "c_materialtype:phosphate-solid-electrolyte-fa5a78584a",
+      "label": "phosphate solid electrolyte",
+      "kind": "MaterialType",
+      "count": 16
+    },
+    {
+      "id": "c_materialtype:single-ion-conducting-polymer-el-b619bbc4cc",
+      "label": "single-ion conducting polymer electrolyte",
+      "kind": "MaterialType",
+      "count": 16
+    },
+    {
+      "id": "c_polymercomponent:succinonitrile-f9b8cbd23d",
+      "label": "succinonitrile",
+      "kind": "PolymerComponent",
+      "count": 16
+    },
+    {
+      "id": "c_formula:80li2s-20p2s5-ca805615e1",
+      "label": "80Li2S·20P2S5",
+      "kind": "Formula",
+      "count": 15
+    },
+    {
+      "id": "c_structurefamily:covalent-organic-framework-79a44b85ad",
+      "label": "Covalent Organic Framework",
+      "kind": "StructureFamily",
+      "count": 15
+    },
+    {
+      "id": "c_polymercomponent:dol-b34ad64012",
+      "label": "DOL",
+      "kind": "PolymerComponent",
+      "count": 15
+    },
+    {
+      "id": "c_formula:li6-45al0-05la3zr1-6ta0-4o12-aac723abd1",
+      "label": "Li6.45Al0.05La3Zr1.6Ta0.4O12",
+      "kind": "Formula",
+      "count": 15
+    },
+    {
+      "id": "c_formula:li7p2s8i-85f69ffe2e",
+      "label": "Li7P2S8I",
+      "kind": "Formula",
+      "count": 15
+    },
+    {
+      "id": "c_journal:new-j-chem-b7973aca66",
+      "label": "New J. Chem.",
+      "kind": "Journal",
+      "count": 15
+    },
+    {
+      "id": "c_structurefamily:oipc-23049a5616",
+      "label": "OIPC",
+      "kind": "StructureFamily",
+      "count": 15
+    },
+    {
+      "id": "c_polymercomponent:pegdme-56cfb922e2",
+      "label": "PEGDME",
+      "kind": "PolymerComponent",
+      "count": 15
+    },
+    {
+      "id": "c_structurefamily:thio-lisicon-beta-li3ps4-63eb87f197",
+      "label": "Thio-LISICON / beta-Li3PS4",
+      "kind": "StructureFamily",
+      "count": 15
+    },
+    {
+      "id": "c_materialtype:antiperovskite-solid-electrolyte-b786ca53d9",
+      "label": "antiperovskite solid electrolyte",
+      "kind": "MaterialType",
+      "count": 15
+    },
+    {
+      "id": "c_structurefamily:cross-linked-network-45e0bca28b",
+      "label": "cross-linked network",
+      "kind": "StructureFamily",
+      "count": 15
+    },
+    {
+      "id": "c_structurefamily:cross-linked-polymer-fe0a29df7a",
+      "label": "cross-linked polymer",
+      "kind": "StructureFamily",
+      "count": 15
+    },
+    {
+      "id": "c_polymercomponent:polyacrylonitrile-pan-4465ed9219",
+      "label": "polyacrylonitrile (PAN)",
+      "kind": "PolymerComponent",
+      "count": 15
+    },
+    {
+      "id": "c_materialtype:polymer-composite-9413e137ec",
+      "label": "polymer composite",
+      "kind": "MaterialType",
+      "count": 15
+    },
+    {
+      "id": "c_additive:al2o3-3848258807",
+      "label": "Al2O3",
+      "kind": "Additive",
+      "count": 14
+    },
+    {
+      "id": "c_structurefamily:amorphous-glass-8e09a9e70c",
+      "label": "Amorphous glass",
+      "kind": "StructureFamily",
+      "count": 14
+    },
+    {
+      "id": "c_structurefamily:cof-polymer-composite-9f99e9b9e1",
+      "label": "COF-polymer composite",
+      "kind": "StructureFamily",
+      "count": 14
+    },
+    {
+      "id": "c_journal:energy-technology-f86328c0e6",
+      "label": "Energy Technology",
+      "kind": "Journal",
+      "count": 14
+    },
+    {
+      "id": "c_conductingion:h-1d13a0918d",
+      "label": "H+",
+      "kind": "ConductingIon",
+      "count": 14
+    },
+    {
+      "id": "c_journal:langmuir-727454b0ff",
+      "label": "Langmuir",
+      "kind": "Journal",
+      "count": 14
+    },
+    {
+      "id": "c_formula:li5-4ps4-4cl1-6-7b0a60cddf",
+      "label": "Li5.4PS4.4Cl1.6",
+      "kind": "Formula",
+      "count": 14
+    },
+    {
+      "id": "c_formula:libh4-sio2-cacbc10e12",
+      "label": "LiBH4/SiO2",
+      "kind": "Formula",
+      "count": 14
+    },
+    {
+      "id": "c_materialtype:mof-based-solid-electrolyte-f89dab72ae",
+      "label": "MOF-based solid electrolyte",
+      "kind": "MaterialType",
+      "count": 14
+    },
+    {
+      "id": "c_polymercomponent:peg-ae8d391039",
+      "label": "PEG",
+      "kind": "PolymerComponent",
+      "count": 14
+    },
+    {
+      "id": "c_polymercomponent:pegdma-0df1de17c5",
+      "label": "PEGDMA",
+      "kind": "PolymerComponent",
+      "count": 14
+    },
+    {
+      "id": "c_structurefamily:aluminum-oxyhalide-c3c5286a22",
+      "label": "aluminum oxyhalide",
+      "kind": "StructureFamily",
+      "count": 14
+    },
+    {
+      "id": "c_materialtype:ionogel-e7888ba5e1",
+      "label": "ionogel",
+      "kind": "MaterialType",
+      "count": 14
+    },
+    {
+      "id": "c_materialtype:liquid-electrolyte-55c4816f48",
+      "label": "liquid electrolyte",
+      "kind": "MaterialType",
+      "count": 14
+    },
+    {
+      "id": "c_structurefamily:polymerization-induced-phase-sep-92e95fe231",
+      "label": "polymerization-induced phase separation",
+      "kind": "StructureFamily",
+      "count": 14
+    },
+    {
+      "id": "c_polymercomponent:1-3-dioxolane-c5d0d3ce05",
+      "label": "1,3-dioxolane",
+      "kind": "PolymerComponent",
+      "count": 13
+    },
+    {
+      "id": "c_additive:dmpa-011acc94e4",
+      "label": "DMPA",
+      "kind": "Additive",
+      "count": 13
+    },
+    {
+      "id": "c_formula:li10snp2s12-063c7fb5e4",
+      "label": "Li10SnP2S12",
+      "kind": "Formula",
+      "count": 13
+    },
+    {
+      "id": "c_formula:li6-75la3zr1-75nb0-25o12-187347583b",
+      "label": "Li6.75La3Zr1.75Nb0.25O12",
+      "kind": "Formula",
+      "count": 13
+    },
+    {
+      "id": "c_materialtype:gel-polymer-composite-electrolyt-2107d74c79",
+      "label": "gel polymer composite electrolyte",
+      "kind": "MaterialType",
+      "count": 13
+    },
+    {
+      "id": "c_materialtype:hydrogel-electrolyte-f7553cd07f",
+      "label": "hydrogel electrolyte",
+      "kind": "MaterialType",
+      "count": 13
+    },
+    {
+      "id": "c_materialtype:organic-inorganic-hybrid-solid-e-be2796a312",
+      "label": "organic-inorganic hybrid solid electrolyte",
+      "kind": "MaterialType",
+      "count": 13
+    },
+    {
+      "id": "c_materialtype:oxynitride-thin-film-92d1c8c21f",
+      "label": "oxynitride thin film",
+      "kind": "MaterialType",
+      "count": 13
+    },
+    {
+      "id": "c_materialtype:plastic-crystal-electrolyte-3dd624fa7a",
+      "label": "plastic crystal electrolyte",
+      "kind": "MaterialType",
+      "count": 13
+    },
+    {
+      "id": "c_journal:chemsuschem-f57a42809b",
+      "label": "ChemSusChem",
+      "kind": "Journal",
+      "count": 12
+    },
+    {
+      "id": "c_additive:hcl-33fa704710",
+      "label": "HCl",
+      "kind": "Additive",
+      "count": 12
+    },
+    {
+      "id": "c_journal:journal-of-energy-chemistry-64d484a645",
+      "label": "Journal of Energy Chemistry",
+      "kind": "Journal",
+      "count": 12
+    },
+    {
+      "id": "c_journal:journal-of-materials-chemistry-164c867f8c",
+      "label": "Journal of Materials Chemistry",
+      "kind": "Journal",
+      "count": 12
+    },
+    {
+      "id": "c_additive:latp-d73a3c9e9d",
+      "label": "LATP",
+      "kind": "Additive",
+      "count": 12
+    },
+    {
+      "id": "c_formula:li1-xalxti2-x-po4-3-2d1480c007",
+      "label": "Li1+xAlxTi2-x(PO4)3",
+      "kind": "Formula",
+      "count": 12
+    },
+    {
+      "id": "c_formula:li3po4-9a6a8d9f6e",
+      "label": "Li3PO4",
+      "kind": "Formula",
+      "count": 12
+    },
+    {
+      "id": "c_formula:li6-28al0-24la3zr2o12-1928f833a3",
+      "label": "Li6.28Al0.24La3Zr2O12",
+      "kind": "Formula",
+      "count": 12
+    },
+    {
+      "id": "c_additive:libob-d9a47ccf7e",
+      "label": "LiBOB",
+      "kind": "Additive",
+      "count": 12
+    },
+    {
+      "id": "c_formula:lizr2-po4-3-2e37e6b26d",
+      "label": "LiZr2(PO4)3",
+      "kind": "Formula",
+      "count": 12
+    },
+    {
+      "id": "c_journal:nano-energy-d1e0f5e1f6",
+      "label": "Nano Energy",
+      "kind": "Journal",
+      "count": 12
+    },
+    {
+      "id": "c_journal:the-journal-of-physical-chemistr-3c4feaa89c",
+      "label": "The Journal of Physical Chemistry C",
+      "kind": "Journal",
+      "count": 12
+    },
+    {
+      "id": "c_additive:fluoroethylene-carbonate-df56bf0852",
+      "label": "fluoroethylene carbonate",
+      "kind": "Additive",
+      "count": 12
+    },
+    {
+      "id": "c_materialtype:oxide-composite-solid-electrolyt-c10abab6ac",
+      "label": "oxide composite solid electrolyte",
+      "kind": "MaterialType",
+      "count": 12
+    },
+    {
+      "id": "c_polymercomponent:polyethylene-oxide-d63d7a638e",
+      "label": "polyethylene oxide",
+      "kind": "PolymerComponent",
+      "count": 12
+    },
+    {
+      "id": "c_additive:2-hydroxy-2-methylpropiophenone-84a6e1bfc7",
+      "label": "2-hydroxy-2-methylpropiophenone",
+      "kind": "Additive",
+      "count": 11
+    },
+    {
+      "id": "c_formula:li0-33la0-55tio3-b27ffe1a63",
+      "label": "Li0.33La0.55TiO3",
+      "kind": "Formula",
+      "count": 11
+    },
+    {
+      "id": "c_additive:lif-50c142f612",
+      "label": "LiF",
+      "kind": "Additive",
+      "count": 11
+    },
+    {
+      "id": "c_polymercomponent:pcl-01df1d3a7f",
+      "label": "PCL",
+      "kind": "PolymerComponent",
+      "count": 11
+    },
+    {
+      "id": "c_formula:peo-liclo4-9cc21b46fe",
+      "label": "PEO-LiClO4",
+      "kind": "Formula",
+      "count": 11
+    },
+    {
+      "id": "c_polymercomponent:petmp-123b8da07b",
+      "label": "PETMP",
+      "kind": "PolymerComponent",
+      "count": 11
+    },
+    {
+      "id": "c_additive:sio2-1aab990f48",
+      "label": "SiO2",
+      "kind": "Additive",
+      "count": 11
+    },
+    {
+      "id": "c_polymercomponent:vec-b803e7ca5c",
+      "label": "VEC",
+      "kind": "PolymerComponent",
+      "count": 11
+    },
+    {
+      "id": "c_additive:propylene-carbonate-088f410620",
+      "label": "propylene carbonate",
+      "kind": "Additive",
+      "count": 11
+    },
+    {
+      "id": "c_formula:70li2s-30p2s5-2374d1b564",
+      "label": "70Li2S·30P2S5",
+      "kind": "Formula",
+      "count": 10
+    },
+    {
+      "id": "c_polymercomponent:dmpa-011acc94e4",
+      "label": "DMPA",
+      "kind": "PolymerComponent",
+      "count": 10
+    },
+    {
+      "id": "c_formula:li1-5al0-5ti1-5-po4-3-2d379ca22a",
+      "label": "Li1.5Al0.5Ti1.5(PO4)3",
+      "kind": "Formula",
+      "count": 10
+    },
+    {
+      "id": "c_additive:li2co3-22038978c0",
+      "label": "Li2CO3",
+      "kind": "Additive",
+      "count": 10
+    },
+    {
+      "id": "c_formula:li2ohcl-8964eb81fe",
+      "label": "Li2OHCl",
+      "kind": "Formula",
+      "count": 10
+    },
+    {
+      "id": "c_formula:na3sbs4-ac34a01070",
+      "label": "Na3SbS4",
+      "kind": "Formula",
+      "count": 10
+    },
+    {
+      "id": "c_polymercomponent:pdol-82b3d20538",
+      "label": "PDOL",
+      "kind": "PolymerComponent",
+      "count": 10
+    },
+    {
+      "id": "c_polymercomponent:poly-propylene-carbonate-825587e6df",
+      "label": "Poly(propylene carbonate)",
+      "kind": "PolymerComponent",
+      "count": 10
+    },
+    {
+      "id": "c_additive:snf2-e5c88f9019",
+      "label": "SnF2",
+      "kind": "Additive",
+      "count": 10
+    },
+    {
+      "id": "c_additive:triethylamine-e7c39efe92",
+      "label": "triethylamine",
+      "kind": "Additive",
+      "count": 10
+    },
+    {
+      "id": "c_formula:li-la-zr-o-1c23b64006",
+      "label": "Li-La-Zr-O",
+      "kind": "Formula",
+      "count": 9
+    },
+    {
+      "id": "c_formula:li2s-p2s5-e7d9c31c2d",
+      "label": "Li2S-P2S5",
+      "kind": "Formula",
+      "count": 9
+    },
+    {
+      "id": "c_formula:li6-16al0-28la3zr2o12-2dc7ff3dba",
+      "label": "Li6.16Al0.28La3Zr2O12",
+      "kind": "Formula",
+      "count": 9
+    },
+    {
+      "id": "c_formula:li6-4al0-2la3zr2o12-e2dd86fac8",
+      "label": "Li6.4Al0.2La3Zr2O12",
+      "kind": "Formula",
+      "count": 9
+    },
+    {
+      "id": "c_formula:li6-6la3zr1-6ta0-4o12-05f973f20c",
+      "label": "Li6.6La3Zr1.6Ta0.4O12",
+      "kind": "Formula",
+      "count": 9
+    },
+    {
+      "id": "c_formula:li7la3zr2o12-al-f09cdad061",
+      "label": "Li7La3Zr2O12:Al",
+      "kind": "Formula",
+      "count": 9
+    },
+    {
+      "id": "c_formula:lii-3-hydroxypropionitrile-d020ae3c2c",
+      "label": "LiI-3-hydroxypropionitrile",
+      "kind": "Formula",
+      "count": 9
+    },
+    {
+      "id": "c_additive:citric-acid-d405e014d6",
+      "label": "citric acid",
+      "kind": "Additive",
+      "count": 9
+    },
+    {
+      "id": "c_polymercomponent:polyethylene-oxide-peo-f92eae1448",
+      "label": "polyethylene oxide (PEO)",
+      "kind": "PolymerComponent",
+      "count": 9
+    },
+    {
+      "id": "c_additive:2-hydroxy-2-methyl-1-phenyl-1-pr-525b63a582",
+      "label": "2-hydroxy-2-methyl-1-phenyl-1-propanone (HMPP)",
+      "kind": "Additive",
+      "count": 8
+    },
+    {
+      "id": "c_formula:78li2s-22p2s5-06dd306bb9",
+      "label": "78Li2S-22P2S5",
+      "kind": "Formula",
+      "count": 8
+    },
+    {
+      "id": "c_additive:al2o3-nanoparticles-2266294e3f",
+      "label": "Al2O3 nanoparticles",
+      "kind": "Additive",
+      "count": 8
+    },
+    {
+      "id": "c_polymercomponent:hfba-8a378f5a23",
+      "label": "HFBA",
+      "kind": "PolymerComponent",
+      "count": 8
+    },
+    {
+      "id": "c_additive:llzo-b2c0051576",
+      "label": "LLZO",
+      "kind": "Additive",
+      "count": 8
+    },
+    {
+      "id": "c_formula:li2b12h12-1ec36b045a",
+      "label": "Li2B12H12",
+      "kind": "Formula",
+      "count": 8
+    },
+    {
+      "id": "c_formula:li7la2-75ca0-25zr1-75nb0-25o12-e9e410c34c",
+      "label": "Li7La2.75Ca0.25Zr1.75Nb0.25O12",
+      "kind": "Formula",
+      "count": 8
+    },
+    {
+      "id": "c_formula:lialo2-6348ac9b09",
+      "label": "LiAlO2",
+      "kind": "Formula",
+      "count": 8
+    },
+    {
+      "id": "c_additive:lioh-bdd579fd95",
+      "label": "LiOH",
+      "kind": "Additive",
+      "count": 8
+    },
+    {
+      "id": "c_additive:naoh-7b53971d64",
+      "label": "NaOH",
+      "kind": "Additive",
+      "count": 8
+    },
+    {
+      "id": "c_formula:peo-liotf-porous-914e39e32a",
+      "label": "PEO-LiOTf (porous)",
+      "kind": "Formula",
+      "count": 8
+    },
+    {
+      "id": "c_formula:peo-litfsi-snf2-9444ff7c85",
+      "label": "PEO/LiTFSI/SnF2",
+      "kind": "Formula",
+      "count": 8
+    },
+    {
+      "id": "c_additive:sio2-nanoparticles-1cfc666a36",
+      "label": "SiO2 nanoparticles",
+      "kind": "Additive",
+      "count": 8
+    },
+    {
+      "id": "c_polymercomponent:tegdme-10cdd19950",
+      "label": "TEGDME",
+      "kind": "PolymerComponent",
+      "count": 8
+    },
+    {
+      "id": "c_additive:tio2-nanoparticles-efd3e58359",
+      "label": "TiO2 nanoparticles",
+      "kind": "Additive",
+      "count": 8
+    },
+    {
+      "id": "c_polymercomponent:pentaerythritol-tetraacrylate-pe-2263ed25d7",
+      "label": "pentaerythritol tetraacrylate (PETEA)",
+      "kind": "PolymerComponent",
+      "count": 8
+    },
+    {
+      "id": "c_polymercomponent:poly-ethylene-oxide-peo-ec0d995bfb",
+      "label": "poly(ethylene oxide) (PEO)",
+      "kind": "PolymerComponent",
+      "count": 8
+    },
+    {
+      "id": "c_formula:100-x-li7p3s11-xli2ohbr-7b547c287e",
+      "label": "(100-x)Li7P3S11-xLi2OHBr",
+      "kind": "Formula",
+      "count": 7
+    },
+    {
+      "id": "c_formula:li2s-70-p2s5-30-90a8ff9b3f",
+      "label": "(Li2S)70(P2S5)30",
+      "kind": "Formula",
+      "count": 7
+    },
+    {
+      "id": "c_formula:70li2s-30p2s5-4770c6524f",
+      "label": "70Li2S-30P2S5",
+      "kind": "Formula",
+      "count": 7
+    },
+    {
+      "id": "c_polymercomponent:chitosan-101f2a9cfc",
+      "label": "Chitosan",
+      "kind": "PolymerComponent",
+      "count": 7
+    },
+    {
+      "id": "c_additive:cubr-a77fe2ecdb",
+      "label": "CuBr",
+      "kind": "Additive",
+      "count": 7
+    },
+    {
+      "id": "c_conductingion:k-40901c1378",
+      "label": "K+",
+      "kind": "ConductingIon",
+      "count": 7
+    },
+    {
+      "id": "c_formula:li10sip2s12-e636192138",
+      "label": "Li10SiP2S12",
+      "kind": "Formula",
+      "count": 7
+    },
+    {
+      "id": "c_formula:li3-3xalxps4-d20244b38e",
+      "label": "Li3-3xAlxPS4",
+      "kind": "Formula",
+      "count": 7
+    },
+    {
+      "id": "c_additive:li3bo3-6d3b76d718",
+      "label": "Li3BO3",
+      "kind": "Additive",
+      "count": 7
+    },
+    {
+      "id": "c_formula:li3n-cdd59286d4",
+      "label": "Li3N",
+      "kind": "Formula",
+      "count": 7
+    },
+    {
+      "id": "c_formula:li3ybr6-9bc2680775",
+      "label": "Li3YBr6",
+      "kind": "Formula",
+      "count": 7
+    },
+    {
+      "id": "c_formula:li6-28la3al0-24zr2o12-pegda-6c2c87746e",
+      "label": "Li6.28La3Al0.24Zr2O12 / PEGDA",
+      "kind": "Formula",
+      "count": 7
+    },
+    {
+      "id": "c_formula:li6ps5cl0-5br0-5-b29955fb82",
+      "label": "Li6PS5Cl0.5Br0.5",
+      "kind": "Formula",
+      "count": 7
+    },
+    {
+      "id": "c_formula:libh4-80277fae40",
+      "label": "LiBH4",
+      "kind": "Formula",
+      "count": 7
+    },
+    {
+      "id": "c_additive:licl-fd888b4262",
+      "label": "LiCl",
+      "kind": "Additive",
+      "count": 7
+    },
+    {
+      "id": "c_polymercomponent:pdadmatfsi-d21d455527",
+      "label": "PDADMATFSI",
+      "kind": "PolymerComponent",
+      "count": 7
+    },
+    {
+      "id": "c_formula:peo-litdi-7a87fbf83f",
+      "label": "PEO-LiTDI",
+      "kind": "Formula",
+      "count": 7
+    },
+    {
+      "id": "c_polymercomponent:petea-4863dbb15c",
+      "label": "PETEA",
+      "kind": "PolymerComponent",
+      "count": 7
+    },
+    {
+      "id": "c_additive:tep-b0fe190c1b",
+      "label": "TEP",
+      "kind": "Additive",
+      "count": 7
+    },
+    {
+      "id": "c_additive:acetic-acid-3cc4d7bf61",
+      "label": "acetic acid",
+      "kind": "Additive",
+      "count": 7
+    },
+    {
+      "id": "c_additive:succinonitrile-sn-2b6586d341",
+      "label": "succinonitrile (SN)",
+      "kind": "Additive",
+      "count": 7
+    },
+    {
+      "id": "c_additive:2-2-dimethoxy-2-phenylacetopheno-b25db1c2be",
+      "label": "2,2-dimethoxy-2-phenylacetophenone",
+      "kind": "Additive",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li1-15y0-15zr1-85-po4-3-3edf54d89a",
+      "label": "Li1.15Y0.15Zr1.85(PO4)3",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li1-3ti1-7al0-3-po4-3-47b9a7f790",
+      "label": "Li1.3Ti1.7Al0.3(PO4)3",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li3-25ge0-25p0-75s4-61e111adb1",
+      "label": "Li3.25Ge0.25P0.75S4",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li3ocl-7e95c2a1c2",
+      "label": "Li3OCl",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li3yi6-099ec1318e",
+      "label": "Li3YI6",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li5-3ps4-3clbr0-7-4d61a36135",
+      "label": "Li5.3PS4.3ClBr0.7",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li5-7ps4-7cl1-3-c317ac4763",
+      "label": "Li5.7PS4.7Cl1.3",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li6-55ga0-15la3zr2o12-45a5a33373",
+      "label": "Li6.55Ga0.15La3Zr2O12",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li6la3zrtao12-076db8f4ba",
+      "label": "Li6La3ZrTaO12",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li6ps5cl-pegdme-52ad5daef7",
+      "label": "Li6PS5Cl + PEGDME",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li6ps5cl-pvdf-59ec3bf635",
+      "label": "Li6PS5Cl/PVDF",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li9-54si1-74p1-44s11-7cl0-3-4f9249c554",
+      "label": "Li9.54Si1.74P1.44S11.7Cl0.3",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:libh4-linh2-sio2-28b645d6c1",
+      "label": "LiBH4-LiNH2/SiO2",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_additive:lioh-h2o-9eb31b6a76",
+      "label": "LiOH·H2O",
+      "kind": "Additive",
+      "count": 6
+    },
+    {
+      "id": "c_formula:na1-67li0-33al10-67o17-9150ec03cd",
+      "label": "Na1.67Li0.33Al10.67O17",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:na3-3zr1-7pr0-3si2po12-cfc1dc40a0",
+      "label": "Na3.3Zr1.7Pr0.3Si2PO12",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:peo-liclo4-llzo-9f6d1ae055",
+      "label": "PEO-LiClO4-LLZO",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:peo-pvdf-liclo4-sn-fcc3bffb72",
+      "label": "PEO/PVDF/LiClO4/SN",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_formula:pvdf-libob-810f260547",
+      "label": "PVDF-LiBOB",
+      "kind": "Formula",
+      "count": 6
+    },
+    {
+      "id": "c_additive:azobisisobutyronitrile-aibn-2c232ba897",
+      "label": "azobisisobutyronitrile (AIBN)",
+      "kind": "Additive",
+      "count": 6
+    },
+    {
+      "id": "c_propertycategory:diffusion-coefficient-8fad6de82b",
+      "label": "diffusion_coefficient",
+      "kind": "PropertyCategory",
+      "count": 6
+    },
+    {
+      "id": "c_propertycategory:diffusion-energy-barrier-d557f3b264",
+      "label": "diffusion_energy_barrier",
+      "kind": "PropertyCategory",
+      "count": 6
+    },
+    {
+      "id": "c_formula:li0-33la0-56tio3-f11bc7bce9",
+      "label": "Li0.33La0.56TiO3",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_formula:li0-95na0-05fepo4-pvdf-2ffebe8b97",
+      "label": "Li0.95Na0.05FePO4 + PVDF",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_formula:li1-5al0-5ge1-5p3o12-c0e54d8034",
+      "label": "Li1.5Al0.5Ge1.5P3O12",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_formula:li10si0-3ps6-7cl1-8-8e54643fc0",
+      "label": "Li10Si0.3PS6.7Cl1.8",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_formula:li3-875sn0-875as0-125s4-5ce7f82c35",
+      "label": "Li3.875Sn0.875As0.125S4",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_formula:li6-5la3zr1-5nb0-5o12-983d67b867",
+      "label": "Li6.5La3Zr1.5Nb0.5O12",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_formula:li7la3zr2o12-ga-b795933a35",
+      "label": "Li7La3Zr2O12:Ga",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_formula:liti2-po4-3-20b437cb4e",
+      "label": "LiTi2(PO4)3",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_formula:na3ocl-eabb441f65",
+      "label": "Na3OCl",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_formula:pcl-libob-60fdd6778c",
+      "label": "PCL:LiBOB",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_formula:pdol-li1-5al0-5ge1-5-po4-3-36c0a14e19",
+      "label": "PDOL/Li1.5Al0.5Ge1.5(PO4)3",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_formula:peo-pvp-lino3-db89daa2a4",
+      "label": "PEO/PVP/LiNO3",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_formula:pvdf-hfp-litfsi-al-llzto-94f5097a03",
+      "label": "PVDF-HFP/LiTFSI/Al-LLZTO",
+      "kind": "Formula",
+      "count": 5
+    },
+    {
+      "id": "c_conductingion:li-na-k-200d3483c2",
+      "label": "Li+, Na+, K+",
+      "kind": "ConductingIon",
+      "count": 4
+    },
+    {
+      "id": "c_propertycategory:ionic-conductivity-at-temp-6efd526240",
+      "label": "ionic_conductivity_at_temp",
+      "kind": "PropertyCategory",
+      "count": 4
+    },
+    {
+      "id": "c_conductingion:li-na-ag-0f9f2712a9",
+      "label": "Li+, Na+, Ag+",
+      "kind": "ConductingIon",
+      "count": 3
+    },
+    {
+      "id": "c_ssefamily:phosphate-55e1f029ad",
+      "label": "phosphate",
+      "kind": "SSEFamily",
+      "count": 3
+    },
+    {
+      "id": "c_year:2009-7263d678ab",
+      "label": "2009",
+      "kind": "Year",
+      "count": 2
+    },
+    {
+      "id": "c_conductingion:al3-759347b31e",
+      "label": "Al3+",
+      "kind": "ConductingIon",
+      "count": 2
+    },
+    {
+      "id": "c_conductingion:f-b4c4c182b5",
+      "label": "F-",
+      "kind": "ConductingIon",
+      "count": 2
+    },
+    {
+      "id": "c_conductingion:li-mg2-185572d112",
+      "label": "Li+, Mg2+",
+      "kind": "ConductingIon",
+      "count": 2
+    },
+    {
+      "id": "c_conductingion:mg2-c1ebf912c6",
+      "label": "Mg2+",
+      "kind": "ConductingIon",
+      "count": 2
+    },
+    {
+      "id": "c_conductingion:nh4-2fdbc1d6ad",
+      "label": "NH4+",
+      "kind": "ConductingIon",
+      "count": 2
+    },
+    {
+      "id": "c_conductingion:o2-1d5869f6a1",
+      "label": "O2-",
+      "kind": "ConductingIon",
+      "count": 2
+    },
+    {
+      "id": "c_conductingion:tfsi-cb039b9322",
+      "label": "TFSI-",
+      "kind": "ConductingIon",
+      "count": 2
+    },
+    {
+      "id": "c_propertycategory:phase-transition-temperature-6fe63ad03e",
+      "label": "phase_transition_temperature",
+      "kind": "PropertyCategory",
+      "count": 2
+    },
+    {
+      "id": "c_conductingion:bmi-tfsi-3d579a9c23",
+      "label": "BMI+/TFSI-",
+      "kind": "ConductingIon",
+      "count": 1
+    },
+    {
+      "id": "c_conductingion:cl-99c0e78658",
+      "label": "Cl-",
+      "kind": "ConductingIon",
+      "count": 1
+    },
+    {
+      "id": "c_conductingion:h-li-1d851cdccc",
+      "label": "H+, Li+",
+      "kind": "ConductingIon",
+      "count": 1
+    },
+    {
+      "id": "c_conductingion:li-pf6-8e8c24b13c",
+      "label": "Li+, PF6-",
+      "kind": "ConductingIon",
+      "count": 1
+    },
+    {
+      "id": "c_conductingion:zn2-li-k-f7923c3d26",
+      "label": "Zn2+, Li+, K+",
+      "kind": "ConductingIon",
+      "count": 1
+    },
+    {
+      "id": "c_propertycategory:hardness-f2b63abcfa",
+      "label": "hardness",
+      "kind": "PropertyCategory",
+      "count": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:battery-performance-94e99aa606",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 10376
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:ionic-conductivity-rt-3acdd8919e",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 7779
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:interface-5ea2d81a89",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 5709
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 3336
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:electrochemical-stability-window-336fb11a20",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 3247
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:li-dd305be3ca",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 3238
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:cation-transference-number-7973c7e42e",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 2927
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:li-ion-transference-number-5a21889ca9",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 2817
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:activation-energy-8b2e04d7ef",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 2549
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:thermal-stability-435243ebfa",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 2124
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:solution-casting-e8dd2b7fe7",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 1981
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:film-casting-b30480a6c9",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 1886
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:solid-state-reaction-bcc71d4904",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 1422
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 1384
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 1373
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_materialtype:oxide-solid-electrolyte-8cd32a3f62",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 1337
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:conductivity-temperature-relatio-5960e10e93",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 1327
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:mechanical-milling-eafdc39c55",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 1276
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:sintering-88c33e5d3d",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 1114
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:cold-pressing-6228b3dbb5",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 1112
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_materialtype:sulfide-solid-electrolyte-a2e08dae24",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 1098
+    },
+    {
+      "source": "corpus",
+      "target": "c_ssefamily:polymer-457f0e67b0",
+      "relation": "HAS_TOP_SSEFAMILY",
+      "count": 1032
+    },
+    {
+      "source": "c_conductingion:li-dd305be3ca",
+      "target": "c_ssefamily:polymer-457f0e67b0",
+      "relation": "ION_TO_FAMILY",
+      "count": 989
+    },
+    {
+      "source": "corpus",
+      "target": "c_ssefamily:composite-6288c74c29",
+      "relation": "HAS_TOP_SSEFAMILY",
+      "count": 920
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:solution-casting-e8dd2b7fe7",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 920
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:composite-solid-electrolyte-8a48a4a6be",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 909
+    },
+    {
+      "source": "c_conductingion:li-dd305be3ca",
+      "target": "c_ssefamily:composite-6288c74c29",
+      "relation": "ION_TO_FAMILY",
+      "count": 905
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:solution-casting-e8dd2b7fe7",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 902
+    },
+    {
+      "source": "c_materialtype:oxide-solid-electrolyte-8cd32a3f62",
+      "target": "c_structurefamily:garnet-bcc1e0f086",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 876
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:film-casting-b30480a6c9",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 860
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:relative-density-e379d3987d",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 834
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 828
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_materialtype:polymer-solid-electrolyte-96ff648b1a",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 812
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:annealing-9aa85dcd1f",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 788
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:coating-600f8f6dab",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 783
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:film-casting-b30480a6c9",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 758
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 746
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:sintering-88c33e5d3d",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 702
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:solid-state-reaction-bcc71d4904",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 622
+    },
+    {
+      "source": "corpus",
+      "target": "c_ssefamily:oxide-53e59bffe5",
+      "relation": "HAS_TOP_SSEFAMILY",
+      "count": 586
+    },
+    {
+      "source": "c_materialtype:sulfide-solid-electrolyte-a2e08dae24",
+      "target": "c_structurefamily:argyrodite-0cbee07850",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 580
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:in-situ-polymerization-42b2e1555f",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 554
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:air-stability-359d2cac71",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 551
+    },
+    {
+      "source": "c_conductingion:li-dd305be3ca",
+      "target": "c_ssefamily:oxide-53e59bffe5",
+      "relation": "ION_TO_FAMILY",
+      "count": 539
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:acetonitrile-d99ffd75c2",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 485
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_materialtype:gel-polymer-electrolyte-4d6907a4c0",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 482
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 471
+    },
+    {
+      "source": "corpus",
+      "target": "c_ssefamily:sulfide-67e7d261c3",
+      "relation": "HAS_TOP_SSEFAMILY",
+      "count": 465
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:composite-polymer-electrolyte-edc43c97ac",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 454
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:mechanical-milling-eafdc39c55",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 453
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:density-bbbf26a1fb",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 449
+    },
+    {
+      "source": "c_conductingion:li-dd305be3ca",
+      "target": "c_ssefamily:sulfide-67e7d261c3",
+      "relation": "ION_TO_FAMILY",
+      "count": 449
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_precursor:peo-b304c0d69e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 430
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:calcination-1790e967f2",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 414
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_solvent:acetonitrile-d99ffd75c2",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 414
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:thermal-polymerization-52e403ffc2",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 413
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:peo-b304c0d69e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 413
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:cold-pressing-6228b3dbb5",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 394
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_materialtype:solid-polymer-electrolyte-d6c56181e9",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 380
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:in-situ-polymerization-42b2e1555f",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 369
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:vacuum-drying-690901f780",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 367
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:annealing-9aa85dcd1f",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 364
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:drying-2e0f07d2a1",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 363
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:mechanical-milling-eafdc39c55",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 362
+    },
+    {
+      "source": "c_materialtype:oxide-solid-electrolyte-8cd32a3f62",
+      "target": "c_structurefamily:nasicon-dab3fdb158",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 345
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:solid-state-reaction-bcc71d4904",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 338
+    },
+    {
+      "source": "c_ssefamily:halide-5bac6ecf19",
+      "target": "c_materialtype:halide-solid-electrolyte-a1a98a6ab3",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 323
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:cold-pressing-6228b3dbb5",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 320
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:thermal-polymerization-52e403ffc2",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 286
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:li2s-8d4097b90e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 278
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:solid-state-reaction-bcc71d4904",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 276
+    },
+    {
+      "source": "c_structurefamily:argyrodite-0cbee07850",
+      "target": "c_formula:li6ps5cl-5ff9f9185c",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 272
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:ball-milling-6264a3a594",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 259
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:p2s5-573ed3c812",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 257
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_precursor:peo-b304c0d69e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 252
+    },
+    {
+      "source": "c_materialtype:composite-polymer-electrolyte-edc43c97ac",
+      "target": "c_structurefamily:peo-based-485b80c192",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 252
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_materialtype:composite-polymer-electrolyte-edc43c97ac",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 246
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 238
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:mechanical-milling-eafdc39c55",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 236
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:coating-600f8f6dab",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 233
+    },
+    {
+      "source": "c_materialtype:polymer-solid-electrolyte-96ff648b1a",
+      "target": "c_structurefamily:peo-based-485b80c192",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 232
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_solvent:acetonitrile-d99ffd75c2",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 227
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:lithium-bis-trifluoromethanesulf-ecd6298dbd",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 225
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:hot-pressing-c584632c15",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 220
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:uv-curing-b468a67694",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 212
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:solution-mixing-d614ef6249",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 211
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:heat-treatment-cd794f319d",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 209
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:electrospinning-ce77110b9e",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 209
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:calcination-1790e967f2",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 208
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:coating-600f8f6dab",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 208
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:pvdf-hfp-1412ef6876",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 205
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_precursor:pvdf-hfp-1412ef6876",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 204
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:li2s-8d4097b90e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 197
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:dmf-641fd7e517",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 192
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:zro2-f08e80789c",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 189
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 185
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:sintering-88c33e5d3d",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 184
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:cold-pressing-6228b3dbb5",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 182
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:deionized-water-f0c7ef4fd4",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 180
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:p2s5-573ed3c812",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 178
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:thermal-curing-56d1a3a090",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 176
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:in-situ-polymerization-42b2e1555f",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 174
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:mixing-3187876867",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 173
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:vacuum-drying-690901f780",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 171
+    },
+    {
+      "source": "c_processtag:annealing-9aa85dcd1f",
+      "target": "c_precursor:li2s-8d4097b90e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 168
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:calcination-1790e967f2",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 168
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_precursor:lithium-bis-trifluoromethanesulf-ecd6298dbd",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 165
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:sol-gel-7f8f70f0ea",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 164
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:annealing-9aa85dcd1f",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 164
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:drying-2e0f07d2a1",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 163
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_precursor:pvdf-hfp-1412ef6876",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 163
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:zro2-f08e80789c",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 159
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_solvent:dmf-641fd7e517",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 157
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:licl-fd888b4262",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 156
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:la2o3-9b0c2d6ce2",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 155
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:vacuum-drying-690901f780",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 155
+    },
+    {
+      "source": "c_processtag:annealing-9aa85dcd1f",
+      "target": "c_precursor:p2s5-573ed3c812",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 154
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:impregnation-d677e2254f",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 150
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:solvent-evaporation-79989c64cb",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 149
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:ion-exchange-1a1abde68e",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 149
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:uv-curing-b468a67694",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 147
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:ethanol-d853a1aecb",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 147
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:licl-fd888b4262",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 143
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:film-casting-b30480a6c9",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 142
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_precursor:pvdf-6b6075dfb8",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 141
+    },
+    {
+      "source": "c_materialtype:solid-polymer-electrolyte-d6c56181e9",
+      "target": "c_structurefamily:peo-based-485b80c192",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 140
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:coating-600f8f6dab",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 139
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:sintering-88c33e5d3d",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 137
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:electrospinning-ce77110b9e",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 137
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:water-6d5a45920a",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 137
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:heat-treatment-cd794f319d",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 136
+    },
+    {
+      "source": "c_materialtype:composite-solid-electrolyte-8a48a4a6be",
+      "target": "c_structurefamily:peo-based-composite-1adaf3805c",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 136
+    },
+    {
+      "source": "c_structurefamily:garnet-bcc1e0f086",
+      "target": "c_formula:li7la3zr2o12-6a0c412ce7",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 135
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:pvdf-6b6075dfb8",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 131
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:solvothermal-6defe64b00",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 130
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:ball-milling-6264a3a594",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 130
+    },
+    {
+      "source": "c_processtag:vacuum-drying-690901f780",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 130
+    },
+    {
+      "source": "c_materialtype:sulfide-solid-electrolyte-a2e08dae24",
+      "target": "c_structurefamily:thio-lisicon-35b881b065",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 130
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:drying-2e0f07d2a1",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 129
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:polymerization-566542b796",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 127
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:la2o3-9b0c2d6ce2",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 126
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:li2co3-22038978c0",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 126
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_materialtype:polymer-electrolyte-06f57a9bca",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 126
+    },
+    {
+      "source": "corpus",
+      "target": "c_ssefamily:other-d0941e68da",
+      "relation": "HAS_TOP_SSEFAMILY",
+      "count": 125
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_precursor:poly-ethylene-oxide-032606764e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 123
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:thermal-curing-56d1a3a090",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 122
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:composite-solid-polymer-electrol-4873f6a2fc",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 122
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:polymer-solid-electrolyte-96ff648b1a",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 121
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_precursor:lithium-bis-trifluoromethanesulf-ecd6298dbd",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 121
+    },
+    {
+      "source": "c_ssefamily:halide-5bac6ecf19",
+      "target": "c_processtag:mechanical-milling-eafdc39c55",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 120
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:poly-ethylene-oxide-032606764e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 120
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:coating-600f8f6dab",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 118
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:oxide-solid-electrolyte-8cd32a3f62",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 117
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_solvent:dmf-641fd7e517",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 117
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:thermal-polymerization-52e403ffc2",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 116
+    },
+    {
+      "source": "corpus",
+      "target": "c_ssefamily:halide-5bac6ecf19",
+      "relation": "HAS_TOP_SSEFAMILY",
+      "count": 113
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:surface-modification-f2ce4e124b",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 111
+    },
+    {
+      "source": "c_conductingion:li-dd305be3ca",
+      "target": "c_ssefamily:other-d0941e68da",
+      "relation": "ION_TO_FAMILY",
+      "count": 110
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:thf-d9b3b1daf4",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 109
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:solvent-casting-74a6d81c2b",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 108
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:zro2-f08e80789c",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 108
+    },
+    {
+      "source": "c_structurefamily:garnet-bcc1e0f086",
+      "target": "c_formula:li6-4la3zr1-4ta0-6o12-577e23209d",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 108
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:anhydrous-acetonitrile-17beaca73f",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 107
+    },
+    {
+      "source": "c_conductingion:li-dd305be3ca",
+      "target": "c_ssefamily:halide-5bac6ecf19",
+      "relation": "ION_TO_FAMILY",
+      "count": 106
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:solid-polymer-electrolyte-d6c56181e9",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 106
+    },
+    {
+      "source": "c_processtag:in-situ-polymerization-42b2e1555f",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 104
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:impregnation-d677e2254f",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 103
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:sol-gel-67d4867818",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 102
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:na-edb4f9efc8",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 101
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:thin-film-deposition-ebde708584",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 101
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:ring-opening-polymerization-ddfeb52f0e",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 99
+    },
+    {
+      "source": "c_processtag:drying-2e0f07d2a1",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 99
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:annealing-9aa85dcd1f",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 98
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:ta2o5-5056ba18be",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 97
+    },
+    {
+      "source": "c_structurefamily:nasicon-dab3fdb158",
+      "target": "c_formula:li1-3al0-3ti1-7-po4-3-99d205fb72",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 96
+    },
+    {
+      "source": "c_processtag:annealing-9aa85dcd1f",
+      "target": "c_precursor:licl-fd888b4262",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 96
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:solution-synthesis-e4cd63faa2",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 95
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:li2co3-22038978c0",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 95
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:li2s-8d4097b90e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 93
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:polymerization-566542b796",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 93
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:tetrahydrofuran-f2a274db31",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 93
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:hydrothermal-462d554cc4",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 92
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:solvothermal-6defe64b00",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 92
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_solvent:anhydrous-acetonitrile-17beaca73f",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 92
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:la2o3-9b0c2d6ce2",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 91
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:acetone-fdd7bfd96d",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 91
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:melt-quenching-56a10cada4",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 90
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:ring-opening-polymerization-ddfeb52f0e",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 90
+    },
+    {
+      "source": "c_materialtype:composite-solid-electrolyte-8a48a4a6be",
+      "target": "c_structurefamily:polymer-ceramic-composite-7e3418058e",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 88
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_materialtype:quasi-solid-polymer-electrolyte-43a392205d",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 87
+    },
+    {
+      "source": "c_materialtype:composite-solid-polymer-electrol-4873f6a2fc",
+      "target": "c_structurefamily:peo-based-485b80c192",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 87
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:solution-mixing-d614ef6249",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 86
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:slurry-casting-56658dac86",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 85
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:solution-mixing-d614ef6249",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 84
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:solvent-evaporation-79989c64cb",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 84
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:infiltration-3c60aac9e8",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 83
+    },
+    {
+      "source": "c_processtag:coating-600f8f6dab",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 83
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:solvent-casting-74a6d81c2b",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 83
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:tape-casting-d37b1a7856",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 82
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:sol-gel-7f8f70f0ea",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 82
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:solution-reaction-f7334664b4",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 81
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:al2o3-3848258807",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 81
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:ta2o5-5056ba18be",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 81
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:ball-milling-6264a3a594",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 81
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:ion-exchange-1a1abde68e",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 81
+    },
+    {
+      "source": "c_ssefamily:halide-5bac6ecf19",
+      "target": "c_processtag:solid-state-reaction-bcc71d4904",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 80
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:succinonitrile-f9b8cbd23d",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 79
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:p2s5-573ed3c812",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 78
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:mixing-3187876867",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 77
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_precursor:pvdf-6b6075dfb8",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 77
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:cold-pressing-6228b3dbb5",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 77
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:doctor-blade-e23624774d",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 76
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:composite-fabrication-553918b726",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 76
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_solvent:nmp-a3f1fd9564",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 76
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:lioh-h2o-9eb31b6a76",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 74
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:lithium-carbonate-05e2bbb0be",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 74
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:composite-6288c74c29",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 74
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:hot-pressing-c584632c15",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 74
+    },
+    {
+      "source": "c_materialtype:composite-solid-electrolyte-8a48a4a6be",
+      "target": "c_structurefamily:peo-based-485b80c192",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 74
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_solvent:thf-d9b3b1daf4",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 73
+    },
+    {
+      "source": "c_processtag:drying-2e0f07d2a1",
+      "target": "c_solvent:acetonitrile-d99ffd75c2",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 73
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:li2co3-22038978c0",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 72
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:lioh-bdd579fd95",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 72
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:nh4h2po4-920f4d7b00",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 72
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_precursor:zro2-f08e80789c",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 71
+    },
+    {
+      "source": "c_processtag:ball-milling-6264a3a594",
+      "target": "c_precursor:zro2-f08e80789c",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 71
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:sps-e1dacd3dd0",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 70
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:soaking-3f909ad99f",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 70
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:n-n-dimethylformamide-8bd5c5e284",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 70
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_precursor:poly-ethylene-oxide-032606764e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 70
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:liclo4-c36baca58a",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 69
+    },
+    {
+      "source": "c_materialtype:composite-polymer-electrolyte-edc43c97ac",
+      "target": "c_structurefamily:peo-based-composite-1adaf3805c",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 69
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:uniaxial-pressing-deb885d9b4",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 68
+    },
+    {
+      "source": "c_processtag:solution-mixing-d614ef6249",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 68
+    },
+    {
+      "source": "c_ssefamily:halide-5bac6ecf19",
+      "target": "c_processtag:annealing-9aa85dcd1f",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 68
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_materialtype:composite-solid-polymer-electrol-4873f6a2fc",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 68
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:gel-polymer-electrolyte-4d6907a4c0",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 68
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:li2s-8d4097b90e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 67
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:lifsi-ae32f46cdd",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 67
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_precursor:liclo4-c36baca58a",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 67
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:crosslinking-aa8fbe0335",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 66
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:gelation-a51556615e",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 66
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:solution-casting-e8dd2b7fe7",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 66
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:llzto-38f7b82fb1",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 66
+    },
+    {
+      "source": "c_processtag:in-situ-polymerization-42b2e1555f",
+      "target": "c_precursor:lithium-bis-trifluoromethanesulf-ecd6298dbd",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 66
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:al2o3-3848258807",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 65
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:surface-modification-f2ce4e124b",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 65
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:hydrothermal-462d554cc4",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 65
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:composite-electrolyte-a5ca3e869a",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 64
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:lii-870f668087",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 64
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_precursor:lifsi-ae32f46cdd",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 64
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:nmp-a3f1fd9564",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 64
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_solvent:anhydrous-acetonitrile-17beaca73f",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 64
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:gel-polymer-electrolyte-4d6907a4c0",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 63
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:lioh-h2o-9eb31b6a76",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 63
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:hot-pressing-c584632c15",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 63
+    },
+    {
+      "source": "c_materialtype:polymer-electrolyte-06f57a9bca",
+      "target": "c_structurefamily:peo-based-485b80c192",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 63
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_precursor:llzto-38f7b82fb1",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 63
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:uv-curing-b468a67694",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 63
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:polyethylene-oxide-d63d7a638e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 63
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:sputtering-0ea91b4ef8",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 62
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:solution-processing-06d823138a",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 62
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_solvent:isopropanol-2be7a78576",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 62
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:lithium-nitrate-fe5c7b7e49",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 62
+    },
+    {
+      "source": "c_processtag:thermal-polymerization-52e403ffc2",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 62
+    },
+    {
+      "source": "c_processtag:vacuum-drying-690901f780",
+      "target": "c_solvent:acetonitrile-d99ffd75c2",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 62
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_solvent:isopropanol-2be7a78576",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 61
+    },
+    {
+      "source": "c_ssefamily:other-d0941e68da",
+      "target": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 61
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:lithium-nitrate-fe5c7b7e49",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 60
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:polymer-electrolyte-06f57a9bca",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 60
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:crosslinking-aa8fbe0335",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 60
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_solvent:acetone-fdd7bfd96d",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 60
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:slurry-casting-56658dac86",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 59
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:electrospinning-ce77110b9e",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 59
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:composite-fabrication-553918b726",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 59
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:film-casting-b30480a6c9",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 58
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:p2s5-573ed3c812",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 58
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:licl-fd888b4262",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 58
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:gel-polymer-electrolyte-4d6907a4c0",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 58
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_precursor:polyethylene-oxide-d63d7a638e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 58
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:sol-gel-7f8f70f0ea",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 58
+    },
+    {
+      "source": "c_processtag:vacuum-drying-690901f780",
+      "target": "c_precursor:peo-b304c0d69e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 58
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:crystallization-55da0e25a0",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 57
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:free-radical-polymerization-eb1ba6e9b0",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 57
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:lino3-ebf8e29e0a",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 57
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_solvent:ethanol-d853a1aecb",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 57
+    },
+    {
+      "source": "c_structurefamily:nasicon-dab3fdb158",
+      "target": "c_formula:li1-5al0-5ge1-5-po4-3-564dbd5803",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 57
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:organic-synthesis-afc309a64e",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 56
+    },
+    {
+      "source": "c_processtag:cold-pressing-6228b3dbb5",
+      "target": "c_precursor:zro2-f08e80789c",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 56
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:lino3-ebf8e29e0a",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 56
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:doctor-blade-e23624774d",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 56
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:gelation-a51556615e",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 56
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:photopolymerization-0c1af38483",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 55
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:ta2o5-5056ba18be",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 55
+    },
+    {
+      "source": "c_ssefamily:hydride-ed2fa4b19e",
+      "target": "c_materialtype:hydride-solid-electrolyte-927290d77e",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 55
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_materialtype:composite-solid-electrolyte-8a48a4a6be",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 55
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:solvent-free-70252d9c87",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 54
+    },
+    {
+      "source": "c_processtag:heat-treatment-cd794f319d",
+      "target": "c_precursor:li2s-8d4097b90e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 54
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_precursor:la2o3-9b0c2d6ce2",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 54
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:sol-gel-67d4867818",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 54
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_solvent:ethanol-d853a1aecb",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 54
+    },
+    {
+      "source": "c_ssefamily:halide-5bac6ecf19",
+      "target": "c_processtag:cold-pressing-6228b3dbb5",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 54
+    },
+    {
+      "source": "c_structurefamily:peo-based-485b80c192",
+      "target": "c_formula:peo-litfsi-e016f53e6c",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 54
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:uniaxial-pressing-deb885d9b4",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 54
+    },
+    {
+      "source": "c_processtag:cold-pressing-6228b3dbb5",
+      "target": "c_precursor:la2o3-9b0c2d6ce2",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 53
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_materialtype:composite-solid-electrolyte-8a48a4a6be",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 53
+    },
+    {
+      "source": "c_materialtype:oxide-solid-electrolyte-8cd32a3f62",
+      "target": "c_structurefamily:perovskite-f6eb9e126b",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 53
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:thin-film-deposition-ebde708584",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 53
+    },
+    {
+      "source": "c_processtag:solvent-evaporation-79989c64cb",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 53
+    },
+    {
+      "source": "c_processtag:heat-treatment-cd794f319d",
+      "target": "c_precursor:p2s5-573ed3c812",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 52
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:hot-pressing-c584632c15",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 52
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:infiltration-3c60aac9e8",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 52
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:polishing-d4bc089263",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 51
+    },
+    {
+      "source": "c_processtag:ball-milling-6264a3a594",
+      "target": "c_precursor:la2o3-9b0c2d6ce2",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 51
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:lithium-carbonate-05e2bbb0be",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 51
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:solvent-evaporation-79989c64cb",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 51
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_precursor:lithium-nitrate-fe5c7b7e49",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 51
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_materialtype:polymer-457f0e67b0",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 51
+    },
+    {
+      "source": "c_processtag:hot-pressing-c584632c15",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 51
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_solvent:acetone-fdd7bfd96d",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 51
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:nh4h2po4-920f4d7b00",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 50
+    },
+    {
+      "source": "c_processtag:drying-2e0f07d2a1",
+      "target": "c_precursor:peo-b304c0d69e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 50
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:free-radical-polymerization-eb1ba6e9b0",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 50
+    },
+    {
+      "source": "c_processtag:uv-curing-b468a67694",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 50
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:tape-casting-d37b1a7856",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 50
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_solvent:n-n-dimethylformamide-8bd5c5e284",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 50
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:thermal-curing-56d1a3a090",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 50
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:cell-assembly-b902fc074b",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 49
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:surface-coating-fe263d7853",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 49
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:lioh-bdd579fd95",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 49
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_solvent:2-propanol-8bf72d11ac",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 49
+    },
+    {
+      "source": "c_structurefamily:garnet-bcc1e0f086",
+      "target": "c_formula:li6-5la3zr1-5ta0-5o12-1cdf270791",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 49
+    },
+    {
+      "source": "c_processtag:cold-pressing-6228b3dbb5",
+      "target": "c_precursor:li2co3-22038978c0",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 49
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:sulfide-solid-electrolyte-a2e08dae24",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 49
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_solvent:2-propanol-8bf72d11ac",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 48
+    },
+    {
+      "source": "c_ssefamily:other-d0941e68da",
+      "target": "c_processtag:coating-600f8f6dab",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 48
+    },
+    {
+      "source": "c_processtag:mixing-3187876867",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 48
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:solution-reaction-f7334664b4",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 48
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:composite-electrolyte-a5ca3e869a",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 48
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:composite-mixing-bdcb421490",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 47
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:thin-film-c83c4fdbde",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 47
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:lanthanum-oxide-fdf240f0b5",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 47
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:licl-fd888b4262",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 47
+    },
+    {
+      "source": "c_processtag:solvent-casting-74a6d81c2b",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 47
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:methanol-81de7a2f5d",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 47
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:pulsed-laser-deposition-542e74ed70",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 46
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_solvent:deionized-water-f0c7ef4fd4",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 46
+    },
+    {
+      "source": "c_materialtype:sulfide-solid-electrolyte-a2e08dae24",
+      "target": "c_structurefamily:lgps-type-5bebc51ac2",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 46
+    },
+    {
+      "source": "c_processtag:impregnation-d677e2254f",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 46
+    },
+    {
+      "source": "c_structurefamily:argyrodite-0cbee07850",
+      "target": "c_formula:li6ps5br-cd0f71f551",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 46
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:polishing-d4bc089263",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 46
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:photopolymerization-0c1af38483",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 46
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_solvent:thf-d9b3b1daf4",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 45
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:tio2-f840763400",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 45
+    },
+    {
+      "source": "c_processtag:thermal-polymerization-52e403ffc2",
+      "target": "c_precursor:aibn-c53401a133",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 45
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:ammonium-dihydrogen-phosphate-dbd9e89c50",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 45
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:composite-preparation-c3911c2ea5",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 44
+    },
+    {
+      "source": "c_structurefamily:nasicon-dab3fdb158",
+      "target": "c_formula:na3zr2si2po12-057afd267d",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 44
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_precursor:lifsi-ae32f46cdd",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 44
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:annealing-9aa85dcd1f",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 44
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_materialtype:polymer-solid-state-electrolyte-4e982476bf",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 44
+    },
+    {
+      "source": "corpus",
+      "target": "c_ssefamily:borate-phosphate-226868e481",
+      "relation": "HAS_TOP_SSEFAMILY",
+      "count": 43
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:aibn-c53401a133",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 43
+    },
+    {
+      "source": "c_processtag:in-situ-polymerization-42b2e1555f",
+      "target": "c_precursor:1-3-dioxolane-c5d0d3ce05",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 43
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_solvent:nmp-a3f1fd9564",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 43
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:ion-exchange-1a1abde68e",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 43
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:pressing-c5cddf20ad",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 42
+    },
+    {
+      "source": "c_ssefamily:other-d0941e68da",
+      "target": "c_processtag:solid-state-reaction-bcc71d4904",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 42
+    },
+    {
+      "source": "c_materialtype:composite-polymer-electrolyte-edc43c97ac",
+      "target": "c_structurefamily:composite-6288c74c29",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 42
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:dmso-df72dba955",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 42
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_precursor:liclo4-c36baca58a",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 42
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:lithium-carbonate-05e2bbb0be",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 42
+    },
+    {
+      "source": "c_processtag:cold-pressing-6228b3dbb5",
+      "target": "c_precursor:li2s-8d4097b90e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 42
+    },
+    {
+      "source": "c_structurefamily:argyrodite-0cbee07850",
+      "target": "c_formula:li5-5ps4-5cl1-5-c0fcd9a615",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 42
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:organic-synthesis-afc309a64e",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 42
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:gel-formation-4888c363d2",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 41
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_precursor:li2co3-22038978c0",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 41
+    },
+    {
+      "source": "c_conductingion:na-edb4f9efc8",
+      "target": "c_ssefamily:oxide-53e59bffe5",
+      "relation": "ION_TO_FAMILY",
+      "count": 41
+    },
+    {
+      "source": "c_ssefamily:halide-5bac6ecf19",
+      "target": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 41
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:mixing-3187876867",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 41
+    },
+    {
+      "source": "c_materialtype:oxide-53e59bffe5",
+      "target": "c_structurefamily:nasicon-dab3fdb158",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 41
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:zirconium-dioxide-7a87730496",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 41
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:atomic-layer-deposition-7f36f7bedb",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 40
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_precursor:ta2o5-5056ba18be",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 40
+    },
+    {
+      "source": "c_ssefamily:other-d0941e68da",
+      "target": "c_processtag:film-casting-b30480a6c9",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 40
+    },
+    {
+      "source": "c_processtag:in-situ-polymerization-42b2e1555f",
+      "target": "c_precursor:aibn-c53401a133",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 40
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:latp-powder-854ed80564",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 40
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_precursor:polyethylene-oxide-d63d7a638e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 40
+    },
+    {
+      "source": "c_processtag:cold-pressing-6228b3dbb5",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 40
+    },
+    {
+      "source": "c_processtag:coating-600f8f6dab",
+      "target": "c_solvent:acetonitrile-d99ffd75c2",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 40
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:grafting-084f4467eb",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 39
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:freeze-drying-a6d84c887e",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 39
+    },
+    {
+      "source": "c_processtag:cold-pressing-6228b3dbb5",
+      "target": "c_precursor:latp-powder-854ed80564",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 39
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:aluminum-nitrate-nonahydrate-4d0fd8ccd9",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 39
+    },
+    {
+      "source": "c_materialtype:composite-solid-electrolyte-8a48a4a6be",
+      "target": "c_structurefamily:garnet-polymer-composite-e702f761fa",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 39
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:copolymerization-f59036ca90",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 38
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:al2o3-3848258807",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 38
+    },
+    {
+      "source": "c_processtag:annealing-9aa85dcd1f",
+      "target": "c_precursor:lii-870f668087",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 38
+    },
+    {
+      "source": "c_structurefamily:thio-lisicon-35b881b065",
+      "target": "c_formula:li10gep2s12-1aca60c0ee",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 38
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:n-n-dimethylformamide-dmf-0ac197be34",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 38
+    },
+    {
+      "source": "c_ssefamily:hydride-ed2fa4b19e",
+      "target": "c_processtag:mechanical-milling-eafdc39c55",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 38
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_solvent:n-n-dimethylformamide-8bd5c5e284",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 38
+    },
+    {
+      "source": "c_processtag:hot-pressing-c584632c15",
+      "target": "c_precursor:peo-b304c0d69e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 38
+    },
+    {
+      "source": "corpus",
+      "target": "c_ssefamily:hydride-ed2fa4b19e",
+      "relation": "HAS_TOP_SSEFAMILY",
+      "count": 37
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:lioh-bdd579fd95",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 37
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_precursor:lioh-h2o-9eb31b6a76",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 37
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_materialtype:polymer-composite-electrolyte-cab5920dd3",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 37
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:nh4h2po4-920f4d7b00",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 37
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:composite-mixing-bdcb421490",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 37
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:composite-formation-3f3a7e86dc",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 36
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:interface-engineering-bd850e9037",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 36
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:polycondensation-5543170a0a",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 36
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_solvent:2-propanol-8bf72d11ac",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 36
+    },
+    {
+      "source": "c_processtag:ball-milling-6264a3a594",
+      "target": "c_precursor:li2co3-22038978c0",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 36
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_solvent:ethanol-d853a1aecb",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 36
+    },
+    {
+      "source": "c_materialtype:halide-solid-electrolyte-a1a98a6ab3",
+      "target": "c_structurefamily:halide-5bac6ecf19",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 36
+    },
+    {
+      "source": "c_processtag:electrospinning-ce77110b9e",
+      "target": "c_solvent:dmf-641fd7e517",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 36
+    },
+    {
+      "source": "c_processtag:thermal-curing-56d1a3a090",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 36
+    },
+    {
+      "source": "c_processtag:coating-600f8f6dab",
+      "target": "c_precursor:peo-b304c0d69e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 36
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:aluminum-nitrate-nonahydrate-4d0fd8ccd9",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 36
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:zirconium-dioxide-7a87730496",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 36
+    },
+    {
+      "source": "c_processtag:composite-fabrication-553918b726",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 36
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:lanthanum-oxide-fdf240f0b5",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 36
+    },
+    {
+      "source": "c_structurefamily:garnet-bcc1e0f086",
+      "target": "c_formula:li6-4ga0-2la3zr2o12-47c119edfb",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 36
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:doping-1f0233498a",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 35
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:blending-ac954cd33a",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 35
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:precipitation-3cceb67f7e",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 35
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:sol-gel-67d4867818",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 35
+    },
+    {
+      "source": "c_processtag:drying-2e0f07d2a1",
+      "target": "c_precursor:pvdf-hfp-1412ef6876",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 35
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_precursor:aluminum-nitrate-nonahydrate-4d0fd8ccd9",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 35
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:surface-treatment-261b9504ec",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 34
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:crystallization-55da0e25a0",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 34
+    },
+    {
+      "source": "c_ssefamily:borate-phosphate-226868e481",
+      "target": "c_processtag:sintering-88c33e5d3d",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 34
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:tio2-f840763400",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 34
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:lii-870f668087",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 34
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:pegda-905e1a9848",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 34
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_solvent:isopropanol-2be7a78576",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 34
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:heat-treatment-cd794f319d",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 34
+    },
+    {
+      "source": "c_processtag:solvent-evaporation-79989c64cb",
+      "target": "c_precursor:peo-b304c0d69e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 34
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_precursor:al2o3-3848258807",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 34
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_solvent:deionized-water-f0c7ef4fd4",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 34
+    },
+    {
+      "source": "c_ssefamily:other-d0941e68da",
+      "target": "c_processtag:mechanical-milling-eafdc39c55",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 34
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:soaking-3f909ad99f",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 34
+    },
+    {
+      "source": "c_processtag:vacuum-drying-690901f780",
+      "target": "c_precursor:pvdf-hfp-1412ef6876",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 34
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:thin-film-c83c4fdbde",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 34
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:lithiation-2c6c0157c7",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 33
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:melting-f3fce5c214",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 33
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:ald-24a7cb4a8a",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 33
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:pulsed-laser-deposition-542e74ed70",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 33
+    },
+    {
+      "source": "c_ssefamily:borate-phosphate-226868e481",
+      "target": "c_processtag:solid-state-reaction-bcc71d4904",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 33
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_precursor:lino3-ebf8e29e0a",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 33
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:citric-acid-d405e014d6",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 33
+    },
+    {
+      "source": "c_processtag:ball-milling-6264a3a594",
+      "target": "c_precursor:ta2o5-5056ba18be",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 33
+    },
+    {
+      "source": "c_processtag:cold-pressing-6228b3dbb5",
+      "target": "c_precursor:ta2o5-5056ba18be",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 33
+    },
+    {
+      "source": "c_conductingion:li-dd305be3ca",
+      "target": "c_ssefamily:borate-phosphate-226868e481",
+      "relation": "ION_TO_FAMILY",
+      "count": 33
+    },
+    {
+      "source": "c_conductingion:li-dd305be3ca",
+      "target": "c_ssefamily:hydride-ed2fa4b19e",
+      "relation": "ION_TO_FAMILY",
+      "count": 33
+    },
+    {
+      "source": "c_ssefamily:hydride-ed2fa4b19e",
+      "target": "c_processtag:cold-pressing-6228b3dbb5",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 33
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:lipf6-cf34ed361a",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 33
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:impregnation-d677e2254f",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 33
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:quasi-solid-state-electrolyte-bb07b375a7",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 33
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:quasi-solid-composite-electrolyt-eba43086fd",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 33
+    },
+    {
+      "source": "c_processtag:cold-pressing-6228b3dbb5",
+      "target": "c_precursor:p2s5-573ed3c812",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 33
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:solvent-free-70252d9c87",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 33
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_materialtype:oxide-53e59bffe5",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 33
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_precursor:ammonium-dihydrogen-phosphate-dbd9e89c50",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 33
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:spark-plasma-sintering-dee21a61fd",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 32
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:solution-polymerization-fa1ffd8f49",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 32
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:radical-polymerization-919f2de909",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 32
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:thermal-initiation-d54ed879b1",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 32
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:mechanical-mixing-963336788d",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 32
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:swelling-99cc5cc078",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 32
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:atrp-00acd9bb73",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 32
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:magnetron-sputtering-3df0c0e5d5",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 32
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:lamination-51ec4952c1",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 32
+    },
+    {
+      "source": "corpus",
+      "target": "c_processtag:polymer-electrolyte-06f57a9bca",
+      "relation": "HAS_TOP_PROCESSTAG",
+      "count": 32
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:la-no3-3-6h2o-f5ee57e430",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 32
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:citric-acid-d405e014d6",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 32
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_solvent:deionized-water-f0c7ef4fd4",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 32
+    },
+    {
+      "source": "c_processtag:sintering-88c33e5d3d",
+      "target": "c_precursor:lioh-h2o-9eb31b6a76",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 32
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:copolymerization-f59036ca90",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 32
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:lithium-perchlorate-8542ced667",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 32
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:la-oh-3-f58e169966",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 31
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:drying-2e0f07d2a1",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 31
+    },
+    {
+      "source": "c_ssefamily:other-d0941e68da",
+      "target": "c_processtag:cold-pressing-6228b3dbb5",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 31
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_solvent:dmso-df72dba955",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 31
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:solution-polymerization-fa1ffd8f49",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 31
+    },
+    {
+      "source": "c_processtag:coating-600f8f6dab",
+      "target": "c_precursor:pvdf-hfp-1412ef6876",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 31
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_precursor:1-3-dioxolane-c5d0d3ce05",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 31
+    },
+    {
+      "source": "c_processtag:solvent-casting-74a6d81c2b",
+      "target": "c_precursor:peo-b304c0d69e",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 31
+    },
+    {
+      "source": "c_materialtype:composite-solid-electrolyte-8a48a4a6be",
+      "target": "c_structurefamily:argyrodite-0cbee07850",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 31
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:anhydrous-ethanol-7d7e8d47fc",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 31
+    },
+    {
+      "source": "c_materialtype:polymer-solid-electrolyte-96ff648b1a",
+      "target": "c_structurefamily:block-copolymer-750d81cc16",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 31
+    },
+    {
+      "source": "c_processtag:sol-gel-7f8f70f0ea",
+      "target": "c_precursor:lithium-nitrate-fe5c7b7e49",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 31
+    },
+    {
+      "source": "c_ssefamily:other-d0941e68da",
+      "target": "c_materialtype:organic-ionic-plastic-crystal-70745029e8",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 31
+    },
+    {
+      "source": "c_ssefamily:borate-phosphate-226868e481",
+      "target": "c_materialtype:oxide-solid-electrolyte-8cd32a3f62",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 30
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:solution-synthesis-e4cd63faa2",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 30
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_materialtype:sulfide-glass-5826c555a5",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 30
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:radical-polymerization-919f2de909",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 30
+    },
+    {
+      "source": "c_processtag:drying-2e0f07d2a1",
+      "target": "c_precursor:pvdf-6b6075dfb8",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 30
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_materialtype:composite-solid-state-electrolyt-cde305020d",
+      "relation": "FAMILY_TO_TYPE",
+      "count": 30
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:gel-formation-4888c363d2",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 30
+    },
+    {
+      "source": "c_materialtype:gel-polymer-electrolyte-4d6907a4c0",
+      "target": "c_structurefamily:pvdf-hfp-based-934e95721c",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 30
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:polycondensation-5543170a0a",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 30
+    },
+    {
+      "source": "c_materialtype:oxide-solid-electrolyte-8cd32a3f62",
+      "target": "c_structurefamily:lisicon-c99180fbba",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 30
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:zn2-2d3def1107",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 29
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_solvent:isopropyl-alcohol-97646bda26",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 29
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_solvent:tetrahydrofuran-f2a274db31",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 29
+    },
+    {
+      "source": "c_processtag:coating-600f8f6dab",
+      "target": "c_precursor:pvdf-6b6075dfb8",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 29
+    },
+    {
+      "source": "c_ssefamily:composite-6288c74c29",
+      "target": "c_processtag:soaking-3f909ad99f",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 29
+    },
+    {
+      "source": "c_processtag:cold-pressing-6228b3dbb5",
+      "target": "c_precursor:li6ps5cl-5ff9f9185c",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 29
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:melt-quenching-56a10cada4",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 29
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:ammonium-dihydrogen-phosphate-dbd9e89c50",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 29
+    },
+    {
+      "source": "c_materialtype:composite-solid-polymer-electrol-4873f6a2fc",
+      "target": "c_structurefamily:peo-based-composite-1adaf3805c",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 29
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_precursor:lithium-carbonate-05e2bbb0be",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 29
+    },
+    {
+      "source": "c_materialtype:composite-solid-electrolyte-8a48a4a6be",
+      "target": "c_structurefamily:nasicon-polymer-composite-b5d52e7b8a",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 29
+    },
+    {
+      "source": "c_processtag:composite-electrolyte-a5ca3e869a",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 29
+    },
+    {
+      "source": "c_materialtype:polymer-solid-electrolyte-96ff648b1a",
+      "target": "c_structurefamily:polyether-baf41ce050",
+      "relation": "TYPE_TO_STRUCTURE",
+      "count": 29
+    },
+    {
+      "source": "c_processtag:solution-casting-e8dd2b7fe7",
+      "target": "c_precursor:lithium-perchlorate-8542ced667",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 29
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:atomic-layer-deposition-7f36f7bedb",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 29
+    },
+    {
+      "source": "c_processtag:calcination-1790e967f2",
+      "target": "c_precursor:la-no3-3-6h2o-f5ee57e430",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 28
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_precursor:nb2o5-e2d3b9dc27",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 28
+    },
+    {
+      "source": "c_processtag:ball-milling-6264a3a594",
+      "target": "c_precursor:lioh-h2o-9eb31b6a76",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 28
+    },
+    {
+      "source": "c_processtag:ball-milling-6264a3a594",
+      "target": "c_precursor:nh4h2po4-920f4d7b00",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 28
+    },
+    {
+      "source": "c_processtag:cold-pressing-6228b3dbb5",
+      "target": "c_precursor:al2o3-3848258807",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 28
+    },
+    {
+      "source": "c_ssefamily:oxide-53e59bffe5",
+      "target": "c_processtag:sputtering-0ea91b4ef8",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 28
+    },
+    {
+      "source": "c_processtag:film-casting-b30480a6c9",
+      "target": "c_precursor:llzto-38f7b82fb1",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 28
+    },
+    {
+      "source": "c_processtag:doctor-blade-e23624774d",
+      "target": "c_precursor:litfsi-8e14276a61",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 28
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:la-oh-3-f58e169966",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 27
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:nb2o5-e2d3b9dc27",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 27
+    },
+    {
+      "source": "c_processtag:solid-state-reaction-bcc71d4904",
+      "target": "c_solvent:isopropyl-alcohol-97646bda26",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 27
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:ball-milling-6264a3a594",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 27
+    },
+    {
+      "source": "c_ssefamily:sulfide-67e7d261c3",
+      "target": "c_processtag:melt-quenching-56a10cada4",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 27
+    },
+    {
+      "source": "c_structurefamily:peo-based-485b80c192",
+      "target": "c_formula:peo-litfsi-f565c3b585",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 27
+    },
+    {
+      "source": "c_processtag:mechanical-milling-eafdc39c55",
+      "target": "c_precursor:li6ps5cl-5ff9f9185c",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 27
+    },
+    {
+      "source": "c_structurefamily:nasicon-dab3fdb158",
+      "target": "c_formula:li1-4al0-4ti1-6-po4-3-e8c18654c0",
+      "relation": "STRUCTURE_TO_FORMULA",
+      "count": 27
+    },
+    {
+      "source": "c_processtag:slurry-casting-56658dac86",
+      "target": "c_precursor:pvdf-6b6075dfb8",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 27
+    },
+    {
+      "source": "c_ssefamily:polymer-457f0e67b0",
+      "target": "c_processtag:swelling-99cc5cc078",
+      "relation": "FAMILY_TO_PROCESS",
+      "count": 27
+    },
+    {
+      "source": "c_processtag:liquid-phase-synthesis-843c0709c7",
+      "target": "c_solvent:distilled-water-95a176852d",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 27
+    },
+    {
+      "source": "c_processtag:solvent-evaporation-79989c64cb",
+      "target": "c_solvent:acetonitrile-d99ffd75c2",
+      "relation": "PROCESS_TO_SOLVENT",
+      "count": 27
+    },
+    {
+      "source": "c_processtag:vacuum-drying-690901f780",
+      "target": "c_precursor:pvdf-6b6075dfb8",
+      "relation": "PROCESS_TO_PRECURSOR",
+      "count": 27
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:electronic-conductivity-6f22187716",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 18
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:li-na-b4e3cafbb9",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 17
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:h-1d13a0918d",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 14
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:k-40901c1378",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 7
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:diffusion-coefficient-8fad6de82b",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 6
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:diffusion-energy-barrier-d557f3b264",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 6
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:li-na-k-200d3483c2",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 4
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:ionic-conductivity-at-temp-6efd526240",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 4
+    },
+    {
+      "source": "corpus",
+      "target": "c_ssefamily:phosphate-55e1f029ad",
+      "relation": "HAS_TOP_SSEFAMILY",
+      "count": 3
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:li-na-ag-0f9f2712a9",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 3
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:o2-1d5869f6a1",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 2
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:nh4-2fdbc1d6ad",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 2
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:li-mg2-185572d112",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 2
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:mg2-c1ebf912c6",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 2
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:al3-759347b31e",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 2
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:tfsi-cb039b9322",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 2
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:f-b4c4c182b5",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 2
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:phase-transition-temperature-6fe63ad03e",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 2
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:zn2-li-k-f7923c3d26",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 1
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:h-li-1d851cdccc",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 1
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:bmi-tfsi-3d579a9c23",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 1
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:cl-99c0e78658",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 1
+    },
+    {
+      "source": "corpus",
+      "target": "c_conductingion:li-pf6-8e8c24b13c",
+      "relation": "HAS_TOP_CONDUCTINGION",
+      "count": 1
+    },
+    {
+      "source": "corpus",
+      "target": "c_propertycategory:hardness-f2b63abcfa",
+      "relation": "HAS_TOP_PROPERTYCATEGORY",
+      "count": 1
+    }
+  ]
+}

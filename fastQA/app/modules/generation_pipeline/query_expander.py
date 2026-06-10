@@ -1,0 +1,91 @@
+from __future__ import annotations
+
+import logging
+import os
+
+from app.integrations.llm import SharedHttpPoolConfig, build_chat_completions_client, raise_if_upstream_pool_timeout
+from app.integrations.llm.openai_compat import DEFAULT_LLM_COMPATIBLE_BASE_URL
+from app.core.prompt_loader import load_prompt_template
+from app.integrations.llm.thinking import LLM_STAGE_CONTROL, merge_extra_body, resolve_thinking_controls
+
+logger = logging.getLogger(__name__)
+
+
+class QueryExpander:
+    def __init__(
+        self,
+        *,
+        api_key: str | None = None,
+        base_url: str | None = None,
+        model: str | None = None,
+        http_client=None,
+        transport_config: SharedHttpPoolConfig | None = None,
+    ) -> None:
+        self.api_key = os.getenv("LLM_API_KEY") if api_key is None else api_key
+        self.base_url = (
+            base_url
+            or os.getenv("LLM_BASE_URL")
+            or DEFAULT_LLM_COMPATIBLE_BASE_URL
+        )
+        self.model = model or os.getenv("LLM_MODEL") or "qwen-plus"
+        self._http_client = http_client
+        self._transport_config = transport_config or SharedHttpPoolConfig.from_env()
+        self._client = None
+
+    def _get_client(self):
+        if self._client is not None:
+            return self._client
+        if not self.base_url or not self.model:
+            return None
+        self._client = build_chat_completions_client(
+            api_key=str(self.api_key or ""),
+            base_url=self.base_url,
+            logger=logger,
+            connect_timeout_seconds=self._transport_config.connect_timeout_seconds,
+            read_timeout_seconds=self._transport_config.read_timeout_seconds,
+            stream_read_timeout_seconds=self._transport_config.stream_read_timeout_seconds,
+            write_timeout_seconds=self._transport_config.write_timeout_seconds,
+            pool_timeout_seconds=self._transport_config.pool_timeout_seconds,
+            keepalive_expiry_seconds=self._transport_config.keepalive_expiry_seconds,
+            max_connections=self._transport_config.max_connections,
+            max_keepalive_connections=self._transport_config.max_keepalive_connections,
+            http_client=self._http_client,
+        )
+        return self._client
+
+    def expand(self, query: str) -> str:
+        text = str(query or "").strip()
+        if not text:
+            return text
+        client = self._get_client()
+        if client is None:
+            return text
+        try:
+            controls = resolve_thinking_controls(
+                stage=LLM_STAGE_CONTROL,
+                max_tokens=120,
+                stream=False,
+            )
+            response = client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": "你是一个学术文献检索助手，只输出扩展后的查询，不要任何解释。"},
+                    {"role": "user", "content": load_prompt_template("query_expansion.txt").format(query=text)},
+                ],
+                temperature=0.2,
+                max_tokens=controls.max_tokens,
+                extra_body=merge_extra_body(None, controls),
+            )
+            expanded = str(response.choices[0].message.content or "").strip()
+            if len(expanded) >= 6:
+                logger.info("stage2 query expanded original=%s expanded=%s", text[:80], expanded[:80])
+                return expanded
+        except Exception as exc:
+            raise_if_upstream_pool_timeout(exc)
+            logger.warning("stage2 query expansion failed, fallback to original query: %s", exc)
+        return text
+
+    def close(self) -> None:
+        close = getattr(self._client, "close", None)
+        if callable(close):
+            close()

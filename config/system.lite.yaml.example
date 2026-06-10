@@ -1,0 +1,133 @@
+# 磷酸铁锂 QA 系统 — lite 后端配置模板（无前端、无 MinIO）
+# 用法：
+#   cp config/system.lite.yaml.example config/system.lite.yaml
+#   编辑密钥与本机端口
+#   SYSTEM_YAML=config/system.lite.yaml bash scripts/start_lite_all.sh
+#
+# 目标：
+# - 仅启动后端 API：gateway/public-service/fastQA/highThinkingQA/patent
+# - 保留 MySQL、Redis、向量库、本地 resource 数据
+# - 不启动 frontend-vue，不依赖 MinIO
+# - 文件与专利原文优先走本地 storage/archive
+
+_meta:
+  stack: lite
+  domain: lifepo4
+
+ports:
+  GATEWAY_PORT: 18101
+  PUBLIC_SERVICE_PORT: 18102
+  FASTQA_PORT: 18008
+  FASTQA_FASTAPI_PORT: 18008
+  HIGHTHINKINGQA_PORT: 18009
+  PATENT_PORT: 18010
+
+backends:
+  PUBLIC_BACKEND_BASE_URL: http://127.0.0.1:18102
+  FAST_BACKEND_BASE_URL: http://127.0.0.1:18008
+  THINKING_BACKEND_BASE_URL: http://127.0.0.1:18009
+  PATENT_BACKEND_BASE_URL: http://127.0.0.1:18010
+
+mysql:
+  MYSQL_HOST: 127.0.0.1
+  MYSQL_PORT: 13306
+  MYSQL_DATABASE: agentcode_lwb
+  MYSQL_USER: root
+  MYSQL_PASSWORD: "123456"
+
+redis:
+  REDIS_HOST: 127.0.0.1
+  REDIS_PORT: 16379
+  REDIS_DB: 0
+  REDIS_PASSWORD: "123456"
+  REDIS_ENABLED: 1
+  PATENT_REDIS_KEY_PREFIX: patent-lite
+
+storage:
+  STORAGE_BACKEND: local
+  # 不配置 MINIO_ENDPOINT/MINIO_ACCESS_KEY/MINIO_SECRET_KEY 时，public-service 自动使用 LocalStorageBackend。
+  LOCAL_STORAGE_ROOT: resource/storage/lite
+  QA_ORIGINAL_MINIO_ONLY: false
+  PATENT_ORIGINAL_MINIO_ONLY: false
+  PUBLIC_SERVICE_MINIO_USE_PROXY: 1
+
+neo4j:
+  # 图谱可选；本机有 Neo4j 时保留，缺失时相关图谱功能降级。
+  FASTQA_NEO4J_URL: bolt://127.0.0.1:7688
+  FASTQA_NEO4J_USERNAME: neo4j
+  FASTQA_NEO4J_PASSWORD: "12345678"
+  FASTQA_NEO4J_DATABASE: neo4j
+  PATENT_NEO4J_URL: bolt://127.0.0.1:8687
+  PATENT_NEO4J_USERNAME: neo4j
+  PATENT_NEO4J_PASSWORD: "12345678"
+  PATENT_NEO4J_DATABASE: neo4j
+
+llm:
+  LLM_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+  LLM_MODEL: deepseek-v4-pro
+  LLM_API_KEY: ""
+  LLM_IS_THINKING_MODEL: true
+  LLM_THINKING_ENABLED: true
+
+intent_model:
+  INTENT_MODEL_ENABLED: true
+  INTENT_MODEL_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+  INTENT_MODEL: qwen3-8b
+  INTENT_MODEL_API_KEY: ""
+
+embedding:
+  EMBEDDING_BASE_URL: http://127.0.0.1:8001/v1/embeddings
+  EMBEDDING_MODEL: bge-local
+  EMBEDDING_MODEL_TYPE: remote
+  EMBEDDING_API_URL: http://127.0.0.1:8001/v1/embeddings
+  EMBEDDING_API_MODEL: bge-local
+  HIGHTHINKINGQA_EMBEDDING_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+  HIGHTHINKINGQA_EMBEDDING_MODEL: text-embedding-v4
+  HIGHTHINKINGQA_EMBEDDING_DIMENSIONS: 2048
+  HIGHTHINKINGQA_EMBEDDING_API_KEY: ""
+
+rerank:
+  RERANK_PROVIDER: local
+  RERANK_BASE_URL: http://localhost:8084
+  RERANK_MODEL: qwen3-vl-rerank
+
+auth:
+  QA_ANONYMOUS_ASK_ENABLED: 1
+  HIGHTHINKINGQA_ANONYMOUS_ASK_ENABLED: 1
+  JWT_SECRET: ""
+  PUBLIC_SERVICE_INTERNAL_AUTH_TOKEN: ""
+  GATEWAY_ADMISSION_CONTROL_TOKEN: ""
+
+gateway:
+  GATEWAY_GUNICORN_WORKERS: 4
+  GATEWAY_REFRESH_SURVIVABLE_QA_TASKS_ENABLED: 1
+  GATEWAY_ADMISSION_ENABLED: 1
+  GATEWAY_ADMISSION_DISPATCHER_ENABLED: 1
+  GATEWAY_ADMISSION_WORKER_ENABLED: 1
+
+public_service:
+  PUBLIC_SERVICE_GUNICORN_WORKERS: 4
+  VECTOR_COLLECTION_NAME: lfp_papers
+  VECTOR_DB_PATH: vector_database
+  UPLOAD_DIR: uploads
+  PAPERS_DIR: papers
+  CHAT_JSON_BASE_DIR: data/conversations
+
+fastqa:
+  FASTQA_GRAPH_KB_ENABLED: 0
+  FASTQA_GENERATION_RUNTIME_ENABLED: 1
+  VECTOR_DB_PATH: resource/fastqa/vector_database
+  VECTOR_DB_MD_PATH: resource/fastqa/vector_database_md
+  TOPIC_INDEX_PATH: ../resource/fastqa/vector_db_topic_index.json
+  QA_PIPELINE_CACHE_ENABLED: 0
+
+high_thinking:
+  CHROMA_COLLECTION_NAME: lfp_papers
+  CHROMA_PERSIST_DIR: ../../../highThinkingQA/vectordb
+
+patent:
+  PATENT_GRAPH_KB_ENABLED: true
+  PATENT_OPENAI_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+  PATENT_OPENAI_MODEL: deepseek-v3.1
+  PATENT_OPENAI_API_KEY: ""
+  PATENT_OPENAI_USE_SHARED_ENV: 0

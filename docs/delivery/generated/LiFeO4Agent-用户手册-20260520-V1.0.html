@@ -1,0 +1,402 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LiFeO4Agent-用户手册-20260520-V1.0</title>
+
+<style>
+@page {
+  size: A4 portrait;
+  margin: 2.54cm 2.54cm 2.54cm 2.54cm;
+}
+body {
+  font-family: SimSun, "宋体", "Times New Roman", serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: #000;
+  text-align: justify;
+}
+.cover {
+  text-align: center;
+  page-break-after: always;
+  padding-top: 4.5cm;
+}
+.cover .system {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 0.8cm;
+}
+.cover .doc-title {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 22pt;
+  font-weight: bold;
+  margin-bottom: 3cm;
+}
+.cover .meta {
+  font-size: 10.5pt;
+  line-height: 1.8;
+}
+h1 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 16pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h2 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h3 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 10.5pt;
+  font-weight: bold;
+  margin: 6pt 0 3pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+p {
+  margin: 0 0 6pt 0;
+  text-indent: 2em;
+}
+.no-indent,
+table p,
+li p {
+  text-indent: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6pt 0;
+  font-size: 10.5pt;
+  page-break-inside: auto;
+}
+th, td {
+  border: 0.5pt solid #000;
+  padding: 4pt 5pt;
+  vertical-align: middle;
+}
+th {
+  background: #eeeeee;
+  font-weight: bold;
+  text-align: center;
+}
+td.center {
+  text-align: center;
+}
+td.left {
+  text-align: left;
+}
+pre {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.2;
+  background: #f2f2f2;
+  border: 0.5pt solid #cccccc;
+  padding: 6pt;
+  margin: 3pt 0 6pt 0;
+  white-space: pre-wrap;
+}
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+}
+ol, ul {
+  margin-top: 0;
+  margin-bottom: 6pt;
+}
+li {
+  margin-bottom: 3pt;
+}
+.version-table td,
+.version-table th {
+  text-align: center;
+}
+.note {
+  border-left: 3pt solid #999;
+  padding-left: 8pt;
+  margin: 6pt 0;
+}
+.page-break {
+  page-break-before: always;
+}
+.diagram {
+  border: 0.75pt solid #777;
+  background: #fafafa;
+  margin: 8pt 0 10pt 0;
+  padding: 8pt;
+  font-family: SimSun, "宋体", serif;
+}
+.diagram-title {
+  font-family: SimHei, "黑体", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 6pt;
+}
+.diagram pre {
+  border: 0;
+  background: transparent;
+  margin: 0;
+}
+.mermaid {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.25;
+  background: #f7f7f7;
+  border: 0.5pt solid #bfbfbf;
+  padding: 6pt;
+  white-space: pre-wrap;
+}
+</style>
+
+</head>
+<body>
+<div class="cover">
+  <div class="system">LiFeO4Agent</div>
+  <div class="doc-title">用户手册</div>
+  <div class="meta">
+    <div>文档版本：V1.0</div>
+    <div>文档日期：2026/05/20</div>
+    <div>适用环境：LiFeO4Agent Web 使用环境</div>
+    <div>文档对象：最终用户、系统管理员</div>
+  </div>
+</div>
+<h1>版本记录</h1>
+<table class="version-table">
+  <tr><th>版本</th><th>日期</th><th>修订人</th><th>修订说明</th></tr>
+  <tr><td>V1.0</td><td>2026/05/20</td><td>项目组</td><td>初版</td></tr>
+</table>
+
+<h1>1 文档说明</h1>
+<p>本文档面向 LiFeO4Agent 最终用户和管理员，说明如何注册、登录、使用问答功能、上传文件、查看原文、管理用户和处理常见问题。本文档不要求用户了解 Docker、MinIO、Neo4j 或部署细节。</p>
+
+<h1>2 用户注册</h1>
+<h2>2.1 操作入口</h2>
+<p>在浏览器访问系统地址，进入登录页后点击“注册账号”。</p>
+<div class="diagram">
+  <div class="diagram-title">图 1 注册入口界面示意图</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-用户手册-20260520-V1.0-diagram-01.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<h2>2.2 注册步骤</h2>
+<ol>
+  <li>点击“注册账号”，进入注册页。</li>
+  <li>填写用户名。用户名长度为 3 到 50 个字符，不能以 <code>admin</code> 开头。</li>
+  <li>填写密码并再次确认密码。</li>
+  <li>填写姓名、工号和校验码。该信息需要与管理员维护的人员记录一致。</li>
+  <li>点击提交。</li>
+  <li>页面提示注册成功后返回登录页。</li>
+</ol>
+<h2>2.3 预期结果</h2>
+<p>注册成功后，用户账号处于可登录状态，部门信息由人员记录自动带出。注册失败时，页面会提示用户名重复、人员信息不匹配、校验码错误或密码不符合要求。</p>
+
+<h1>3 登录和个人中心</h1>
+<h2>3.1 登录步骤</h2>
+<ol>
+  <li>打开系统地址。</li>
+  <li>输入用户名和密码。</li>
+  <li>点击“登录”。</li>
+  <li>普通用户进入问答首页，管理员进入管理后台。</li>
+</ol>
+<h2>3.2 首次登录</h2>
+<p>首次登录时，系统可能要求修改密码、设置安全问题或补全人员信息。用户应按页面提示进入个人中心完成设置，完成后才能正常使用全部功能。</p>
+<h2>3.3 个人中心</h2>
+<table>
+  <tr><th>功能</th><th>入口</th><th>操作说明</th></tr>
+  <tr><td>修改用户名</td><td>个人中心</td><td>输入新用户名并保存。</td></tr>
+  <tr><td>修改密码</td><td>个人中心</td><td>输入旧密码和新密码。</td></tr>
+  <tr><td>设置安全问题</td><td>个人中心</td><td>设置用于找回密码的问题和答案。</td></tr>
+  <tr><td>绑定人员信息</td><td>个人中心</td><td>输入工号、姓名和校验码。</td></tr>
+</table>
+
+<h1>4 问答首页操作说明</h1>
+<div class="diagram">
+  <div class="diagram-title">图 2 问答首页区域示意图</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-用户手册-20260520-V1.0-diagram-02.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<table>
+  <tr><th>区域</th><th>作用</th></tr>
+  <tr><td>会话列表</td><td>新建、切换、置顶或删除会话。</td></tr>
+  <tr><td>文件列表</td><td>查看本会话上传文件，选择本轮问答使用哪些文件。</td></tr>
+  <tr><td>消息区</td><td>查看问题、回答、阶段、引用和错误提示。</td></tr>
+  <tr><td>问题大纲</td><td>长对话中快速跳转到历史问题。</td></tr>
+  <tr><td>输入区</td><td>选择问答模式、上传文件并发送问题。</td></tr>
+</table>
+
+<h1>5 文献问答</h1>
+<h2>5.1 操作入口</h2>
+<p>在首页底部模式选择中点击“文献”。</p>
+<h2>5.2 操作步骤</h2>
+<ol>
+  <li>选择“文献”模式。</li>
+  <li>输入与论文、材料性能、工艺、实验结论相关的问题。</li>
+  <li>点击发送。</li>
+  <li>等待系统完成检索、重排和生成。</li>
+  <li>查看回答中的引用和原文入口。</li>
+</ol>
+<h2>5.3 预期结果</h2>
+<p>系统返回结构化回答，并展示引用文献。用户可点击引用或原文入口核对 PDF。</p>
+
+<h1>6 深度问答</h1>
+<h2>6.1 操作入口</h2>
+<p>在首页底部模式选择中点击“深度”。</p>
+<h2>6.2 适用场景</h2>
+<p>深度问答适合复杂分析、技术路线比较、原因归纳和方案建议。该模式通常比文献模式耗时更长。</p>
+<h2>6.3 操作步骤</h2>
+<ol>
+  <li>选择“深度”模式。</li>
+  <li>输入问题，并尽量说明目标、约束和期望输出格式。</li>
+  <li>点击发送。</li>
+  <li>观察阶段进度，等待回答完成。</li>
+</ol>
+
+<h1>7 专利问答</h1>
+<h2>7.1 操作入口</h2>
+<p>在首页底部模式选择中点击“专利”。</p>
+<h2>7.2 操作步骤</h2>
+<ol>
+  <li>选择“专利”模式。</li>
+  <li>输入专利号、申请人、材料体系、技术方向或具体问题。</li>
+  <li>如需要表格数据，可在问题中说明“读取专利表格”。</li>
+  <li>点击发送。</li>
+  <li>查看专利引用、图谱分析、tables 和原文入口。</li>
+</ol>
+<h2>7.3 预期结果</h2>
+<p>系统返回专利相关回答，并可提供专利原文、结构化表格或图谱增强信息。</p>
+
+<h1>8 文件问答</h1>
+<h2>8.1 上传文件</h2>
+<ol>
+  <li>在问答首页点击上传按钮。</li>
+  <li>选择 PDF、Excel 或 CSV 文件。</li>
+  <li>等待上传完成，文件出现在会话文件列表中。</li>
+  <li>勾选需要参与本轮问答的文件。</li>
+  <li>输入问题并发送。</li>
+</ol>
+<h2>8.2 预期结果</h2>
+<p>系统会结合选中的文件回答问题。若没有勾选文件，则系统按普通知识库问答处理。</p>
+<h2>8.3 注意事项</h2>
+<ul>
+  <li>上传过程中不要刷新页面。</li>
+  <li>如果回答与文件无关，先检查本轮是否勾选了正确文件。</li>
+  <li>Excel 和 CSV 适合表格统计、字段解释和对比分析。</li>
+</ul>
+
+<h1>9 管理后台操作说明</h1>
+<h2>9.1 用户管理</h2>
+<ol>
+  <li>管理员登录后进入 <code>/admin</code>。</li>
+  <li>切换到用户管理页签。</li>
+  <li>可新增用户、停用用户、重置密码、修改用户类型或绑定人员。</li>
+  <li>操作完成后，页面刷新列表并显示结果。</li>
+</ol>
+<h2>9.2 部门管理</h2>
+<p>管理员可维护一级、二级、三级部门。系统初始包含“电池材料技术研究中心”及其下属部门。</p>
+<h2>9.3 人员管理</h2>
+<p>管理员维护工号、姓名、校验码和部门。普通用户注册或绑定人员信息时，会使用这些记录进行校验。</p>
+<h2>9.4 配额管理</h2>
+<p>管理员可配置普通问答、文件问答、查看原文和文档辅助配额。当用户配额不足时，页面会提示用户联系管理员。</p>
+
+<h1>10 常见问题</h1>
+<table>
+  <tr><th>问题</th><th>处理方法</th></tr>
+  <tr><td>登录失败怎么办？</td><td>检查用户名和密码；若账号停用或忘记密码，请联系管理员。</td></tr>
+  <tr><td>注册提示人员信息不匹配？</td><td>联系管理员确认工号、姓名和校验码是否正确。</td></tr>
+  <tr><td>为什么登录后跳到个人中心？</td><td>说明需要完成首次登录设置、修改密码、安全问题或人员绑定。</td></tr>
+  <tr><td>问答提示配额不足？</td><td>联系管理员调整配额，或等待配额周期刷新。</td></tr>
+  <tr><td>原文打不开？</td><td>稍后重试；仍失败时联系运维检查对象存储。</td></tr>
+  <tr><td>回答较慢？</td><td>深度问答、专利图谱和大模型生成可能耗时较长，可缩小问题范围。</td></tr>
+</table>
+
+
+<h1>11 会话管理</h1>
+<h2>11.1 新建会话</h2>
+<ol>
+  <li>在左侧会话栏点击“新建会话”。</li>
+  <li>系统创建空会话，并切换到该会话。</li>
+  <li>选择问答模式，输入问题后发送。</li>
+</ol>
+<p>预期结果：新会话显示在会话列表中，第一条问题发送后会话标题自动生成或可手动修改。</p>
+<h2>11.2 切换和删除会话</h2>
+<table>
+  <tr><th>操作</th><th>步骤</th><th>预期结果</th></tr>
+  <tr><td>切换会话</td><td>点击左侧历史会话。</td><td>中间区域加载该会话消息和文件。</td></tr>
+  <tr><td>修改标题</td><td>点击标题编辑入口，输入新标题。</td><td>会话列表显示新标题。</td></tr>
+  <tr><td>删除会话</td><td>点击删除并确认。</td><td>会话从列表移除，历史消息不可再查看。</td></tr>
+  <tr><td>查看文件</td><td>展开会话文件区域。</td><td>显示该会话上传的 PDF、Excel 或 CSV。</td></tr>
+</table>
+
+<h1>12 阶段进度和引用查看</h1>
+<p>问答过程中，页面会展示阶段进度和耗时。不同模式展示的阶段略有差异，常见阶段包括意图识别、查询扩展、向量检索、图谱查询、重排、答案生成和引用整理。</p>
+<div class="diagram">
+  <div class="diagram-title">图 3 问答阶段展示流程</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-用户手册-20260520-V1.0-diagram-03.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<table>
+  <tr><th>页面元素</th><th>含义</th><th>用户操作</th></tr>
+  <tr><td>阶段名称</td><td>当前正在执行的处理步骤。</td><td>一般无需操作，可用于判断耗时来源。</td></tr>
+  <tr><td>阶段耗时</td><td>该步骤使用的时间。</td><td>若长期卡住，可刷新或联系管理员。</td></tr>
+  <tr><td>引用卡片</td><td>回答使用的论文、专利或文件片段。</td><td>点击查看来源详情。</td></tr>
+  <tr><td>原文按钮</td><td>打开论文或专利 PDF。</td><td>用于核对出处。</td></tr>
+  <tr><td>错误提示</td><td>本次问答失败原因。</td><td>按提示重试或联系管理员。</td></tr>
+</table>
+
+<h1>13 原文查看</h1>
+<h2>13.1 论文原文</h2>
+<ol>
+  <li>在回答引用中找到论文引用。</li>
+  <li>点击“查看原文”或 PDF 入口。</li>
+  <li>浏览器打开 PDF 预览或下载。</li>
+</ol>
+<h2>13.2 专利原文和 tables</h2>
+<ol>
+  <li>在专利回答中查看专利引用。</li>
+  <li>点击专利原文入口查看 PDF 或图片。</li>
+  <li>如回答中展示结构化表格，可根据表格标题和字段核对专利 tables。</li>
+</ol>
+<p>原文打不开通常不是账号问题，可能是对象存储正在导入、对象路径缺失或浏览器阻止弹窗。用户可先重新登录再试，仍失败时联系管理员。</p>
+
+<h1>14 管理员详细操作</h1>
+<h2>14.1 新增用户</h2>
+<ol>
+  <li>进入管理后台，选择“用户管理”。</li>
+  <li>点击新增用户，填写用户名、用户类型、初始密码和人员绑定信息。</li>
+  <li>保存后在列表中确认用户状态为启用。</li>
+  <li>通知用户首次登录后修改密码和设置安全问题。</li>
+</ol>
+<h2>14.2 批量导入人员</h2>
+<ol>
+  <li>进入“人员管理”。</li>
+  <li>点击下载导入模板。</li>
+  <li>按模板填写工号、姓名、部门和校验码。</li>
+  <li>上传模板文件。</li>
+  <li>查看导入结果，处理失败行。</li>
+</ol>
+<h2>14.3 配额调整</h2>
+<ol>
+  <li>进入管理后台的配额页签。</li>
+  <li>查看系统默认配额和用户当前用量。</li>
+  <li>修改普通问答、文件问答、查看原文或文档辅助配额。</li>
+  <li>如某个用户需要立即恢复额度，使用用户配额重置功能。</li>
+</ol>
+<div class="diagram">
+  <div class="diagram-title">图 4 管理员配额处理流程</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-用户手册-20260520-V1.0-diagram-04.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+
+<h1>15 用户问题建议写法</h1>
+<table>
+  <tr><th>模式</th><th>推荐写法</th><th>说明</th></tr>
+  <tr><td>文献</td><td>“请总结磷酸铁锂低温性能提升相关文献的主要方法，并列出引用。”</td><td>适合查论文结论和引用。</td></tr>
+  <tr><td>深度</td><td>“请从材料、工艺和电芯设计角度分析该问题，并给出优先级建议。”</td><td>适合复杂分析。</td></tr>
+  <tr><td>专利</td><td>“检索磷酸铁锂包覆改性相关专利，关注申请人、技术路线和表格数据。”</td><td>适合专利检索和对比。</td></tr>
+  <tr><td>文件</td><td>“基于我上传的 Excel，统计不同样品的容量保持率并解释异常值。”</td><td>适合用户自带文件分析。</td></tr>
+</table>
+
+</body>
+</html>

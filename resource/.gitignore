@@ -1,0 +1,17 @@
+# Keep the directory shape, ignore mutable contents.
+*
+!README.md
+!.gitignore
+!config/
+!config/**
+config/**/*.secret.env
+config/**/config.secret.env
+config/system.yaml
+config/system.generated.env
+config/services/patent/config.shared.env
+!assets/
+!assets/**
+!mounts/
+!mounts/**
+!scripts/
+!scripts/**

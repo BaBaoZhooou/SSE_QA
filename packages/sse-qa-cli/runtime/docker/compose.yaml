@@ -1,0 +1,62 @@
+# SSE QA lite stack — Redis + fastQA + highThinkingQA (no gateway)
+
+services:
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--requirepass", "123456"]
+    ports:
+      - "${REDIS_PORT:-16380}:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "123456", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  fastqa:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.fastqa
+    image: sse-qa-fastqa:${SSE_QA_VERSION:-0.2.0}
+    env_file:
+      - ${SSE_QA_CONFIG_HOME}/runtime/docker.env
+    environment:
+      SYSTEM_YAML: /app/runtime/system.agent.yaml
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      FASTQA_NEO4J_URL: ${FASTQA_NEO4J_URL:-bolt://host.docker.internal:7698}
+      VECTOR_DB_PATH: /data/chroma/fastqa
+      VECTOR_DB_MD_PATH: /data/chroma/fastqa_md
+    volumes:
+      - ${SSE_QA_CONFIG_HOME}/runtime/system.agent.yaml:/app/runtime/system.agent.yaml:ro
+      - ${SSE_QA_CONFIG_HOME}/runtime/system.env:/app/runtime/system.env:ro
+      - ${CHROMA_FASTQA_HOST_PATH}:/data/chroma/fastqa:ro
+      - ${CHROMA_FASTQA_MD_HOST_PATH}:/data/chroma/fastqa_md:ro
+    ports:
+      - "${FASTQA_PORT:-18018}:18018"
+    depends_on:
+      redis:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  thinking:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.thinking
+    image: sse-qa-thinking:${SSE_QA_VERSION:-0.2.0}
+    env_file:
+      - ${SSE_QA_CONFIG_HOME}/runtime/docker.env
+    environment:
+      SYSTEM_YAML: /app/runtime/system.agent.yaml
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      CHROMA_PERSIST_DIR: /data/chroma/thinking
+    volumes:
+      - ${SSE_QA_CONFIG_HOME}/runtime/system.agent.yaml:/app/runtime/system.agent.yaml:ro
+      - ${SSE_QA_CONFIG_HOME}/runtime/system.env:/app/runtime/system.env:ro
+      - ${CHROMA_THINKING_HOST_PATH}:/data/chroma/thinking:ro
+    ports:
+      - "${HIGHTHINKINGQA_PORT:-18019}:18019"
+    depends_on:
+      redis:
+        condition: service_healthy

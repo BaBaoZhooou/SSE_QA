@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "sse-qa": {
+      "command": "npx",
+      "args": ["-y", "@sse-qa/cli", "mcp", "--auto-start"],
+      "env": {
+        "SSE_QA_AUTO_START": "1"
+      }
+    }
+  }
+}

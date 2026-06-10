@@ -1,0 +1,142 @@
+# 固态电解质 QA — Agent-only 配置模板（无 MySQL、无 public-service、无前端）
+#
+# 用法：
+#   cp config/system.agent.yaml.example config/system.agent.yaml
+#   编辑 LLM_API_KEY、INTENT_MODEL_API_KEY、Redis 等
+#   bash scripts/start_agent_all.sh
+#
+# 目标：
+# - 仅启动 gateway + fastQA + highThinkingQA（默认不启 patent）
+# - 匿名问答，供 Claude/Codex/Cursor MCP 调用
+# - 向量库 / Neo4j 使用占位路径，待后续 ingest
+
+agent:
+  # 启动哪些后端（不含 patent 时不启动专利服务）
+  QA_SERVICES: "fastQA highThinkingQA gateway"
+  # Gateway / CLI / MCP 可代理的问答支线
+  QA_ENABLED_MODES: fast,thinking
+  QA_PATENT_ENABLED: 0
+  SSE_QA_ENABLED_MODES: fast,thinking
+
+_meta:
+  stack: agent
+  domain: solid_state_electrolyte
+
+ports:
+  GATEWAY_PORT: 18201
+  FASTQA_PORT: 18018
+  FASTQA_FASTAPI_PORT: 18018
+  HIGHTHINKINGQA_PORT: 18019
+  PATENT_PORT: 18020
+
+backends:
+  FAST_BACKEND_BASE_URL: http://127.0.0.1:18018
+  THINKING_BACKEND_BASE_URL: http://127.0.0.1:18019
+  PATENT_BACKEND_BASE_URL: http://127.0.0.1:18020
+
+redis:
+  REDIS_HOST: 127.0.0.1
+  REDIS_PORT: 16380
+  REDIS_DB: 0
+  REDIS_PASSWORD: "123456"
+  REDIS_ENABLED: 1
+  PATENT_REDIS_KEY_PREFIX: sse-patent
+
+storage:
+  STORAGE_BACKEND: local
+  LOCAL_STORAGE_ROOT: resource/sse/storage
+  QA_ORIGINAL_MINIO_ONLY: false
+  PATENT_ORIGINAL_MINIO_ONLY: false
+
+neo4j:
+  # SSE 文献知识图谱（先运行 scripts/知识图谱/start_neo4j_kg.sh 建库导入）
+  FASTQA_NEO4J_URL: bolt://127.0.0.1:7698
+  FASTQA_NEO4J_USERNAME: neo4j
+  FASTQA_NEO4J_PASSWORD: sse-kg-password
+  FASTQA_NEO4J_DATABASE: neo4j
+  FASTQA_GRAPH_KB_ENABLED: 1
+  FASTQA_GRAPH_KB_SCHEMA: sse
+  FASTQA_GRAPH_KB_V2_ENABLED: 1
+  FASTQA_GRAPH_KB_RAG_INJECTION_ENABLED: 1
+  FASTQA_GRAPH_KB_TIMEOUT_MS: 8000
+  PATENT_NEO4J_URL: bolt://127.0.0.1:8698
+  PATENT_NEO4J_USERNAME: neo4j
+  PATENT_NEO4J_PASSWORD: ""
+  PATENT_NEO4J_DATABASE: neo4j
+
+llm:
+  LLM_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+  LLM_MODEL: deepseek-v4-pro
+  LLM_API_KEY: ""
+  LLM_IS_THINKING_MODEL: true
+  LLM_THINKING_ENABLED: true
+
+intent_model:
+  INTENT_MODEL_ENABLED: true
+  INTENT_MODEL_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+  INTENT_MODEL: qwen3-8b
+  INTENT_MODEL_API_KEY: ""
+
+embedding:
+  EMBEDDING_BASE_URL: http://127.0.0.1:8001/v1/embeddings
+  EMBEDDING_MODEL: bge-local
+  EMBEDDING_MODEL_TYPE: remote
+  HIGHTHINKINGQA_EMBEDDING_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+  HIGHTHINKINGQA_EMBEDDING_MODEL: text-embedding-v4
+  HIGHTHINKINGQA_EMBEDDING_DIMENSIONS: 2048
+  HIGHTHINKINGQA_EMBEDDING_API_KEY: ""
+
+rerank:
+  RERANK_PROVIDER: local
+  RERANK_BASE_URL: http://localhost:8084
+  RERANK_MODEL: qwen3-vl-rerank
+
+auth:
+  QA_ANONYMOUS_ASK_ENABLED: 1
+  HIGHTHINKINGQA_ANONYMOUS_ASK_ENABLED: 1
+
+gateway:
+  GATEWAY_GUNICORN_WORKERS: 2
+  GATEWAY_REFRESH_SURVIVABLE_QA_TASKS_ENABLED: 0
+  GATEWAY_ADMISSION_ENABLED: 1
+  GATEWAY_ADMISSION_DISPATCHER_ENABLED: 1
+  GATEWAY_ADMISSION_WORKER_ENABLED: 1
+  # 控制 gateway 可代理的问答支线（与 agent.QA_ENABLED_MODES / SSE_QA_ENABLED_MODES 保持一致）
+  QA_ENABLED_MODES: fast,thinking
+  QA_PATENT_ENABLED: 0
+  # 也可单独开关：QA_FAST_ENABLED / QA_THINKING_ENABLED / QA_PATENT_ENABLED
+
+fastqa:
+  FASTQA_GRAPH_KB_ENABLED: 1
+  FASTQA_GRAPH_KB_SCHEMA: sse
+  FASTQA_GRAPH_KB_V2_ENABLED: 1
+  FASTQA_GRAPH_KB_RAG_INJECTION_ENABLED: 1
+  FASTQA_GRAPH_KB_TIMEOUT_MS: 8000
+  FASTQA_NEO4J_URL: bolt://127.0.0.1:7698
+  FASTQA_NEO4J_USERNAME: neo4j
+  FASTQA_NEO4J_PASSWORD: sse-kg-password
+  FASTQA_GENERATION_RUNTIME_ENABLED: 1
+  FASTQA_PROMPTS_DIR: prompts
+  VECTOR_DB_PATH: resource/sse/fastqa/vector_database
+  VECTOR_DB_MD_PATH: resource/sse/fastqa/vector_database_md
+  TOPIC_INDEX_PATH: resource/sse/fastqa/vector_db_topic_index.json
+  QA_PIPELINE_CACHE_ENABLED: 0
+
+high_thinking:
+  CHROMA_COLLECTION_NAME: sse_literature
+  CHROMA_PERSIST_DIR: resource/sse/highThinkingQA/vectordb
+  CONVERSATION_EXECUTION_AUTHORITY_TARGET: legacy
+  CONVERSATION_ASSISTANT_WRITE_TARGET: legacy
+  PROMPTS_DIR: prompts
+
+patent:
+  # 专利支线默认关闭：不启动服务时也不会做专利向量/图谱检索
+  PATENT_SERVICE_ENABLED: 0
+  PATENT_GRAPH_KB_ENABLED: false
+  PATENT_DURABLE_MODE_ENABLED: 0
+  PATENT_DURABLE_AUTHORITY_ENABLED: 0
+  PATENT_OPENAI_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+  PATENT_OPENAI_MODEL: deepseek-v3.1
+  PATENT_OPENAI_API_KEY: ""
+  PATENT_OPENAI_USE_SHARED_ENV: 0
+  PATENT_CHROMA_PERSIST_DIR: resource/sse/patent/vectordb

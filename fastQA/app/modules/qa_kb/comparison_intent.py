@@ -1,0 +1,444 @@
+from __future__ import annotations
+
+import re
+import json
+from typing import Any
+
+from app.core.prompt_loader import load_prompt_template
+from app.integrations.llm.thinking import LLM_STAGE_CONTROL, merge_extra_body, resolve_thinking_controls
+
+
+_DEFAULT_DIMENSIONS = ["成本", "储存稳定性", "反应路径", "还原需求", "杂质风险", "电化学表现"]
+
+_ALIAS_TABLE: dict[str, list[str]] = {
+    "LLZO": ["Li7La3Zr2O12", "garnet", "石榴石"],
+    "LGPS": ["Li10GeP2S12", "硫化物电解质"],
+    "Li6PS5Cl": ["LPSCl", "argyrodite", "银辉石"],
+    "PEO": ["聚环氧乙烷", "polyethylene oxide", "聚合物电解质"],
+    "LAGP": ["Li1.5Al0.5Ge1.5(PO4)3", "NASICON"],
+    "LATP": ["Li1.3Al0.3Ti1.7(PO4)3", "NASICON"],
+    "硫化物电解质": ["sulfide electrolyte", "sulfide SSE"],
+    "氧化物电解质": ["oxide electrolyte", "oxide SSE"],
+    "聚合物电解质": ["polymer electrolyte", "SPE"],
+    "固相法": ["solid-state", "solid state synthesis"],
+    "球磨": ["ball milling", "mechanical milling"],
+    "烧结": ["sintering", "densification"],
+    "界面层": ["interlayer", "buffer layer", "interface modification"],
+}
+
+_AVOID_CONFUSIONS: dict[str, list[str]] = {
+    "液态电解质": ["固态电解质"],
+    "隔膜": ["固态电解质"],
+}
+
+_COMPARISON_TRIGGERS = (
+    "优劣势",
+    "优缺点",
+    "优势",
+    "劣势",
+    "区别",
+    "差异",
+    "对比",
+    "比较",
+    "分别",
+    "各有什么",
+    "适用什么场景",
+)
+
+_CONTEXT_WORDS = (
+    "固态电解质",
+    "SSE",
+    "全固态电池",
+    "硫化物",
+    "氧化物",
+    "聚合物",
+    "离子电导率",
+    "界面",
+    "LLZO",
+    "LGPS",
+    "Li6PS5Cl",
+    "制备",
+    "烧结",
+    "球磨",
+)
+
+def _comparison_retrieval_profile_prompt() -> str:
+    return load_prompt_template("comparison_retrieval_profile.txt")
+
+
+def _dedupe(values: list[str]) -> list[str]:
+    ordered: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        text = str(value or "").strip()
+        if not text or text in seen:
+            continue
+        seen.add(text)
+        ordered.append(text)
+    return ordered
+
+
+def _clean_string_list(values: Any, *, limit: int = 12) -> list[str]:
+    if not isinstance(values, list):
+        return []
+    return _dedupe([str(item).strip() for item in values if str(item).strip()])[:limit]
+
+
+def _extract_json_object(text: str) -> dict[str, Any]:
+    raw = str(text or "").strip()
+    start = raw.find("{")
+    end = raw.rfind("}")
+    if start == -1 or end == -1 or end < start:
+        return {}
+    try:
+        data = json.loads(raw[start : end + 1])
+    except Exception:
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _is_comparison_question(question: str) -> bool:
+    text = str(question or "")
+    if not text:
+        return False
+    if not any(trigger in text for trigger in _COMPARISON_TRIGGERS):
+        return False
+    return "、" in text or "，" in text or "," in text or "和" in text
+
+
+def _strip_object_noise(value: str) -> str:
+    text = str(value or "").strip(" ？?，,。；;：:")
+    text = re.sub(r"^(以|用|采用|基于)", "", text)
+    text = re.sub(r"(为原料|作为原料|作为碳源|作为还原剂|制备.*|各有什么.*|有什么.*|的.*)$", "", text)
+    text = text.strip(" ？?，,。；;：:")
+    return text
+
+
+def _extract_known_objects(question: str) -> list[str]:
+    text = str(question or "")
+    positions: list[tuple[int, str]] = []
+    for label in _ALIAS_TABLE:
+        index = text.find(label)
+        if index >= 0:
+            positions.append((index, label))
+    positions.sort(key=lambda item: item[0])
+    labels = [label for _, label in positions]
+    return _dedupe(labels)
+
+
+def _extract_delimited_objects(question: str) -> list[str]:
+    text = str(question or "")
+    prefix_match = re.search(r"(?:以|用|采用|基于)?(.+?)(?:各有什么|有什么区别|有什么差异|进行对比|对比|比较)", text)
+    segment = prefix_match.group(1) if prefix_match else text
+    raw_parts = re.split(r"[、,/，]|和", segment)
+    candidates: list[str] = []
+    for part in raw_parts:
+        cleaned = _strip_object_noise(part)
+        if not cleaned or len(cleaned) > 12:
+            continue
+        if cleaned in _CONTEXT_WORDS:
+            continue
+        if any(word in cleaned for word in ("问题", "过程中")):
+            continue
+        candidates.append(cleaned)
+    return _dedupe(candidates)
+
+
+def _extract_objects(question: str) -> list[str]:
+    known = _extract_known_objects(question)
+    if len(known) >= 2:
+        return known
+    delimited = _extract_delimited_objects(question)
+    if len(delimited) >= 2:
+        return delimited
+    return known
+
+
+def _extract_context_keywords(question: str, retrieval_claims: list[dict[str, Any]]) -> list[str]:
+    keywords: list[str] = []
+    text = str(question or "")
+    for word in _CONTEXT_WORDS:
+        if word in text:
+            keywords.append(word)
+    for claim in retrieval_claims:
+        if not isinstance(claim, dict):
+            continue
+        keywords.extend(str(item).strip() for item in list(claim.get("keywords") or []) if str(item).strip())
+    return _dedupe(keywords)
+
+
+def _question_focus_axes_and_meta(
+    stage1_result: dict[str, Any] | None,
+) -> tuple[list[str], str, str]:
+    """Return (deduped axes from Stage1 question_focus, focus_type, trimmed focus_summary)."""
+
+    if not isinstance(stage1_result, dict):
+        return [], "generic", ""
+
+    qf = stage1_result.get("question_focus")
+    if not isinstance(qf, dict):
+        return [], "generic", ""
+
+    axes: list[str] = []
+    for key in ("evidence_axes", "secondary_axes"):
+        inner = qf.get(key)
+        if not isinstance(inner, list):
+            continue
+        for item in inner:
+            t = str(item or "").strip()
+            if t:
+                axes.append(t)
+
+    axes = _dedupe(axes)
+    focus_raw = str(qf.get("focus_type") or "").strip().lower().replace(" ", "_")
+    focus_type = focus_raw if focus_raw else "generic"
+    summary = str(qf.get("focus_summary") or "").strip()
+    if len(summary) > 160:
+        summary = summary[:157].rsplit(maxsplit=1)[0].strip() + "…"
+
+    return axes, focus_type, summary
+
+
+def _resolved_comparison_dimensions(stage_axes: list[str]) -> list[str]:
+    """Prefer Stage1 evidence axes; fall back to defaults when Stage1 signal is thin."""
+
+    if len(stage_axes) >= 2:
+        return stage_axes[:8]
+    if len(stage_axes) == 1:
+        return _dedupe([stage_axes[0], *_DEFAULT_DIMENSIONS])[:8]
+    return list(_DEFAULT_DIMENSIONS)
+
+
+_DIM_PREVIEW_MAX = 4
+
+
+def _comparison_claim_for_object(
+    *,
+    label: str,
+    dimensions: list[str],
+    focus_type: str,
+) -> str:
+    """Claim text aligned with Stage1 focus_type and comparison dimensions (method A)."""
+
+    preview_dims = dimensions[:_DIM_PREVIEW_MAX]
+    dim_join = "、".join(preview_dims) if preview_dims else "制备与性能"
+
+    if focus_type == "mechanism_analysis":
+        return f"检索对比对象「{label}」在{dim_join}等方面的反应机理与工艺路径证据"
+    if focus_type == "comparative_tradeoff":
+        return f"对比对象「{label}」在{dim_join}上的差异、优劣与适用场景"
+    if focus_type == "electrochemical_performance":
+        return f"检索「{label}」在{dim_join}及电化学性能相关的证据片段"
+    if focus_type == "synthesis_preparation":
+        return f"检索「{label}」在{dim_join}及合成制备路线相关的论述"
+    if focus_type == "characterization":
+        return f"检索「{label}」在{dim_join}及表征与结构相关的证据"
+    if focus_type == "cost_scaleup":
+        return f"检索「{label}」在{dim_join}及成本与放大相关的论述"
+    if focus_type == "recycling_sustainability":
+        return f"检索「{label}」在{dim_join}及回收与可持续性相关的论述"
+    if focus_type == "density_metric_ambiguity":
+        return f"检索「{label}」在{dim_join}及粉体/电极密度口径相关的论述"
+    if focus_type == "powder_dense_morphology":
+        return f"检索「{label}」在{dim_join}及粉体形貌致密化相关的论述"
+    if focus_type == "electrode_compaction_process":
+        return f"检索「{label}」在{dim_join}及极片压实工艺相关的论述"
+    if focus_type == "carbon_coating_conductivity":
+        return f"检索「{label}」在{dim_join}及碳包覆导电网络相关的论述"
+    if focus_type == "doping_structure":
+        return f"检索「{label}」在{dim_join}及掺杂与结构演变相关的论述"
+    if focus_type == "safety_reliability":
+        return f"检索「{label}」在{dim_join}及安全性可靠性相关的论述"
+
+    return f"围绕当前问题检索「{label}」在{dim_join}方面的关键论述与证据"
+
+
+def build_comparison_plan(
+    question: str,
+    *,
+    stage1_result: dict[str, Any] | None = None,
+    retrieval_claims: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    claims = list(retrieval_claims or [])
+    if not claims and isinstance(stage1_result, dict):
+        raw_claims = stage1_result.get("retrieval_claims")
+        claims = [item for item in list(raw_claims or []) if isinstance(item, dict)]
+
+    objects = _extract_objects(question)
+    enabled = _is_comparison_question(question) and len(objects) >= 2
+    if not enabled:
+        return {"enabled": False, "task_type": "", "objects": [], "dimensions": [], "context_keywords": []}
+
+    plan_objects: list[dict[str, Any]] = []
+    for label in objects[:6]:
+        aliases = _ALIAS_TABLE.get(label, [])
+        must_include_any = _dedupe([label, *aliases])
+        plan_objects.append(
+            {
+                "label": label,
+                "aliases": list(aliases),
+                "must_include_any": must_include_any,
+                "avoid_confusions": list(_AVOID_CONFUSIONS.get(label, [])),
+            }
+        )
+
+    stage_axes, comparison_focus_type, comparison_focus_summary = _question_focus_axes_and_meta(stage1_result)
+    dimensions = _resolved_comparison_dimensions(stage_axes)
+
+    return {
+        "enabled": True,
+        "task_type": "multi_object_comparison",
+        "objects": plan_objects,
+        "dimensions": dimensions,
+        "comparison_focus_type": comparison_focus_type,
+        "comparison_focus_summary": comparison_focus_summary,
+        "context_keywords": _extract_context_keywords(question, claims),
+        "min_docs_per_object": 3,
+        "min_md_chunks_per_object": 2,
+    }
+
+
+def normalize_comparison_retrieval_profile(
+    *,
+    base_plan: dict[str, Any],
+    profile: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not isinstance(base_plan, dict) or not base_plan.get("enabled"):
+        return base_plan
+    if not isinstance(profile, dict) or not profile.get("enabled"):
+        return base_plan
+
+    by_label = {
+        str(item.get("label") or "").strip(): item
+        for item in list(profile.get("objects") or [])
+        if isinstance(item, dict) and str(item.get("label") or "").strip()
+    }
+    if not by_label:
+        return base_plan
+
+    next_plan = dict(base_plan)
+    next_objects: list[dict[str, Any]] = []
+    changed = False
+    for item in list(base_plan.get("objects") or []):
+        if not isinstance(item, dict):
+            continue
+        label = str(item.get("label") or "").strip()
+        merged = dict(item)
+        incoming = by_label.get(label)
+        if incoming:
+            aliases = _clean_string_list(incoming.get("aliases"), limit=12)
+            retrieval_queries = _clean_string_list(incoming.get("retrieval_queries"), limit=6)
+            must_include_any = _clean_string_list(incoming.get("must_include_any"), limit=12)
+            positive_context_terms = _clean_string_list(incoming.get("positive_context_terms"), limit=12)
+            negative_context_terms = _clean_string_list(incoming.get("negative_context_terms"), limit=12)
+            if aliases:
+                merged["aliases"] = _dedupe([*list(merged.get("aliases") or []), *aliases])
+            if retrieval_queries:
+                merged["retrieval_queries"] = retrieval_queries
+            if must_include_any:
+                merged["must_include_any"] = _dedupe([label, *must_include_any])
+            if positive_context_terms:
+                merged["positive_context_terms"] = positive_context_terms
+            if negative_context_terms:
+                merged["negative_context_terms"] = negative_context_terms
+            changed = True
+        next_objects.append(merged)
+    if not changed:
+        return base_plan
+    next_plan["objects"] = next_objects
+    next_plan["profile_source"] = "llm"
+    return next_plan
+
+
+def generate_comparison_retrieval_profile(
+    *,
+    user_question: str,
+    comparison_plan: dict[str, Any],
+    retrieval_claims: list[dict[str, Any]],
+    client: Any,
+    model: str,
+    logger: Any | None = None,
+) -> dict[str, Any]:
+    if not isinstance(comparison_plan, dict) or not comparison_plan.get("enabled"):
+        return comparison_plan
+    try:
+        controls = resolve_thinking_controls(
+            stage=LLM_STAGE_CONTROL,
+            max_tokens=1200,
+            stream=False,
+        )
+        response = client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": "你是严谨的 RAG 检索规划器，只输出 JSON。"},
+                {
+                    "role": "user",
+                    "content": _comparison_retrieval_profile_prompt().format(
+                        user_question=str(user_question or ""),
+                        comparison_plan=json.dumps(comparison_plan, ensure_ascii=False),
+                        retrieval_claims=json.dumps(retrieval_claims or [], ensure_ascii=False),
+                    ),
+                },
+            ],
+            temperature=0.1,
+            max_tokens=controls.max_tokens,
+            extra_body=merge_extra_body(None, controls),
+            stream=False,
+        )
+        raw = str(response.choices[0].message.content or "").strip()
+        profile = _extract_json_object(raw)
+        return normalize_comparison_retrieval_profile(base_plan=comparison_plan, profile=profile)
+    except Exception as exc:
+        if logger is not None:
+            try:
+                logger.warning("comparison retrieval profile generation failed: %s", exc)
+            except Exception:
+                pass
+        return comparison_plan
+
+
+def build_retrieval_claims_from_comparison_plan(plan: dict[str, Any]) -> list[dict[str, Any]]:
+    if not isinstance(plan, dict) or not plan.get("enabled"):
+        return []
+    context_keywords = [str(item).strip() for item in list(plan.get("context_keywords") or []) if str(item).strip()]
+    dimensions = [str(item).strip() for item in list(plan.get("dimensions") or []) if str(item).strip()]
+    focus_type = str(plan.get("comparison_focus_type") or "").strip().lower().replace(" ", "_") or "generic"
+    focus_summary = str(plan.get("comparison_focus_summary") or "").strip()
+    summary_kw = focus_summary if len(focus_summary) <= 48 else ""
+    claims: list[dict[str, Any]] = []
+    for item in list(plan.get("objects") or []):
+        if not isinstance(item, dict):
+            continue
+        label = str(item.get("label") or "").strip()
+        if not label:
+            continue
+        aliases = [str(alias).strip() for alias in list(item.get("aliases") or []) if str(alias).strip()]
+        retrieval_queries = [str(query).strip() for query in list(item.get("retrieval_queries") or []) if str(query).strip()]
+        positive_context_terms = [str(term).strip() for term in list(item.get("positive_context_terms") or []) if str(term).strip()]
+        negative_context_terms = [str(term).strip() for term in list(item.get("negative_context_terms") or []) if str(term).strip()]
+        kw_extra = [summary_kw] if summary_kw else []
+        keywords = _dedupe([*context_keywords, *kw_extra, label, *aliases, *dimensions])
+        claims.append(
+            {
+                "claim": _comparison_claim_for_object(label=label, dimensions=dimensions, focus_type=focus_type),
+                "query": retrieval_queries[0] if retrieval_queries else "",
+                "retrieval_queries": retrieval_queries,
+                "keywords": keywords,
+                "comparison_group": True,
+                "comparison_object": label,
+                "comparison_aliases": aliases,
+                "must_include_any": list(item.get("must_include_any") or [label]),
+                "avoid_confusions": list(item.get("avoid_confusions") or []),
+                "positive_context_terms": positive_context_terms,
+                "negative_context_terms": negative_context_terms,
+            }
+        )
+    return claims
+
+
+__all__ = [
+    "build_comparison_plan",
+    "build_retrieval_claims_from_comparison_plan",
+    "generate_comparison_retrieval_profile",
+    "normalize_comparison_retrieval_profile",
+]

@@ -1,0 +1,380 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LiFeO4Agent-开发文档-20260520-V1.0</title>
+
+<style>
+@page {
+  size: A4 portrait;
+  margin: 2.54cm 2.54cm 2.54cm 2.54cm;
+}
+body {
+  font-family: SimSun, "宋体", "Times New Roman", serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: #000;
+  text-align: justify;
+}
+.cover {
+  text-align: center;
+  page-break-after: always;
+  padding-top: 4.5cm;
+}
+.cover .system {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 0.8cm;
+}
+.cover .doc-title {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 22pt;
+  font-weight: bold;
+  margin-bottom: 3cm;
+}
+.cover .meta {
+  font-size: 10.5pt;
+  line-height: 1.8;
+}
+h1 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 16pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h2 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h3 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 10.5pt;
+  font-weight: bold;
+  margin: 6pt 0 3pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+p {
+  margin: 0 0 6pt 0;
+  text-indent: 2em;
+}
+.no-indent,
+table p,
+li p {
+  text-indent: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6pt 0;
+  font-size: 10.5pt;
+  page-break-inside: auto;
+}
+th, td {
+  border: 0.5pt solid #000;
+  padding: 4pt 5pt;
+  vertical-align: middle;
+}
+th {
+  background: #eeeeee;
+  font-weight: bold;
+  text-align: center;
+}
+td.center {
+  text-align: center;
+}
+td.left {
+  text-align: left;
+}
+pre {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.2;
+  background: #f2f2f2;
+  border: 0.5pt solid #cccccc;
+  padding: 6pt;
+  margin: 3pt 0 6pt 0;
+  white-space: pre-wrap;
+}
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+}
+ol, ul {
+  margin-top: 0;
+  margin-bottom: 6pt;
+}
+li {
+  margin-bottom: 3pt;
+}
+.version-table td,
+.version-table th {
+  text-align: center;
+}
+.note {
+  border-left: 3pt solid #999;
+  padding-left: 8pt;
+  margin: 6pt 0;
+}
+.page-break {
+  page-break-before: always;
+}
+.diagram {
+  border: 0.75pt solid #777;
+  background: #fafafa;
+  margin: 8pt 0 10pt 0;
+  padding: 8pt;
+  font-family: SimSun, "宋体", serif;
+}
+.diagram-title {
+  font-family: SimHei, "黑体", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 6pt;
+}
+.diagram pre {
+  border: 0;
+  background: transparent;
+  margin: 0;
+}
+.mermaid {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.25;
+  background: #f7f7f7;
+  border: 0.5pt solid #bfbfbf;
+  padding: 6pt;
+  white-space: pre-wrap;
+}
+</style>
+
+</head>
+<body>
+<div class="cover">
+  <div class="system">LiFeO4Agent</div>
+  <div class="doc-title">开发文档</div>
+  <div class="meta">
+    <div>文档版本：V1.0</div>
+    <div>文档日期：2026/05/20</div>
+    <div>适用环境：源码维护、二次开发和版本发布</div>
+    <div>文档对象：开发人员、测试人员、技术维护人员</div>
+  </div>
+</div>
+<h1>版本记录</h1>
+<table class="version-table">
+  <tr><th>版本</th><th>日期</th><th>修订人</th><th>修订说明</th></tr>
+  <tr><td>V1.0</td><td>2026/05/20</td><td>项目组</td><td>初版</td></tr>
+</table>
+
+<h1>1 设计维护记录</h1>
+<table>
+  <tr><th>版本</th><th>日期</th><th>作者</th><th>修订摘要</th></tr>
+  <tr><td>V1.0</td><td>2026/05/20</td><td>项目组</td><td>形成 LiFeO4Agent 开发文档初版，覆盖架构、模块、接口、数据库、开发环境和发布规则。</td></tr>
+</table>
+
+<h1>2 文档引言</h1>
+<h2>2.1 目的</h2>
+<p>本文档面向开发人员、测试人员和维护人员，说明 LiFeO4Agent 的工程结构、核心模块、数据库设计、接口设计、开发环境、编码规范、数据包构建和常见问题。部署人员应主要阅读部署手册和运维手册。</p>
+<h2>2.2 背景</h2>
+<p>系统用于支撑电池材料研发过程中的文献检索、深度分析、专利检索和原文核对。项目从单体和本地资源依赖逐步演进为前端、网关、公共服务和多个 QA 后端组成的容器化系统，以便离线交付、增量升级和运维管理。</p>
+<h2>2.3 术语</h2>
+<table>
+  <tr><th>术语</th><th>说明</th></tr>
+  <tr><td>fastQA</td><td>文献快速问答后端。</td></tr>
+  <tr><td>highThinkingQA</td><td>深度思考问答后端，负责多阶段分析。</td></tr>
+  <tr><td>patentQA</td><td>专利问答后端，负责专利检索、tables 和图谱增强。</td></tr>
+  <tr><td>public-service</td><td>公共能力服务，负责用户、部门、人员、配额、会话和文件。</td></tr>
+  <tr><td>reference data</td><td>向量库、索引、JSON archive 等可由数据包重建的数据。</td></tr>
+  <tr><td>seed job</td><td>compose 启动时执行的一次性数据导入容器。</td></tr>
+</table>
+
+<h1>3 需求说明</h1>
+<table>
+  <tr><th>需求编号</th><th>业务需求</th><th>实现模块</th></tr>
+  <tr><td>REQ-001</td><td>用户可使用文献、深度、专利三种问答模式。</td><td>frontend、gateway、fastQA、highThinkingQA、patentQA。</td></tr>
+  <tr><td>REQ-002</td><td>用户可上传 PDF、Excel、CSV 并参与问答。</td><td>frontend、gateway、public-service、QA 后端。</td></tr>
+  <tr><td>REQ-003</td><td>管理员可维护用户、部门、人员和配额。</td><td>frontend admin、public-service。</td></tr>
+  <tr><td>REQ-004</td><td>论文和专利原文统一存储在 MinIO。</td><td>seed-tools、public-service、fastQA、highThinkingQA、patentQA。</td></tr>
+  <tr><td>REQ-005</td><td>系统可离线部署和增量更新。</td><td>deploy、Dockerfile、compose、package scripts。</td></tr>
+</table>
+
+<h1>4 系统设计</h1>
+<h2>4.1 总体架构</h2>
+<div class="diagram">
+  <div class="diagram-title">图 1 开发视角总体架构</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-开发文档-20260520-V1.0-diagram-01.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+
+<h2>4.2 仓库目录</h2>
+<table>
+  <tr><th>目录</th><th>职责</th><th>维护规则</th></tr>
+  <tr><td><code>frontend-vue</code></td><td>Vue 3 + Vite 前端。</td><td>前端体验和 API 调用封装在此维护。</td></tr>
+  <tr><td><code>gateway</code></td><td>FastAPI 网关。</td><td>统一路由、SSE 代理、文件上下文、配额 precheck/finalize。</td></tr>
+  <tr><td><code>public-service</code></td><td>公共能力后端。</td><td>用户、部门、人员、配额、会话、文件、原文代理。</td></tr>
+  <tr><td><code>fastQA</code></td><td>文献问答后端。</td><td>文献检索、rerank、图谱和生成。</td></tr>
+  <tr><td><code>highThinkingQA</code></td><td>深度问答后端。</td><td>规划、分解、检索、综合生成。</td></tr>
+  <tr><td><code>patent</code></td><td>专利问答后端。</td><td>专利检索、tables、图谱和回答生成。</td></tr>
+  <tr><td><code>resource</code></td><td>共享资源、配置和本地数据源。</td><td>数据包构建从这里取原始资源。</td></tr>
+  <tr><td><code>deploy</code></td><td>部署编排、seed 脚本、MySQL 初始化。</td><td>客户配置面变化必须同步。</td></tr>
+</table>
+
+<h2>4.3 模块设计</h2>
+<table>
+  <tr><th>模块</th><th>输入</th><th>输出</th><th>核心函数或类</th></tr>
+  <tr><td>gateway QA router</td><td>用户问题、模式、文件选择、token。</td><td>同步回答或 SSE 事件。</td><td><code>gateway/app/routers/qa.py</code>。</td></tr>
+  <tr><td>file context resolver</td><td>会话文件列表和用户选择。</td><td>路由决策和文件上下文。</td><td><code>gateway/app/services/file_context_resolver.py</code>。</td></tr>
+  <tr><td>quota service</td><td>用户 ID、配额类型。</td><td>是否允许、剩余额度、grant id。</td><td><code>public-service/backend/app/modules/quota/service.py</code>。</td></tr>
+  <tr><td>auth service</td><td>用户名、密码、人员信息。</td><td>token、用户资料、注册结果。</td><td><code>public-service/backend/app/modules/auth</code>。</td></tr>
+  <tr><td>fastQA generation pipeline</td><td>问题、检索配置、模型配置。</td><td>阶段事件、引用、答案。</td><td><code>fastQA/app/modules/generation_pipeline</code>。</td></tr>
+  <tr><td>highThinking agent core</td><td>问题、模式 profile、向量库。</td><td>直接回答、分解、子答案、综合答案。</td><td><code>highThinkingQA/agent_core</code>。</td></tr>
+  <tr><td>patent retrieval service</td><td>专利问题、intent、向量库。</td><td>专利候选、段落、tables、图谱补充。</td><td><code>patent/server/patent/retrieval_service.py</code>。</td></tr>
+</table>
+
+<h1>5 数据库设计</h1>
+<p>数据库为 MySQL <code>agentcode</code>，当前部署初始化只导入 schema、真实部门树和 bootstrap 管理员，不导入研发环境用户数据。</p>
+<table>
+  <tr><th>表</th><th>关键字段</th><th>说明</th></tr>
+  <tr><td><code>users</code></td><td><code>id</code>、<code>username</code>、<code>password_hash</code>、<code>role</code>、<code>user_type</code>、<code>status</code>、<code>created_at</code>、<code>updated_at</code></td><td>用户账号和权限。</td></tr>
+  <tr><td><code>personnel_records</code></td><td><code>employee_no</code>、<code>full_name</code>、<code>verification_code_hash</code>、部门 ID、<code>status</code></td><td>注册和绑定人员。</td></tr>
+  <tr><td><code>primary_departments</code>、<code>secondary_departments</code>、<code>tertiary_departments</code></td><td><code>id</code>、<code>name</code>、<code>status</code></td><td>三级部门树。</td></tr>
+  <tr><td><code>quota_configs</code></td><td><code>quota_type</code>、<code>period</code>、<code>default_limit</code>、<code>is_active</code></td><td>配额配置。</td></tr>
+  <tr><td><code>user_quota_usage</code></td><td><code>user_id</code>、<code>quota_type</code>、<code>period_key</code>、<code>used_count</code></td><td>用户配额用量。</td></tr>
+  <tr><td><code>conversations</code>、<code>conversation_messages</code>、<code>conversation_files</code></td><td>会话、消息、文件元数据字段。</td><td>会话历史和文件关联。</td></tr>
+</table>
+<p>表结构中普遍包含 <code>created_at</code> 和 <code>updated_at</code>，用于增量同步和审计。当前表没有统一 <code>is_deleted</code> 字段，用户、部门和人员通过 <code>status</code> 做业务停用；后续若新增强删除类业务表，应优先采用逻辑删除。</p>
+
+<h1>6 接口设计</h1>
+<table>
+  <tr><th>接口</th><th>方法</th><th>职责</th><th>提供方</th></tr>
+  <tr><td><code>/api/auth/login</code></td><td>POST</td><td>用户登录。</td><td>public-service。</td></tr>
+  <tr><td><code>/api/auth/register</code></td><td>POST</td><td>用户注册。</td><td>public-service。</td></tr>
+  <tr><td><code>/api/auth/me</code></td><td>GET</td><td>获取当前用户。</td><td>public-service。</td></tr>
+  <tr><td><code>/api/admin/users</code></td><td>GET/POST</td><td>用户管理。</td><td>public-service。</td></tr>
+  <tr><td><code>/api/admin/departments/tree</code></td><td>GET</td><td>部门树。</td><td>public-service。</td></tr>
+  <tr><td><code>/api/admin/personnel</code></td><td>GET/POST/PUT</td><td>人员管理。</td><td>public-service。</td></tr>
+  <tr><td><code>/api/quota/configs</code></td><td>GET/POST/PUT</td><td>配额管理。</td><td>public-service。</td></tr>
+  <tr><td><code>/api/fast/ask_stream</code></td><td>POST</td><td>文献流式问答。</td><td>gateway -> fastQA。</td></tr>
+  <tr><td><code>/api/thinking/ask_stream</code></td><td>POST</td><td>深度流式问答。</td><td>gateway -> highThinkingQA。</td></tr>
+  <tr><td><code>/api/patent/ask_stream</code></td><td>POST</td><td>专利流式问答。</td><td>gateway -> patentQA。</td></tr>
+  <tr><td><code>/api/view_pdf/{doi}</code></td><td>GET/HEAD</td><td>查看论文 PDF。</td><td>public-service 或 QA 后端。</td></tr>
+  <tr><td><code>/api/patent/original/{id}</code></td><td>GET/HEAD</td><td>查看专利原文。</td><td>public-service。</td></tr>
+</table>
+
+<h1>7 开发实现</h1>
+<h2>7.1 开发环境</h2>
+<table>
+  <tr><th>类别</th><th>建议</th></tr>
+  <tr><td>Python</td><td>使用项目现有虚拟环境或 conda 环境，保持依赖与各服务 requirements 一致。</td></tr>
+  <tr><td>Node</td><td>使用前端项目兼容的 Node 版本，执行 <code>npm install</code> 后开发。</td></tr>
+  <tr><td>IDE</td><td>建议开启 Python、Vue、ESLint 或等效检查。</td></tr>
+  <tr><td>数据库</td><td>本地开发可连接用户态 MySQL，部署测试使用 Docker MySQL。</td></tr>
+</table>
+
+<h2>7.2 核心问答伪代码</h2>
+<pre>def ask(question, mode, selected_files, user):
+    check_auth(user)
+    route = resolve_route(mode, selected_files)
+    grant = quota_precheck(user.id, route.quota_type)
+    try:
+        context = build_file_context(selected_files)
+        for event in route.backend.ask_stream(question, context):
+            yield event
+        quota_finalize(grant.id, success=True)
+    except Exception as exc:
+        quota_finalize(grant.id, success=False)
+        yield error_event(exc)</pre>
+
+<h1>8 部署及更新方案</h1>
+<p>开发人员只需要理解交付分层：业务代码进入对应服务镜像，大数据进入数据包。只修改某个后端时，优先只构建并交付该后端镜像；修改数据资源时，重新生成对应数据包和 manifest。详细步骤见部署手册。</p>
+
+<h1>9 常见问题与解决方案</h1>
+<table>
+  <tr><th>类别</th><th>问题</th><th>处理建议</th></tr>
+  <tr><td>数据质量</td><td>专利 tables 缺失或 manifest 未登记。</td><td>运行 tables backfill，并使用 validate_data_packages 检查。</td></tr>
+  <tr><td>模型调用</td><td>OpenAI 兼容接口参数不兼容。</td><td>检查 stream、enable_thinking、模型名和 base url。</td></tr>
+  <tr><td>性能优化</td><td>检索或 rerank 慢。</td><td>检查候选数量、连接池、模型服务延迟和向量库路径。</td></tr>
+  <tr><td>数据库</td><td>配额扣减异常。</td><td>检查 precheck/finalize 是否成对执行，检查 quota 表唯一键。</td></tr>
+  <tr><td>前端</td><td>SSE 阶段显示错位。</td><td>检查事件 schema、稳定 key 和渲染状态机。</td></tr>
+</table>
+
+<h1>10 参考文档</h1>
+<table>
+  <tr><th>文档</th><th>用途</th></tr>
+  <tr><td>LiFeO4Agent 部署手册</td><td>部署和升级。</td></tr>
+  <tr><td>LiFeO4Agent 系统概要设计说明书</td><td>架构和技术选型。</td></tr>
+  <tr><td>LiFeO4Agent 系统详细设计说明书</td><td>模块、接口和流程。</td></tr>
+  <tr><td>FastAPI、Vue、Docker、MinIO、Neo4j 官方文档</td><td>第三方组件参考。</td></tr>
+</table>
+
+
+<h1>11 接口实现清单</h1>
+<p>开发维护时应以 gateway 对外路由表为准。前端不直接调用 QA 后端或 public-service 内部接口；除健康检查和特殊排障外，生产流量统一经过 gateway。</p>
+<table>
+  <tr><th>领域</th><th>对外接口</th><th>后端归属</th><th>维护注意事项</th></tr>
+  <tr><td>认证</td><td><code>/api/auth/*</code>、<code>/api/v1/auth/*</code></td><td>public-service</td><td>新增字段需同步前端登录态和用户模型。</td></tr>
+  <tr><td>会话</td><td><code>/api/conversations*</code>、<code>/api/v1/conversations*</code></td><td>public-service</td><td>消息写入与异步任务接口需保持一致。</td></tr>
+  <tr><td>文件和原文</td><td><code>/api/upload_pdf</code>、<code>/api/upload_excel</code>、<code>/api/view_pdf/*</code>、<code>/api/patent/original/*</code></td><td>public-service，QA 兼容保留</td><td>MinIO key 规则变更需同步 seed 和 manifest。</td></tr>
+  <tr><td>问答</td><td><code>/api/{fast|thinking|patent}/ask(_stream)</code></td><td>gateway -> QA 后端</td><td>SSE 事件 schema 变更需前后端同步。</td></tr>
+  <tr><td>配额</td><td><code>/api/quota/*</code> 和 <code>/internal/quota/*</code></td><td>public-service</td><td>precheck/finalize 必须成对调用。</td></tr>
+  <tr><td>管理后台</td><td><code>/api/admin/users*</code>、<code>/api/admin/personnel*</code>、<code>/api/admin/departments*</code></td><td>public-service</td><td>批量导入模板字段变更需更新用户手册。</td></tr>
+  <tr><td>任务</td><td><code>/api/v1/tasks*</code></td><td>gateway</td><td>事件流需支持断线恢复。</td></tr>
+  <tr><td>准入</td><td><code>/api/admission/*</code></td><td>gateway</td><td>用于任务准入状态、取消和帧读取。</td></tr>
+</table>
+
+<h1>12 配置开发规范</h1>
+<h2>12.1 模型配置</h2>
+<table>
+  <tr><th>能力</th><th>共享配置名</th><th>secret 配置名</th><th>使用方</th></tr>
+  <tr><td>LLM</td><td><code>LLM_BASE_URL</code>、<code>LLM_MODEL</code></td><td><code>LLM_API_KEY</code></td><td>fastQA、highThinkingQA、patentQA。</td></tr>
+  <tr><td>Intent</td><td><code>INTENT_MODEL_ENABLED</code>、<code>INTENT_MODEL_BASE_URL</code>、<code>INTENT_MODEL</code></td><td><code>INTENT_MODEL_API_KEY</code></td><td>fastQA、patentQA。</td></tr>
+  <tr><td>QA Embedding</td><td><code>QA_EMBEDDING_BASE_URL</code>、<code>QA_EMBEDDING_MODEL</code></td><td><code>QA_EMBEDDING_API_KEY</code></td><td>fastQA、patentQA。</td></tr>
+  <tr><td>HighThinking Embedding</td><td><code>HIGHTHINKINGQA_EMBEDDING_BASE_URL</code>、<code>HIGHTHINKINGQA_EMBEDDING_MODEL</code></td><td><code>HIGHTHINKINGQA_EMBEDDING_API_KEY</code></td><td>highThinkingQA。</td></tr>
+  <tr><td>Rerank</td><td><code>RERANK_PROVIDER</code>、<code>RERANK_BASE_URL</code>、<code>RERANK_MODEL</code></td><td><code>RERANK_API_KEY</code></td><td>fastQA、patentQA。</td></tr>
+</table>
+<p>新增配置项时，必须同步 <code>resource/config/shared/*.env</code>、服务本地配置、<code>deploy/.env.production.example</code>、<code>deploy/docker-compose.yml</code>、部署文档和运维文档。密钥类配置只进入 secret 或部署方 <code>.env</code>，不得写入代码常量。</p>
+
+<h2>12.2 SSE 事件规范</h2>
+<table>
+  <tr><th>事件类型</th><th>字段</th><th>前端处理</th></tr>
+  <tr><td>阶段开始</td><td><code>stage</code>、<code>title</code>、<code>timestamp</code></td><td>创建或更新阶段卡片。</td></tr>
+  <tr><td>阶段结束</td><td><code>stage</code>、<code>duration_ms</code>、<code>status</code></td><td>展示耗时和状态。</td></tr>
+  <tr><td>文本增量</td><td><code>delta</code></td><td>追加到回答正文。</td></tr>
+  <tr><td>引用</td><td><code>references</code></td><td>渲染引用卡片和原文入口。</td></tr>
+  <tr><td>错误</td><td><code>message</code>、<code>code</code></td><td>展示用户可理解提示。</td></tr>
+  <tr><td>完成</td><td><code>answer</code>、<code>usage</code></td><td>收尾、保存状态、解锁输入框。</td></tr>
+</table>
+
+<h1>13 数据包构建规范</h1>
+<div class="diagram">
+  <div class="diagram-title">图 2 数据包构建流程</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-开发文档-20260520-V1.0-diagram-02.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<table>
+  <tr><th>规则</th><th>说明</th></tr>
+  <tr><td>原文只进 MinIO 包</td><td>后端 reference data 不重复携带 PDF、PNG、JPG。</td></tr>
+  <tr><td>专利 tables 必须 backfill</td><td>生成 <code>structured/tables.json</code>，并更新 manifest。</td></tr>
+  <tr><td>向量库必须包含 SQLite</td><td>Chroma 包至少校验 <code>chroma.sqlite3</code>。</td></tr>
+  <tr><td>manifest 必须包含 sha256</td><td>部署前 preflight 根据 manifest 校验。</td></tr>
+  <tr><td>Neo4j dump 需要一致性窗口</td><td>导出前应停止或冻结图谱写入。</td></tr>
+</table>
+
+<h1>14 代码变更检查清单</h1>
+<table>
+  <tr><th>变更类型</th><th>必须检查</th></tr>
+  <tr><td>前端页面</td><td><code>npm run build</code>，检查路由、按钮、响应式和 SSE 渲染。</td></tr>
+  <tr><td>gateway 路由</td><td>更新路由表、鉴权、配额和代理目标。</td></tr>
+  <tr><td>public-service 表结构</td><td>新增 SQL migration、模型、接口、测试和初始化脚本。</td></tr>
+  <tr><td>QA 后端</td><td>检查模型配置、向量库路径、MinIO 路径和 SSE 事件。</td></tr>
+  <tr><td>部署文件</td><td>同步 compose、env 模板、preflight 和交付文档。</td></tr>
+  <tr><td>数据包规则</td><td>更新构建脚本、校验脚本和 manifest 统计。</td></tr>
+</table>
+
+</body>
+</html>

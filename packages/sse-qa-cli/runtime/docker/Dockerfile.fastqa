@@ -1,0 +1,17 @@
+# syntax=docker/dockerfile:1
+FROM python:3.11-slim
+
+WORKDIR /app
+ENV PYTHONUNBUFFERED=1
+
+COPY backend/requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt pyyaml gunicorn chromadb neo4j
+
+COPY backend/fastQA /app/fastQA
+COPY backend/scripts /app/scripts
+COPY backend/resource/config /app/resource/config
+
+WORKDIR /app/fastQA
+EXPOSE 18018
+
+CMD ["bash", "-lc", "source /app/runtime/system.env 2>/dev/null || true; exec bash scripts/start_gunicorn.sh"]

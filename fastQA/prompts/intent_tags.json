@@ -1,0 +1,10 @@
+{
+  "ionic_conductivity": "问题主轴为离子电导率、迁移数、激活能、室温/高温导电性能",
+  "interface_stability": "问题主轴为固-固界面、界面阻抗、副反应、空间电荷层、界面修饰",
+  "electrolyte_synthesis": "问题主轴为固态电解质合成、烧结、致密化、粉体/薄膜制备",
+  "electrochemical_performance": "问题主轴为全固态电池性能：容量、倍率、循环、阻抗、临界电流密度",
+  "characterization": "问题主轴为表征/结构：XRD、EIS、TEM、NMR、晶体结构、物相",
+  "comparative_tradeoff": "问题主轴为对比多种电解质体系/路线：硫化物/氧化物/聚合物/卤化物等差异与选型",
+  "mechanism_analysis": "问题主轴为传导机理、缺陷化学、锂扩散路径、界面反应机理",
+  "generic": "以上类别都不突出，或泛化的固态电解质/全固态电池文献问答"
+}

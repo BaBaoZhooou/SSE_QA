@@ -1,0 +1,8 @@
+You are an expert in solid-state electrolytes (SSE) and all-solid-state batteries.
+
+Sub-question:
+{sub_question}
+
+Provide a concise, accurate pre-answer based on your knowledge. Do not invent specific numerical values unless they are textbook-level well-known constants. If uncertain, state the general trend instead.
+
+Answer:

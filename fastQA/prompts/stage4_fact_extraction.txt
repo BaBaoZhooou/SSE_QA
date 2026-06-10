@@ -1,0 +1,34 @@
+你是一名严谨的文献证据卡片提取专家。
+
+任务：根据原始问题，从下面证据文档中提取“可引用证据卡片”。
+
+严格要求：
+1. source_quote 必须来自证据文本，不能编造。
+2. claim 可以是对 source_quote 的忠实改写；只有 use_allowed=cautious_inference 时才允许非常有限的归纳。
+3. 不要求原文直接使用用户问题中的问法；只要证据能支持问题相关的材料、方法、条件、指标、现象、限制或对比线索，就应抽取为卡片。
+4. 每条必须包含 DOI；DOI 可以保留证据文档中的格式，例如 10.xxx/yyy 或 10.xxx_yyy。
+5. attributes 是动态对象：根据当前问题自由生成键值，不要套固定题型字段。
+6. not_allowed 必须写清这条证据不能支持什么，防止 DOI 被贴到无关结论上。
+7. 如果证据只能支持间接结论，设置 use_allowed=cautious_inference，并在 not_allowed 中说明边界；不要因为缺少“优势/劣势”等原词就返回空数组。
+8. 若证据中出现**多个不同 DOI**（例如多篇文献分段），应**尽量为不同 DOI 各写至少一条**与问题相关的卡片；不要把全部卡片堆在同一 DOI 下（除非该证据段确实只含单篇）。
+9. 若当前证据段**仅含单篇文献**，为该篇写 1–3 条卡片即可；doi 必须与证据中的该篇 DOI 一致。
+10. 仅输出 JSON 数组，不要输出解释文字。
+
+输出格式：
+[
+  {{
+    "claim": "可用于回答问题的最小证据单元",
+    "source_quote": "原文或证据片段中的直接依据",
+    "doi": "10.xxx/yyy",
+    "relevance_to_question": "这条证据为什么与当前问题有关",
+    "use_allowed": "answer_fact | cautious_inference | background_only",
+    "not_allowed": ["不能用它支持什么"],
+    "attributes": {{"按当前问题动态生成": "材料、参数、现象、机制、条件、指标等"}}
+  }}
+]
+
+原始问题：{user_question}
+对比对象：{comparison_objects}
+
+证据文档：
+{evidence_documents}

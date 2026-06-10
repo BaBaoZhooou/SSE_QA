@@ -1,0 +1,114 @@
+# 磷酸铁锂 QA 系统 — lwb 统一配置模板
+# 用法：
+#   cp config/system.yaml.example config/system.yaml
+#   编辑 config/system.yaml（含密钥；已在 .gitignore）
+#   bash scripts/start_lwb_all.sh
+# 或仅后端：bash scripts/start_all.sh（自动加载 system.yaml）
+#
+# 键名与 .env 变量一致；后加载的 .env 仍可覆盖此处默认值。
+# 勿在此设置 REDIS_KEY_PREFIX：各服务共用该变量名，全局 export 会覆盖 per-service 配置。
+
+_meta:
+  stack: lwb
+  domain: lifepo4
+
+ports:
+  GATEWAY_PORT: 18101
+  PUBLIC_SERVICE_PORT: 18102
+  FASTQA_PORT: 18008
+  FASTQA_FASTAPI_PORT: 18008
+  HIGHTHINKINGQA_PORT: 18009
+  PATENT_PORT: 18010
+  FRONTEND_PORT: 5174
+
+backends:
+  PUBLIC_BACKEND_BASE_URL: http://127.0.0.1:18102
+  FAST_BACKEND_BASE_URL: http://127.0.0.1:18008
+  THINKING_BACKEND_BASE_URL: http://127.0.0.1:18009
+  PATENT_BACKEND_BASE_URL: http://127.0.0.1:18010
+  GATEWAY_UPSTREAM_URL: http://127.0.0.1:18101
+  BACKEND_PROXY_TARGET: http://127.0.0.1:18101
+  VITE_PROXY_TARGET: http://127.0.0.1:18101
+
+mysql:
+  MYSQL_HOST: 127.0.0.1
+  MYSQL_PORT: 13306
+  MYSQL_DATABASE: agentcode_lwb
+  MYSQL_USER: root
+  MYSQL_PASSWORD: "123456"
+
+redis:
+  REDIS_HOST: 127.0.0.1
+  REDIS_PORT: 16379
+  REDIS_DB: 0
+  REDIS_PASSWORD: "123456"
+  REDIS_ENABLED: 1
+  PATENT_REDIS_KEY_PREFIX: patent-lwb
+
+minio:
+  MINIO_ENDPOINT: 127.0.0.1:19001
+  MINIO_ACCESS_KEY: admin
+  MINIO_SECRET_KEY: "12345678"
+  MINIO_BUCKET: agentcode-lwb
+  MINIO_SECURE: 0
+
+neo4j:
+  FASTQA_NEO4J_URL: bolt://127.0.0.1:7688
+  FASTQA_NEO4J_USERNAME: neo4j
+  FASTQA_NEO4J_PASSWORD: ""
+  PATENT_NEO4J_URL: bolt://127.0.0.1:8687
+  PATENT_NEO4J_USERNAME: neo4j
+  PATENT_NEO4J_PASSWORD: ""
+
+llm:
+  LLM_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+  LLM_MODEL: deepseek-v4-pro
+  LLM_API_KEY: ""
+  LLM_IS_THINKING_MODEL: true
+  LLM_THINKING_ENABLED: true
+
+intent_model:
+  INTENT_MODEL_ENABLED: true
+  INTENT_MODEL_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+  INTENT_MODEL: qwen3-8b
+  INTENT_MODEL_API_KEY: ""
+
+embedding:
+  EMBEDDING_BASE_URL: http://127.0.0.1:8001/v1/embeddings
+  EMBEDDING_MODEL: bge-local
+  HIGHTHINKINGQA_EMBEDDING_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+  HIGHTHINKINGQA_EMBEDDING_MODEL: text-embedding-v4
+  HIGHTHINKINGQA_EMBEDDING_DIMENSIONS: 2048
+  HIGHTHINKINGQA_EMBEDDING_API_KEY: ""
+
+rerank:
+  RERANK_PROVIDER: local
+  RERANK_BASE_URL: http://localhost:8084
+  RERANK_MODEL: qwen3-vl-rerank
+
+auth:
+  JWT_SECRET: ""
+  PUBLIC_SERVICE_INTERNAL_AUTH_TOKEN: ""
+  GATEWAY_ADMISSION_CONTROL_TOKEN: ""
+
+public_service:
+  VECTOR_COLLECTION_NAME: lfp_papers
+  PUBLIC_SERVICE_CORS_ORIGINS: "http://127.0.0.1:5174,http://localhost:5174"
+
+fastqa:
+  FASTQA_GRAPH_KB_ENABLED: 0
+  FASTQA_GENERATION_RUNTIME_ENABLED: 1
+  VECTOR_DB_PATH: resource/fastqa/vector_database
+  VECTOR_DB_MD_PATH: resource/fastqa/vector_database_md
+  QA_PIPELINE_CACHE_ENABLED: 0
+
+high_thinking:
+  CHROMA_COLLECTION_NAME: lfp_papers
+
+patent:
+  PATENT_OPENAI_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+  PATENT_OPENAI_MODEL: deepseek-v3.1
+  PATENT_OPENAI_API_KEY: ""
+
+frontend:
+  VITE_REFRESH_SURVIVABLE_QA_TASKS_ENABLED: 1

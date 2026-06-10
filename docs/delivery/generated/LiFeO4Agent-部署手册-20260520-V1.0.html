@@ -1,0 +1,421 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LiFeO4Agent-部署手册-20260520-V1.0</title>
+
+<style>
+@page {
+  size: A4 portrait;
+  margin: 2.54cm 2.54cm 2.54cm 2.54cm;
+}
+body {
+  font-family: SimSun, "宋体", "Times New Roman", serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: #000;
+  text-align: justify;
+}
+.cover {
+  text-align: center;
+  page-break-after: always;
+  padding-top: 4.5cm;
+}
+.cover .system {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 0.8cm;
+}
+.cover .doc-title {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 22pt;
+  font-weight: bold;
+  margin-bottom: 3cm;
+}
+.cover .meta {
+  font-size: 10.5pt;
+  line-height: 1.8;
+}
+h1 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 16pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h2 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h3 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 10.5pt;
+  font-weight: bold;
+  margin: 6pt 0 3pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+p {
+  margin: 0 0 6pt 0;
+  text-indent: 2em;
+}
+.no-indent,
+table p,
+li p {
+  text-indent: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6pt 0;
+  font-size: 10.5pt;
+  page-break-inside: auto;
+}
+th, td {
+  border: 0.5pt solid #000;
+  padding: 4pt 5pt;
+  vertical-align: middle;
+}
+th {
+  background: #eeeeee;
+  font-weight: bold;
+  text-align: center;
+}
+td.center {
+  text-align: center;
+}
+td.left {
+  text-align: left;
+}
+pre {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.2;
+  background: #f2f2f2;
+  border: 0.5pt solid #cccccc;
+  padding: 6pt;
+  margin: 3pt 0 6pt 0;
+  white-space: pre-wrap;
+}
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+}
+ol, ul {
+  margin-top: 0;
+  margin-bottom: 6pt;
+}
+li {
+  margin-bottom: 3pt;
+}
+.version-table td,
+.version-table th {
+  text-align: center;
+}
+.note {
+  border-left: 3pt solid #999;
+  padding-left: 8pt;
+  margin: 6pt 0;
+}
+.page-break {
+  page-break-before: always;
+}
+.diagram {
+  border: 0.75pt solid #777;
+  background: #fafafa;
+  margin: 8pt 0 10pt 0;
+  padding: 8pt;
+  font-family: SimSun, "宋体", serif;
+}
+.diagram-title {
+  font-family: SimHei, "黑体", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 6pt;
+}
+.diagram pre {
+  border: 0;
+  background: transparent;
+  margin: 0;
+}
+.mermaid {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.25;
+  background: #f7f7f7;
+  border: 0.5pt solid #bfbfbf;
+  padding: 6pt;
+  white-space: pre-wrap;
+}
+</style>
+
+</head>
+<body>
+<div class="cover">
+  <div class="system">LiFeO4Agent</div>
+  <div class="doc-title">部署手册</div>
+  <div class="meta">
+    <div>文档版本：V1.0</div>
+    <div>文档日期：2026/05/20</div>
+    <div>适用环境：Docker 离线部署环境</div>
+    <div>文档对象：部署实施人员、现场运维人员</div>
+  </div>
+</div>
+<h1>版本记录</h1>
+<table class="version-table">
+  <tr><th>版本</th><th>日期</th><th>修订人</th><th>修订说明</th></tr>
+  <tr><td>V1.0</td><td>2026/05/20</td><td>项目组</td><td>初版</td></tr>
+</table>
+
+<h1>1 文档说明</h1>
+<p>本文档面向部署实施人员和现场运维人员，用于指导 LiFeO4Agent 在目标服务器上的安装、配置、启动、验证、更新和回滚。本文档只说明部署相关工作，不替代测试报告、开发文档和运维手册。</p>
+<table>
+  <tr><th>项目</th><th>说明</th></tr>
+  <tr><td>系统名称</td><td>LiFeO4Agent</td></tr>
+  <tr><td>部署形态</td><td>Docker 离线部署，Docker 镜像包 + <code>tar.zst</code> 数据包 + docker compose 编排。</td></tr>
+  <tr><td>适用版本</td><td>文档版本 <code>V1.0</code>，数据包版本 <code>2026-05-19</code>。</td></tr>
+  <tr><td>部署目标</td><td>完成系统服务启动、基础数据导入、HTTPS 访问、管理员登录和三类问答冒烟验证。</td></tr>
+</table>
+
+<h1>2 部署方案</h1>
+<p>系统采用容器化微服务部署。前端、网关、公共服务、文献问答、深度问答、专利问答、MySQL、Redis、MinIO、Neo4j 和 seed job 均由 docker compose 编排。业务服务镜像和大体积数据包分离，避免后续单服务更新时重复分发原文、向量库和图谱数据。</p>
+<div class="diagram">
+  <div class="diagram-title">图 1 部署方案示意图</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-部署手册-20260520-V1.0-diagram-01.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<p>当前交付为单机 compose 部署形态。若部署方需要高可用，可在后续方案中将 MySQL、Redis、MinIO 和 Neo4j 替换为部署方统一中间件集群，业务服务可通过外部负载均衡扩展为多实例；本次 V1.0 交付不默认启用高可用集群。</p>
+
+<h1>3 运行环境要求</h1>
+<h2>3.1 硬件要求</h2>
+<table>
+  <tr><th>资源</th><th>最低配置</th><th>推荐配置</th><th>说明</th></tr>
+  <tr><td>CPU</td><td>16 核</td><td>32 核及以上</td><td>问答后端、Neo4j 和数据导入会消耗 CPU。</td></tr>
+  <tr><td>内存</td><td>64 GB</td><td>128 GB 及以上</td><td>专利服务、向量库和图谱查询建议预留充足内存。</td></tr>
+  <tr><td>磁盘</td><td>300 GB 可用空间</td><td>500 GB 及以上 SSD</td><td>需容纳镜像、数据包、MinIO 导入后对象、Neo4j 数据和日志。</td></tr>
+  <tr><td>网络</td><td>内网可达</td><td>千兆内网</td><td>客户端、模型服务和部署机之间应保持稳定连接。</td></tr>
+</table>
+
+<h2>3.2 软件要求</h2>
+<table>
+  <tr><th>软件</th><th>版本要求</th><th>用途</th></tr>
+  <tr><td>Linux</td><td>主流 64 位 Linux 发行版</td><td>部署宿主机操作系统。</td></tr>
+  <tr><td>Docker Engine</td><td>建议 24.x 或以上</td><td>运行容器。</td></tr>
+  <tr><td>Docker Compose</td><td>Compose v2</td><td>执行 <code>docker compose</code> 编排。</td></tr>
+  <tr><td>浏览器</td><td>Chrome、Edge 或国产兼容浏览器</td><td>访问前端页面。</td></tr>
+</table>
+<p>宿主机不需要安装 <code>mc</code>、<code>zstd</code>、<code>neo4j-admin</code>；这些工具由 seed-tools 镜像或官方 Neo4j 镜像提供。</p>
+
+<h1>4 交付物清单</h1>
+<table>
+  <tr><th>交付物</th><th>说明</th><th>部署位置</th></tr>
+  <tr><td><code>deploy/docker-compose.yml</code></td><td>容器编排文件。</td><td>部署目录。</td></tr>
+  <tr><td><code>deploy/.env.production.example</code></td><td>生产配置模板。</td><td>复制为 <code>deploy/.env</code>。</td></tr>
+  <tr><td><code>deploy/lifeo4agent-images.tar</code></td><td>离线镜像包。</td><td>通过 <code>docker load</code> 导入。</td></tr>
+  <tr><td><code>deploy/data/manifest.json</code></td><td>数据包清单、版本和 sha256。</td><td>部署目录。</td></tr>
+  <tr><td><code>deploy/data/*.tar.zst</code></td><td>MinIO 原文和 reference data。</td><td>部署目录。</td></tr>
+  <tr><td><code>deploy/data/neo4j-*.dump.zst</code></td><td>文献和专利图谱 dump。</td><td>部署目录。</td></tr>
+  <tr><td><code>deploy/certs/fullchain.pem</code></td><td>HTTPS 证书链。</td><td>部署目录。</td></tr>
+  <tr><td><code>deploy/certs/privkey.pem</code></td><td>HTTPS 私钥。</td><td>部署目录，需限制权限。</td></tr>
+</table>
+
+<h1>5 镜像拉取和镜像重载</h1>
+<h2>5.1 离线镜像加载</h2>
+<p>离线部署时，部署方将镜像 tar 包放到部署机后执行加载命令。</p>
+<pre>docker load -i deploy/lifeo4agent-images.tar</pre>
+<p>成功输出参考：</p>
+<pre>Loaded image: lifeo4agent/gateway:latest
+Loaded image: lifeo4agent/public-service:latest
+Loaded image: lifeo4agent/fastqa:latest
+Loaded image: lifeo4agent/highthinkingqa:latest
+Loaded image: lifeo4agent/patent:latest
+Loaded image: lifeo4agent/frontend:latest
+Loaded image: lifeo4agent/seed-tools:latest</pre>
+<p>失败输出参考：</p>
+<pre>open deploy/lifeo4agent-images.tar: no such file or directory</pre>
+<p>处理方式：确认镜像包路径是否正确，确认文件传输完整。</p>
+
+<h2>5.2 在线镜像拉取</h2>
+<p>如部署方使用私有镜像仓库，可按镜像仓库规范登录并拉取。当前离线交付不要求使用在线拉取。</p>
+<pre>docker login &lt;镜像仓库地址&gt;
+docker pull lifeo4agent/gateway:latest</pre>
+<p>成功输出参考：</p>
+<pre>Login Succeeded
+latest: Pulling from lifeo4agent/gateway
+Status: Downloaded newer image for lifeo4agent/gateway:latest</pre>
+<p>失败输出参考：</p>
+<pre>Error response from daemon: unauthorized: authentication required</pre>
+<p>处理方式：检查仓库地址、用户名、密码、网络连通性和镜像 tag。</p>
+
+<h1>6 配置文件准备</h1>
+<h2>6.1 生成实际配置</h2>
+<pre>cp deploy/.env.production.example deploy/.env</pre>
+<p>成功输出参考：命令无输出，且 <code>deploy/.env</code> 文件存在。</p>
+<p>失败输出参考：</p>
+<pre>cp: cannot stat 'deploy/.env.production.example': No such file or directory</pre>
+<p>处理方式：确认部署目录完整。</p>
+
+<h2>6.2 必填配置项</h2>
+<table>
+  <tr><th>配置类别</th><th>变量</th><th>说明</th></tr>
+  <tr><td>访问入口</td><td><code>HTTP_PUBLISH_PORT</code>、<code>HTTPS_PUBLISH_PORT</code>、<code>HTTPS_SERVER_NAME</code>、<code>HTTPS_REDIRECT_HOST</code></td><td>HTTP/HTTPS 端口和域名。</td></tr>
+  <tr><td>基础组件</td><td><code>MYSQL_ROOT_PASSWORD</code>、<code>MYSQL_APP_PASSWORD</code>、<code>REDIS_PASSWORD</code>、<code>MINIO_ROOT_PASSWORD</code></td><td>数据库、缓存、对象存储密码。</td></tr>
+  <tr><td>业务鉴权</td><td><code>JWT_SECRET</code>、<code>PUBLIC_SERVICE_INTERNAL_AUTH_TOKEN</code></td><td>用户 token 和内部服务鉴权。</td></tr>
+  <tr><td>数据包</td><td><code>DATA_PACKAGE_VERSION</code>、<code>DATA_SEED_FORCE</code></td><td>版本应与 manifest 一致；强制重导默认为 0。</td></tr>
+  <tr><td>大模型</td><td><code>LLM_BASE_URL</code>、<code>LLM_MODEL</code>、<code>LLM_API_KEY</code></td><td>OpenAI 兼容接口或部署方模型网关。</td></tr>
+  <tr><td>意图模型</td><td><code>INTENT_MODEL_ENABLED</code>、<code>INTENT_MODEL_BASE_URL</code>、<code>INTENT_MODEL</code>、<code>INTENT_MODEL_API_KEY</code></td><td>fastQA 和 patentQA 共享。</td></tr>
+  <tr><td>Embedding</td><td><code>QA_EMBEDDING_*</code>、<code>HIGHTHINKINGQA_EMBEDDING_*</code></td><td>文献/专利与深度问答分开配置。</td></tr>
+  <tr><td>Rerank</td><td><code>RERANK_PROVIDER</code>、<code>RERANK_BASE_URL</code>、<code>RERANK_MODEL</code>、<code>RERANK_API_KEY</code></td><td>不用时 provider 设置为 <code>none</code>。</td></tr>
+</table>
+
+<h2>6.3 大模型参数说明</h2>
+<table>
+  <tr><th>参数</th><th>当前配置方式</th><th>说明</th></tr>
+  <tr><td>API Key</td><td><code>LLM_API_KEY</code></td><td>真实密钥只填写在 <code>deploy/.env</code>，不得写入文档。</td></tr>
+  <tr><td>Base URL</td><td><code>LLM_BASE_URL</code></td><td>应为 OpenAI 兼容 chat completions 入口所在的 base url。</td></tr>
+  <tr><td>模型名称</td><td><code>LLM_MODEL</code></td><td>由部署方模型服务提供。</td></tr>
+  <tr><td>超时</td><td><code>LLM_CONNECT_TIMEOUT_SECONDS</code>、<code>LLM_READ_TIMEOUT_SECONDS</code>、<code>LLM_STREAM_READ_TIMEOUT_SECONDS</code></td><td>共享配置中默认连接 15 秒、读取 180 秒、流式读取 600 秒。</td></tr>
+  <tr><td>并发连接</td><td><code>LLM_MAX_CONNECTIONS</code>、<code>LLM_MAX_KEEPALIVE_CONNECTIONS</code></td><td>共享配置默认最大连接 160、保活连接 64。</td></tr>
+  <tr><td>温度和最大 token</td><td>按服务内部默认值控制</td><td>文件问答等局部能力使用内部默认值，例如 top_p 0.95、max_tokens 2500 左右。</td></tr>
+</table>
+
+<h1>7 数据包放置和预检</h1>
+<p>数据包必须放在 <code>deploy/data</code> 下。当前 manifest 记录的数据版本为 <code>2026-05-19</code>。</p>
+<pre>bash deploy/scripts/preflight_check.sh deploy/.env</pre>
+<p>成功输出参考：</p>
+<pre>ok: data package manifest and sha256 validated with python
+ok: docker image present: lifeo4agent/gateway:latest
+preflight check passed</pre>
+<p>失败输出参考：</p>
+<pre>missing required data package: deploy/data/minio-originals.tar.zst</pre>
+<p>处理方式：补齐数据包，或检查 <code>DEPLOY_DATA_DIR</code> 是否指向正确目录。</p>
+
+<h1>8 上线启动与访问</h1>
+<h2>8.1 启动命令</h2>
+<pre>docker compose --env-file deploy/.env -f deploy/docker-compose.yml up -d</pre>
+<p>成功输出参考：</p>
+<pre>Container lifeo4agent-mysql        Healthy
+Container lifeo4agent-redis        Healthy
+Container lifeo4agent-minio        Started
+Container lifeo4agent-minio-seed   Exited
+Container lifeo4agent-gateway      Started
+Container lifeo4agent-edge         Started</pre>
+<p>失败输出参考：</p>
+<pre>Error response from daemon: driver failed programming external connectivity on endpoint lifeo4agent-edge: Bind for 0.0.0.0:443 failed: port is already allocated</pre>
+<p>处理方式：修改 <code>HTTPS_PUBLISH_PORT</code> 或释放宿主机 443 端口。</p>
+
+<h2>8.2 健康检查</h2>
+<pre>docker compose --env-file deploy/.env -f deploy/docker-compose.yml ps</pre>
+<p>成功输出参考：</p>
+<pre>NAME                              STATUS
+lifeo4agent-mysql                 Up (healthy)
+lifeo4agent-redis                 Up (healthy)
+lifeo4agent-gateway               Up
+lifeo4agent-edge                  Up
+lifeo4agent-minio-seed            Exited (0)</pre>
+<p>失败输出参考：</p>
+<pre>lifeo4agent-neo4j-patent          Restarting</pre>
+<p>处理方式：查看对应服务日志，优先检查数据卷、密码和 seed job。</p>
+
+<h2>8.3 访问验证</h2>
+<pre>curl -k -I https://&lt;部署域名&gt;:&lt;HTTPS端口&gt;/</pre>
+<p>成功输出参考：</p>
+<pre>HTTP/2 200
+server: nginx</pre>
+<p>失败输出参考：</p>
+<pre>curl: (7) Failed to connect to &lt;部署域名&gt; port &lt;HTTPS端口&gt;</pre>
+<p>处理方式：检查域名解析、服务器防火墙、端口映射和 edge 容器状态。</p>
+
+<h1>9 初始账号</h1>
+<p>部署脚本会在空数据库初始化时创建 bootstrap 管理员账号。管理员用户名为 <code>admin</code>，初始密码由交付渠道单独确认，不在本文档记录。首次登录后应立即修改密码并设置安全问题。</p>
+
+<h1>10 更新部署方案</h1>
+<h2>10.1 单服务镜像更新</h2>
+<p>如果只修改 fastQA，则只需要导入 fastQA 新镜像并重启该服务。</p>
+<pre>docker load -i lifeo4agent-fastqa-update.tar
+docker compose --env-file deploy/.env -f deploy/docker-compose.yml up -d fastqa</pre>
+<p>成功输出参考：</p>
+<pre>Loaded image: lifeo4agent/fastqa:20260520
+Container lifeo4agent-fastqa Started</pre>
+<p>失败输出参考：</p>
+<pre>No such service: fastqa</pre>
+<p>处理方式：确认 compose 文件版本和服务名是否一致。</p>
+
+<h2>10.2 数据包更新</h2>
+<p>更新原文、向量库或图谱时，需要替换 <code>deploy/data</code> 中的数据包和 manifest，并同步修改 <code>DATA_PACKAGE_VERSION</code>。同版本 marker 存在时会跳过导入；需要重导时设置 <code>DATA_SEED_FORCE=1</code>，完成后改回 <code>0</code>。</p>
+
+<h2>10.3 回滚策略</h2>
+<ol>
+  <li>镜像回滚：保留上一版本镜像 tar 或 tag，重新 <code>docker load</code> 后启动对应服务。</li>
+  <li>配置回滚：恢复备份的 <code>deploy/.env</code>，执行预检后重启受影响服务。</li>
+  <li>数据回滚：恢复旧版本数据包和 manifest，设置旧版本号，并按需强制重导。</li>
+  <li>数据库回滚：使用上线前 MySQL 备份恢复，恢复前应停止写入。</li>
+</ol>
+
+<h1>11 部署常见问题</h1>
+<table>
+  <tr><th>问题</th><th>典型日志或现象</th><th>解决方法</th></tr>
+  <tr><td>端口冲突</td><td><code>port is already allocated</code></td><td>修改 <code>deploy/.env</code> 中对应发布端口。</td></tr>
+  <tr><td>数据库连接失败</td><td><code>Access denied for user</code> 或服务健康检查失败。</td><td>检查 MySQL 密码、数据库初始化和 compose 环境变量。</td></tr>
+  <tr><td>MinIO 导入失败</td><td><code>package not found</code>、<code>AccessDenied</code></td><td>检查数据包路径、MinIO 账号密码和 bucket 初始化。</td></tr>
+  <tr><td>向量库不存在</td><td>后端日志出现 <code>chroma.sqlite3</code> 路径错误。</td><td>检查对应 <code>*-ref-seed</code> 是否 Exited (0)。</td></tr>
+  <tr><td>模型 400 错误</td><td>模型接口返回参数不兼容。</td><td>检查模型是否支持 OpenAI 兼容格式、stream、thinking 参数。</td></tr>
+  <tr><td>HTTPS 证书错误</td><td>浏览器提示证书不受信或域名不匹配。</td><td>确认证书 SAN、域名解析和客户端信任链。</td></tr>
+</table>
+
+
+<h1>12 数据包资源清单</h1>
+<p>部署目录中的 <code>deploy/data/manifest.json</code> 是数据包验收依据。V1.0 数据版本为 <code>2026-05-19</code>，各数据包由 seed job 自动导入，部署人员不需要手工解压。</p>
+<table>
+  <tr><th>数据包</th><th>文件名</th><th>大小</th><th>关键内容</th><th>导入目标</th></tr>
+  <tr><td>MinIO 原文</td><td><code>minio-originals.tar.zst</code></td><td>约 49.3 GiB</td><td>论文 7153 篇、专利目录 14006 个、专利 tables 9581 个。</td><td>MinIO bucket。</td></tr>
+  <tr><td>fastQA reference</td><td><code>fastqa-ref.tar.zst</code></td><td>约 4.09 GiB</td><td>文献主向量库、MD 向量库和索引文件。</td><td><code>fastqa_ref_data</code> volume。</td></tr>
+  <tr><td>highThinking reference</td><td><code>highthinking-ref.tar.zst</code></td><td>约 0.96 GiB</td><td>深度问答 vectordb。</td><td><code>highthinking_ref_data</code> volume。</td></tr>
+  <tr><td>patentQA reference</td><td><code>patentqa-ref.tar.zst</code></td><td>约 1.89 GiB</td><td>两个专利向量库、JSON-only patent archive，不含 PDF/PNG 原文。</td><td><code>patentqa_ref_data</code> volume。</td></tr>
+  <tr><td>public-service reference</td><td><code>public-service-ref.tar.zst</code></td><td>约 10 KiB</td><td>公共服务轻量 vector database。</td><td><code>public_service_ref_data</code> volume。</td></tr>
+  <tr><td>文献图谱</td><td><code>neo4j-literature.dump.zst</code></td><td>约 175 MiB</td><td>文献知识图谱 dump。</td><td><code>neo4j_literature_data</code> volume。</td></tr>
+  <tr><td>专利图谱</td><td><code>neo4j-patent.dump.zst</code></td><td>约 462 MiB</td><td>专利知识图谱 dump。</td><td><code>neo4j_patent_data</code> volume。</td></tr>
+</table>
+
+<h1>13 部署前检查清单</h1>
+<table>
+  <tr><th>序号</th><th>检查项</th><th>通过标准</th><th>失败处理</th></tr>
+  <tr><td class="center">1</td><td>Docker 服务</td><td><code>docker version</code> 正常返回。</td><td>启动 Docker 或联系系统管理员。</td></tr>
+  <tr><td class="center">2</td><td>Compose 命令</td><td><code>docker compose version</code> 正常返回。</td><td>安装或升级 Compose v2。</td></tr>
+  <tr><td class="center">3</td><td>磁盘空间</td><td>Docker 数据目录和部署目录空间满足数据导入要求。</td><td>扩容或迁移 Docker 数据目录。</td></tr>
+  <tr><td class="center">4</td><td>端口占用</td><td>HTTPS、HTTP、MySQL、Redis、MinIO 端口未冲突。</td><td>修改 <code>deploy/.env</code> 发布端口。</td></tr>
+  <tr><td class="center">5</td><td>证书文件</td><td><code>fullchain.pem</code> 和 <code>privkey.pem</code> 存在。</td><td>由客户证书体系签发或使用内网自签证书。</td></tr>
+  <tr><td class="center">6</td><td>数据包</td><td>manifest 和所有 <code>tar.zst</code>/<code>dump.zst</code> 文件存在。</td><td>重新传输数据包。</td></tr>
+  <tr><td class="center">7</td><td>模型连通</td><td>部署机或容器可访问 LLM、embedding、rerank、intent 服务。</td><td>检查内网路由、防火墙和模型网关。</td></tr>
+</table>
+
+<h1>14 上线验证记录表</h1>
+<table>
+  <tr><th>验证项</th><th>命令或操作</th><th>成功结果示例</th><th>异常结果示例</th></tr>
+  <tr><td>Compose 展开</td><td><code>docker compose --env-file deploy/.env -f deploy/docker-compose.yml config --images</code></td><td>列出 <code>lifeo4agent/gateway</code>、<code>lifeo4agent/frontend</code> 等镜像。</td><td>提示变量未定义或 YAML 语法错误。</td></tr>
+  <tr><td>容器状态</td><td><code>docker compose --env-file deploy/.env -f deploy/docker-compose.yml ps</code></td><td>长期服务 <code>Up</code>，seed job <code>Exited (0)</code>。</td><td>容器 <code>Restarting</code> 或 seed job 退出码非 0。</td></tr>
+  <tr><td>HTTPS 首页</td><td><code>curl -k -I https://域名:端口/</code></td><td>返回 <code>HTTP/2 200</code> 或 <code>HTTP/1.1 200</code>。</td><td>连接失败、证书域名不匹配、502。</td></tr>
+  <tr><td>网关健康</td><td><code>curl -k https://域名:端口/healthz</code></td><td>返回健康状态。</td><td>404 或 502，需检查 nginx 路由。</td></tr>
+  <tr><td>MinIO 对象</td><td>登录 MinIO 控制台检查 bucket。</td><td>存在 <code>papers/</code> 和 <code>patent/originals/</code>。</td><td>bucket 为空或 tables 缺失。</td></tr>
+  <tr><td>管理员登录</td><td>浏览器登录 <code>admin</code>。</td><td>进入管理后台或首次安全设置页。</td><td>账号不存在，检查 MySQL 初始化日志。</td></tr>
+  <tr><td>三类问答</td><td>分别发起文献、深度、专利问题。</td><td>返回答案、阶段耗时和引用。</td><td>模型 400、向量库路径错误或配额失败。</td></tr>
+</table>
+
+<h1>15 部署变更记录</h1>
+<p>每次上线或更新后，应在现场交付记录中补充以下内容，便于后续回滚和审计。</p>
+<table>
+  <tr><th>字段</th><th>填写说明</th></tr>
+  <tr><td>变更日期</td><td>记录实际部署日期和时间窗口。</td></tr>
+  <tr><td>变更内容</td><td>记录更新的镜像、数据包、配置或证书。</td></tr>
+  <tr><td>执行人员</td><td>记录部署方和实施方人员。</td></tr>
+  <tr><td>验证结果</td><td>记录健康检查、登录、问答和原文验证结果。</td></tr>
+  <tr><td>回滚材料</td><td>确认上一版本镜像、配置和数据库备份是否可用。</td></tr>
+</table>
+
+</body>
+</html>

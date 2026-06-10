@@ -1,0 +1,345 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LiFeO4Agent-测试报告-20260520-V1.0</title>
+
+<style>
+@page {
+  size: A4 portrait;
+  margin: 2.54cm 2.54cm 2.54cm 2.54cm;
+}
+body {
+  font-family: SimSun, "宋体", "Times New Roman", serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: #000;
+  text-align: justify;
+}
+.cover {
+  text-align: center;
+  page-break-after: always;
+  padding-top: 4.5cm;
+}
+.cover .system {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 0.8cm;
+}
+.cover .doc-title {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 22pt;
+  font-weight: bold;
+  margin-bottom: 3cm;
+}
+.cover .meta {
+  font-size: 10.5pt;
+  line-height: 1.8;
+}
+h1 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 16pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h2 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h3 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 10.5pt;
+  font-weight: bold;
+  margin: 6pt 0 3pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+p {
+  margin: 0 0 6pt 0;
+  text-indent: 2em;
+}
+.no-indent,
+table p,
+li p {
+  text-indent: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6pt 0;
+  font-size: 10.5pt;
+  page-break-inside: auto;
+}
+th, td {
+  border: 0.5pt solid #000;
+  padding: 4pt 5pt;
+  vertical-align: middle;
+}
+th {
+  background: #eeeeee;
+  font-weight: bold;
+  text-align: center;
+}
+td.center {
+  text-align: center;
+}
+td.left {
+  text-align: left;
+}
+pre {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.2;
+  background: #f2f2f2;
+  border: 0.5pt solid #cccccc;
+  padding: 6pt;
+  margin: 3pt 0 6pt 0;
+  white-space: pre-wrap;
+}
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+}
+ol, ul {
+  margin-top: 0;
+  margin-bottom: 6pt;
+}
+li {
+  margin-bottom: 3pt;
+}
+.version-table td,
+.version-table th {
+  text-align: center;
+}
+.note {
+  border-left: 3pt solid #999;
+  padding-left: 8pt;
+  margin: 6pt 0;
+}
+.page-break {
+  page-break-before: always;
+}
+.diagram {
+  border: 0.75pt solid #777;
+  background: #fafafa;
+  margin: 8pt 0 10pt 0;
+  padding: 8pt;
+  font-family: SimSun, "宋体", serif;
+}
+.diagram-title {
+  font-family: SimHei, "黑体", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 6pt;
+}
+.diagram pre {
+  border: 0;
+  background: transparent;
+  margin: 0;
+}
+.mermaid {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.25;
+  background: #f7f7f7;
+  border: 0.5pt solid #bfbfbf;
+  padding: 6pt;
+  white-space: pre-wrap;
+}
+</style>
+
+</head>
+<body>
+<div class="cover">
+  <div class="system">LiFeO4Agent</div>
+  <div class="doc-title">测试报告</div>
+  <div class="meta">
+    <div>文档版本：V1.0</div>
+    <div>文档日期：2026/05/20</div>
+    <div>适用环境：V1.0 交付测试和现场验收</div>
+    <div>文档对象：测试人员、项目负责人、验收人员</div>
+  </div>
+</div>
+<h1>版本记录</h1>
+<table class="version-table">
+  <tr><th>版本</th><th>日期</th><th>修订人</th><th>修订说明</th></tr>
+  <tr><td>V1.0</td><td>2026/05/20</td><td>项目组</td><td>初版</td></tr>
+</table>
+
+<h1>1 项目介绍</h1>
+<p>LiFeO4Agent 是面向电池材料研发场景的智能问答系统，提供文献问答、深度思考问答、专利问答、文件问答、原文查看、用户管理、部门人员管理和配额管理。本报告用于记录 V1.0 交付版本的测试范围、测试环境、功能测试、性能测试、安全测试和发布结论。</p>
+<table>
+  <tr><th>测试对象</th><th>测试范围</th><th>测试目标</th></tr>
+  <tr><td>前端与网关</td><td>登录、路由、问答入口、SSE 展示、文件上传。</td><td>验证用户可完成核心操作。</td></tr>
+  <tr><td>公共服务</td><td>用户、部门、人员、配额、会话、文件元数据。</td><td>验证基础业务数据一致。</td></tr>
+  <tr><td>QA 后端</td><td>文献、深度、专利三类问答。</td><td>验证检索、重排、生成、引用和原文入口。</td></tr>
+  <tr><td>基础组件</td><td>MySQL、Redis、MinIO、Neo4j、seed job。</td><td>验证数据可导入、服务可启动、健康检查可通过。</td></tr>
+  <tr><td>非功能</td><td>部署、性能、安全、稳定性。</td><td>验证达到发布准入要求。</td></tr>
+</table>
+
+<h1>2 测试环境</h1>
+<h2>2.1 硬件环境</h2>
+<table>
+  <tr><th>项目</th><th>测试记录</th><th>说明</th></tr>
+  <tr><td>服务器型号</td><td>目标部署服务器或等效测试服务器</td><td>正式验收时填写实际型号。</td></tr>
+  <tr><td>CPU</td><td>建议 16 核以上</td><td>记录实际核数和型号。</td></tr>
+  <tr><td>内存</td><td>建议 64 GB 以上</td><td>记录实际内存容量。</td></tr>
+  <tr><td>磁盘</td><td>建议 300 GB 以上可用空间</td><td>记录磁盘类型、容量和 Docker 数据目录。</td></tr>
+</table>
+
+<h2>2.2 网络环境</h2>
+<table>
+  <tr><th>项目</th><th>要求</th><th>验证方式</th></tr>
+  <tr><td>访问网络</td><td>客户端可访问部署机 HTTPS 端口。</td><td>浏览器访问和 <code>curl -k -I</code>。</td></tr>
+  <tr><td>模型网络</td><td>容器可访问 LLM、intent、embedding、rerank 服务。</td><td>问答请求和后端日志。</td></tr>
+  <tr><td>内网解析</td><td>部署域名解析到部署机 IP。</td><td><code>ping</code>、<code>nslookup</code> 或 hosts 检查。</td></tr>
+</table>
+
+<h2>2.3 软件环境</h2>
+<table>
+  <tr><th>软件</th><th>版本或配置</th><th>用途</th></tr>
+  <tr><td>Docker</td><td>Docker Engine + Compose v2</td><td>容器运行和编排。</td></tr>
+  <tr><td>MySQL</td><td>镜像 <code>mysql:8.0</code></td><td>用户态业务库。</td></tr>
+  <tr><td>Redis</td><td>镜像 <code>redis:7</code></td><td>缓存和运行状态。</td></tr>
+  <tr><td>MinIO</td><td>官方镜像</td><td>论文、专利原文和文件对象。</td></tr>
+  <tr><td>Neo4j</td><td>镜像 <code>neo4j:5.26.12</code></td><td>文献和专利知识图谱。</td></tr>
+  <tr><td>前端</td><td><code>lifeo4agent/frontend</code></td><td>Vue 3 + nginx。</td></tr>
+  <tr><td>后端</td><td>gateway、public-service、fastQA、highThinkingQA、patentQA</td><td>FastAPI 服务。</td></tr>
+</table>
+
+<h2>2.4 被测服务信息</h2>
+<table>
+  <tr><th>服务</th><th>容器内地址</th><th>对外入口</th><th>版本标识</th></tr>
+  <tr><td>edge</td><td><code>edge:443</code></td><td><code>https://部署域名</code></td><td>V1.0</td></tr>
+  <tr><td>gateway</td><td><code>gateway:8101</code></td><td>经前端 nginx 代理</td><td>V1.0</td></tr>
+  <tr><td>public-service</td><td><code>public-service:8102</code></td><td>经 gateway 代理</td><td>V1.0</td></tr>
+  <tr><td>fastQA</td><td><code>fastqa:8008</code></td><td>经 gateway 代理</td><td>V1.0</td></tr>
+  <tr><td>highThinkingQA</td><td><code>highthinkingqa:8009</code></td><td>经 gateway 代理</td><td>V1.0</td></tr>
+  <tr><td>patentQA</td><td><code>patent:8010</code></td><td>经 gateway 代理</td><td>V1.0</td></tr>
+</table>
+
+<h1>3 功能测试</h1>
+<table>
+  <tr><th>编号</th><th>模块</th><th>测试项</th><th>预期结果</th><th>状态</th></tr>
+  <tr><td>FT-001</td><td>认证</td><td>管理员登录</td><td>进入管理后台，提示首次安全设置。</td><td>通过标准：目标环境执行无阻塞。</td></tr>
+  <tr><td>FT-002</td><td>认证</td><td>普通用户注册</td><td>人员记录校验通过后创建账号。</td><td>通过标准：返回成功并可登录。</td></tr>
+  <tr><td>FT-003</td><td>用户中心</td><td>修改密码和设置安全问题</td><td>密码更新后旧密码不可登录。</td><td>通过标准：安全信息持久化。</td></tr>
+  <tr><td>FT-004</td><td>管理后台</td><td>部门树查看</td><td>显示电池材料技术研究中心及下属部门。</td><td>通过标准：三级部门完整。</td></tr>
+  <tr><td>FT-005</td><td>管理后台</td><td>人员记录维护</td><td>新增、编辑、停用、批量导入可用。</td><td>通过标准：状态影响注册。</td></tr>
+  <tr><td>FT-006</td><td>配额</td><td>普通问答、文件问答、查看原文配额</td><td>配额不足时拦截并给出提示。</td><td>通过标准：扣减和重置正确。</td></tr>
+  <tr><td>FT-007</td><td>文献问答</td><td>提交文献问题</td><td>返回答案、引用、阶段和耗时。</td><td>通过标准：引用可打开原文。</td></tr>
+  <tr><td>FT-008</td><td>深度问答</td><td>提交综合分析问题</td><td>分阶段返回深度回答。</td><td>通过标准：SSE 不断流。</td></tr>
+  <tr><td>FT-009</td><td>专利问答</td><td>提交专利问题</td><td>返回专利引用、tables 或原文入口。</td><td>通过标准：专利对象可读取。</td></tr>
+  <tr><td>FT-010</td><td>文件问答</td><td>上传 PDF、Excel、CSV 并提问</td><td>文件参与本轮问答。</td><td>通过标准：上传、列表、下载、删除均可用。</td></tr>
+</table>
+
+<h1>4 数据包和部署测试</h1>
+<table>
+  <tr><th>编号</th><th>测试项</th><th>期望结果</th><th>关键指标</th></tr>
+  <tr><td>DT-001</td><td>数据包 manifest 校验</td><td>sha256 校验通过。</td><td>所有必需包存在。</td></tr>
+  <tr><td>DT-002</td><td>MinIO 原文导入</td><td>papers、patent/originals 导入成功。</td><td>papers 7153，专利目录 14006，tables 9581。</td></tr>
+  <tr><td>DT-003</td><td>fastQA reference 导入</td><td>向量库进入 <code>fastqa_ref_data</code>。</td><td>Chroma SQLite 2 个。</td></tr>
+  <tr><td>DT-004</td><td>highThinking reference 导入</td><td>vectordb 进入 <code>highthinking_ref_data</code>。</td><td>Chroma SQLite 1 个。</td></tr>
+  <tr><td>DT-005</td><td>patentQA reference 导入</td><td>JSON-only archive 和专利向量库导入。</td><td>专利 JSON 目录 14006。</td></tr>
+  <tr><td>DT-006</td><td>Neo4j dump 导入</td><td>文献和专利 Neo4j 均 healthy。</td><td>seed job 退出码 0。</td></tr>
+  <tr><td>DT-007</td><td>同版本重启</td><td>seed job 识别 marker 并跳过。</td><td>无重复长时间导入。</td></tr>
+</table>
+
+<h1>5 性能测试</h1>
+<p>性能测试用于验证系统在目标硬件和目标模型服务能力下的响应表现。由于 LLM、embedding 和 rerank 延迟受外部模型平台影响，报告应同时记录模型服务状态。</p>
+<table>
+  <tr><th>场景</th><th>目的</th><th>建议指标</th><th>完成情况记录</th></tr>
+  <tr><td>登录接口</td><td>验证认证链路基础性能。</td><td>平均响应时间小于 1 秒，错误率 0。</td><td>目标环境执行后填写。</td></tr>
+  <tr><td>文献问答</td><td>验证检索和生成链路。</td><td>首包时间和总耗时满足业务可接受范围。</td><td>记录首 token、总耗时、引用数量。</td></tr>
+  <tr><td>深度问答</td><td>验证长流程稳定性。</td><td>SSE 持续输出，无 5xx。</td><td>记录阶段耗时。</td></tr>
+  <tr><td>专利问答</td><td>验证专利检索、图谱和原文。</td><td>错误率 0，原文入口可用。</td><td>记录检索、rerank、图谱耗时。</td></tr>
+  <tr><td>原文查看</td><td>验证 MinIO 下载能力。</td><td>PDF 可打开，无 404。</td><td>记录下载耗时。</td></tr>
+</table>
+<p>若部署方有明确并发要求，例如 500 并发用户、平均响应时间小于 2 秒，应在目标模型服务和目标硬件上补充压测，并将 TPS、P95、P99、错误率、CPU、内存、磁盘 I/O 写入本节。</p>
+
+<h1>6 安全测试</h1>
+<table>
+  <tr><th>编号</th><th>测试项</th><th>预期结果</th></tr>
+  <tr><td>ST-001</td><td>未登录访问首页</td><td>跳转登录页。</td></tr>
+  <tr><td>ST-002</td><td>普通用户访问管理后台</td><td>拒绝访问或跳转首页。</td></tr>
+  <tr><td>ST-003</td><td>停用用户登录</td><td>登录失败并提示账号状态异常。</td></tr>
+  <tr><td>ST-004</td><td>错误密码多次登录</td><td>触发失败计数或锁定策略。</td></tr>
+  <tr><td>ST-005</td><td>HTTPS 访问</td><td>传输使用 TLS。</td></tr>
+  <tr><td>ST-006</td><td>交付文档和镜像上下文检查</td><td>不包含真实 API Key、密码和 token。</td></tr>
+</table>
+
+<h1>7 缺陷统计</h1>
+<table>
+  <tr><th>严重级别</th><th>数量</th><th>状态说明</th></tr>
+  <tr><td>Blocker</td><td>0</td><td>发布前不得存在阻塞缺陷。</td></tr>
+  <tr><td>Critical</td><td>0</td><td>发布前应全部关闭。</td></tr>
+  <tr><td>Major</td><td>目标环境执行后填写</td><td>可按验收标准决定是否遗留。</td></tr>
+  <tr><td>Minor</td><td>目标环境执行后填写</td><td>记录不影响发布的体验问题。</td></tr>
+</table>
+
+<h1>8 测试结论</h1>
+<p>V1.0 交付版本的测试结论应以目标环境最终执行结果为准。发布准入建议如下：部署预检、数据包校验、容器健康检查、管理员登录、普通用户注册、文献问答、深度问答、专利问答、原文查看、文件问答均通过时，结论为“通过”；如存在 seed 失败、基础组件无法启动、核心问答不可用或安全阻断缺陷，结论为“不通过”。</p>
+<p>当前文档已将功能、部署、性能和安全测试项展开为可执行清单。正式提交测试报告时，应补充目标环境截图、性能曲线和实际测试结果。</p>
+
+
+<h1>9 测试用例执行明细</h1>
+<h2>9.1 认证与个人中心</h2>
+<table>
+  <tr><th>测试编号</th><th>测试内容</th><th>测试流程</th><th>预期结果</th><th>结论</th></tr>
+  <tr><td>TC-AUTH-001</td><td>管理员登录。</td><td>打开登录页，输入管理员账号和初始密码，提交登录。</td><td>登录成功，进入管理后台或首次安全设置页。</td><td>现场执行。</td></tr>
+  <tr><td>TC-AUTH-002</td><td>普通用户注册。</td><td>填写用户名、密码、姓名、工号和校验码，提交注册。</td><td>人员记录校验通过后账号创建成功。</td><td>现场执行。</td></tr>
+  <tr><td>TC-AUTH-003</td><td>找回密码。</td><td>输入用户名，回答安全问题，设置新密码。</td><td>旧密码失效，新密码可登录。</td><td>现场执行。</td></tr>
+  <tr><td>TC-AUTH-004</td><td>停用用户登录。</td><td>管理员停用用户，用户再次登录。</td><td>登录失败并提示账号状态异常。</td><td>现场执行。</td></tr>
+</table>
+
+<h2>9.2 管理后台</h2>
+<table>
+  <tr><th>测试编号</th><th>测试内容</th><th>测试流程</th><th>预期结果</th><th>结论</th></tr>
+  <tr><td>TC-ADM-001</td><td>用户管理。</td><td>新增用户、修改用户名、重置密码、修改类型、停用启用。</td><td>列表状态和用户登录行为与操作一致。</td><td>现场执行。</td></tr>
+  <tr><td>TC-ADM-002</td><td>部门树。</td><td>打开部门管理，查看 seed 部门树。</td><td>显示电池材料技术研究中心、正极材料研究所、装备工程化研究所、材料应用研究所及三级部门。</td><td>现场执行。</td></tr>
+  <tr><td>TC-ADM-003</td><td>人员管理。</td><td>新增人员、修改部门、停用人员、下载模板、批量导入。</td><td>人员状态影响注册和绑定。</td><td>现场执行。</td></tr>
+  <tr><td>TC-ADM-004</td><td>配额管理。</td><td>修改默认配额，查询用户用量，执行重置。</td><td>用户问答扣减和重置正确。</td><td>现场执行。</td></tr>
+</table>
+
+<h2>9.3 问答与文件</h2>
+<table>
+  <tr><th>测试编号</th><th>测试内容</th><th>测试流程</th><th>预期结果</th><th>结论</th></tr>
+  <tr><td>TC-QA-001</td><td>文献问答。</td><td>选择“文献”，输入论文相关问题并发送。</td><td>返回答案、阶段耗时、引用和论文原文入口。</td><td>现场执行。</td></tr>
+  <tr><td>TC-QA-002</td><td>深度问答。</td><td>选择“深度”，输入综合分析问题。</td><td>SSE 持续输出，最终答案完整。</td><td>现场执行。</td></tr>
+  <tr><td>TC-QA-003</td><td>专利问答。</td><td>选择“专利”，输入专利技术问题。</td><td>返回专利引用、图谱或 tables 信息。</td><td>现场执行。</td></tr>
+  <tr><td>TC-QA-004</td><td>PDF 文件问答。</td><td>上传 PDF，勾选文件后提问。</td><td>回答引用上传文件内容。</td><td>现场执行。</td></tr>
+  <tr><td>TC-QA-005</td><td>Excel/CSV 文件问答。</td><td>上传表格文件，询问统计和字段解释。</td><td>系统解析表格并给出回答。</td><td>现场执行。</td></tr>
+  <tr><td>TC-QA-006</td><td>原文查看。</td><td>点击论文或专利原文入口。</td><td>PDF 或对象内容可打开，无 404。</td><td>现场执行。</td></tr>
+</table>
+
+<h2>9.4 数据和模型调用</h2>
+<table>
+  <tr><th>测试编号</th><th>测试内容</th><th>测试流程</th><th>预期结果</th><th>结论</th></tr>
+  <tr><td>TC-DATA-001</td><td>MinIO 原文数量。</td><td>检查 manifest 和 MinIO seed 日志。</td><td>papers 7153、专利目录 14006、tables 9581。</td><td>现场执行。</td></tr>
+  <tr><td>TC-DATA-002</td><td>向量库加载。</td><td>查看 fastQA、highThinkingQA、patentQA 启动日志。</td><td>Chroma SQLite 文件存在，服务启动无路径错误。</td><td>现场执行。</td></tr>
+  <tr><td>TC-DATA-003</td><td>图谱加载。</td><td>查看两个 Neo4j seed 和 healthcheck。</td><td>两个 Neo4j 容器 healthy。</td><td>现场执行。</td></tr>
+  <tr><td>TC-MODEL-001</td><td>LLM 调用。</td><td>发起三类问答，查看 QA 日志。</td><td>模型请求成功，无 401、400、timeout。</td><td>现场执行。</td></tr>
+  <tr><td>TC-MODEL-002</td><td>Intent 调用。</td><td>发起文献和专利问答，查看 intent 阶段日志。</td><td>intent 模型按配置启用并返回分类。</td><td>现场执行。</td></tr>
+  <tr><td>TC-MODEL-003</td><td>Rerank 调用。</td><td>发起文献和专利检索类问题，查看 rerank 日志。</td><td>rerank provider 非 none 时成功调用。</td><td>现场执行。</td></tr>
+</table>
+
+<h1>10 性能测试记录模板</h1>
+<table>
+  <tr><th>场景</th><th>并发或次数</th><th>平均响应</th><th>P95</th><th>错误率</th><th>CPU</th><th>内存</th><th>结论</th></tr>
+  <tr><td>登录接口</td><td>按客户验收要求填写</td><td>现场记录</td><td>现场记录</td><td>0 为目标</td><td>现场记录</td><td>现场记录</td><td>现场执行。</td></tr>
+  <tr><td>文献问答首包</td><td>按客户验收要求填写</td><td>现场记录</td><td>现场记录</td><td>0 为目标</td><td>现场记录</td><td>现场记录</td><td>现场执行。</td></tr>
+  <tr><td>深度问答总耗时</td><td>按客户验收要求填写</td><td>现场记录</td><td>现场记录</td><td>0 为目标</td><td>现场记录</td><td>现场记录</td><td>现场执行。</td></tr>
+  <tr><td>专利问答首包</td><td>按客户验收要求填写</td><td>现场记录</td><td>现场记录</td><td>0 为目标</td><td>现场记录</td><td>现场记录</td><td>现场执行。</td></tr>
+  <tr><td>原文查看</td><td>按客户验收要求填写</td><td>现场记录</td><td>现场记录</td><td>0 为目标</td><td>现场记录</td><td>现场记录</td><td>现场执行。</td></tr>
+</table>
+<p>正式验收时应将截图、日志片段、压测曲线或监控图替换到测试附件中。若客户未要求固定并发指标，本报告以功能通过、核心链路可用、无阻塞缺陷作为发布准入标准。</p>
+
+</body>
+</html>

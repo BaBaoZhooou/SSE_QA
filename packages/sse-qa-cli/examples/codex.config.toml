@@ -1,0 +1,4 @@
+[mcp_servers.sse-qa]
+enabled = true
+transport = { type = "stdio", command = "npx", args = ["-y", "@sse-qa/cli", "mcp", "--auto-start"] }
+env = { SSE_QA_AUTO_START = "1", SSE_QA_ENABLED_MODES = "fast,thinking" }

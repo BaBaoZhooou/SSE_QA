@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LiFeO4Agent-需求清单-20260520-V1.0</title>
+
+<style>
+@page {
+  size: A4 portrait;
+  margin: 2.54cm 2.54cm 2.54cm 2.54cm;
+}
+body {
+  font-family: SimSun, "宋体", "Times New Roman", serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: #000;
+  text-align: justify;
+}
+.cover {
+  text-align: center;
+  page-break-after: always;
+  padding-top: 4.5cm;
+}
+.cover .system {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 0.8cm;
+}
+.cover .doc-title {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 22pt;
+  font-weight: bold;
+  margin-bottom: 3cm;
+}
+.cover .meta {
+  font-size: 10.5pt;
+  line-height: 1.8;
+}
+h1 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 16pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h2 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h3 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 10.5pt;
+  font-weight: bold;
+  margin: 6pt 0 3pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+p {
+  margin: 0 0 6pt 0;
+  text-indent: 2em;
+}
+.no-indent,
+table p,
+li p {
+  text-indent: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6pt 0;
+  font-size: 10.5pt;
+  page-break-inside: auto;
+}
+th, td {
+  border: 0.5pt solid #000;
+  padding: 4pt 5pt;
+  vertical-align: middle;
+}
+th {
+  background: #eeeeee;
+  font-weight: bold;
+  text-align: center;
+}
+td.center {
+  text-align: center;
+}
+td.left {
+  text-align: left;
+}
+pre {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.2;
+  background: #f2f2f2;
+  border: 0.5pt solid #cccccc;
+  padding: 6pt;
+  margin: 3pt 0 6pt 0;
+  white-space: pre-wrap;
+}
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+}
+ol, ul {
+  margin-top: 0;
+  margin-bottom: 6pt;
+}
+li {
+  margin-bottom: 3pt;
+}
+.version-table td,
+.version-table th {
+  text-align: center;
+}
+.note {
+  border-left: 3pt solid #999;
+  padding-left: 8pt;
+  margin: 6pt 0;
+}
+.page-break {
+  page-break-before: always;
+}
+.diagram {
+  border: 0.75pt solid #777;
+  background: #fafafa;
+  margin: 8pt 0 10pt 0;
+  padding: 8pt;
+  font-family: SimSun, "宋体", serif;
+}
+.diagram-title {
+  font-family: SimHei, "黑体", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 6pt;
+}
+.diagram pre {
+  border: 0;
+  background: transparent;
+  margin: 0;
+}
+.mermaid {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.25;
+  background: #f7f7f7;
+  border: 0.5pt solid #bfbfbf;
+  padding: 6pt;
+  white-space: pre-wrap;
+}
+</style>
+
+</head>
+<body>
+<div class="cover">
+  <div class="system">LiFeO4Agent</div>
+  <div class="doc-title">需求清单</div>
+  <div class="meta">
+    <div>文档版本：V1.0</div>
+    <div>文档日期：2026/05/20</div>
+    <div>适用环境：V1.0 需求跟踪和验收确认</div>
+    <div>文档对象：业务负责人、项目负责人、测试人员</div>
+  </div>
+</div>
+<h1>版本记录</h1>
+<table class="version-table">
+  <tr><th>版本</th><th>日期</th><th>修订人</th><th>修订说明</th></tr>
+  <tr><td>V1.0</td><td>2026/05/20</td><td>项目组</td><td>初版</td></tr>
+</table>
+
+<h1>需求清单</h1>
+<table>
+  <tr><th>序号</th><th>需求层级</th><th>需求简述</th><th>提出时间</th><th>需求文档</th><th>完成时间</th><th>状态</th><th>备注</th></tr>
+  <tr><td class="center">REQ-001</td><td>业务需求-问答</td><td>系统应提供文献、深度、专利三种问答模式。</td><td>2026-05-20</td><td>需求规格说明书 V1.0</td><td>2026-05-20</td><td>已实现</td><td>前端显示为“文献/深度/专利”。</td></tr>
+  <tr><td class="center">REQ-002</td><td>业务需求-文件</td><td>系统应支持 PDF、Excel、CSV 上传并参与问答。</td><td>2026-05-20</td><td>需求规格说明书 V1.0</td><td>2026-05-20</td><td>已实现</td><td>由 public-service 管理文件元数据。</td></tr>
+  <tr><td class="center">REQ-003</td><td>业务需求-原文</td><td>系统应支持论文和专利原文查看。</td><td>2026-05-20</td><td>需求规格说明书 V1.0</td><td>2026-05-20</td><td>已实现</td><td>原文存储在 MinIO。</td></tr>
+  <tr><td class="center">REQ-004</td><td>业务需求-专利</td><td>专利问答应能读取 structured tables 数据。</td><td>2026-05-20</td><td>MinIO 原文数据计划</td><td>2026-05-20</td><td>已实现</td><td>tables 文件数 9581。</td></tr>
+  <tr><td class="center">REQ-005</td><td>账号权限-登录</td><td>用户应能通过用户名和密码登录。</td><td>2026-05-20</td><td>账号管理需求</td><td>2026-05-20</td><td>已实现</td><td>登录成功返回 token。</td></tr>
+  <tr><td class="center">REQ-006</td><td>账号权限-注册</td><td>普通用户注册必须校验人员记录。</td><td>2026-05-20</td><td>账号管理需求</td><td>2026-05-20</td><td>已实现</td><td>姓名、工号、校验码匹配。</td></tr>
+  <tr><td class="center">REQ-007</td><td>账号权限-安全</td><td>首次登录应强制修改密码并设置安全问题。</td><td>2026-05-20</td><td>账号安全需求</td><td>2026-05-20</td><td>已实现</td><td>管理员初始账号同样适用。</td></tr>
+  <tr><td class="center">REQ-008</td><td>账号权限-找回</td><td>用户应能通过安全问题找回密码。</td><td>2026-05-20</td><td>账号安全需求</td><td>2026-05-20</td><td>已实现</td><td>未设置安全问题需管理员处理。</td></tr>
+  <tr><td class="center">REQ-009</td><td>管理后台-用户</td><td>管理员应能维护用户状态、密码、类型和人员绑定。</td><td>2026-05-20</td><td>管理后台需求</td><td>2026-05-20</td><td>已实现</td><td>支持批量操作。</td></tr>
+  <tr><td class="center">REQ-010</td><td>管理后台-部门</td><td>管理员应能维护三级部门。</td><td>2026-05-20</td><td>管理后台需求</td><td>2026-05-20</td><td>已实现</td><td>seed 导入真实部门树。</td></tr>
+  <tr><td class="center">REQ-011</td><td>管理后台-人员</td><td>管理员应能维护人员记录和批量导入模板。</td><td>2026-05-20</td><td>管理后台需求</td><td>2026-05-20</td><td>已实现</td><td>用于注册和绑定。</td></tr>
+  <tr><td class="center">REQ-012</td><td>管理后台-配额</td><td>管理员应能配置普通问答、文件问答、查看原文、文档辅助配额。</td><td>2026-05-20</td><td>配额需求</td><td>2026-05-20</td><td>已实现</td><td>支持默认配置和用户重置。</td></tr>
+  <tr><td class="center">REQ-013</td><td>后端-gateway</td><td>gateway 应统一代理认证、会话、问答和文件请求。</td><td>2026-05-20</td><td>架构设计</td><td>2026-05-20</td><td>已实现</td><td>前端主要访问 gateway。</td></tr>
+  <tr><td class="center">REQ-014</td><td>后端-public-service</td><td>public-service 应独立承载公共业务能力。</td><td>2026-05-20</td><td>架构设计</td><td>2026-05-20</td><td>已实现</td><td>用户、部门、人员、配额、文件。</td></tr>
+  <tr><td class="center">REQ-015</td><td>后端-fastQA</td><td>fastQA 应加载文献向量库和主题索引。</td><td>2026-05-20</td><td>文献问答需求</td><td>2026-05-20</td><td>已实现</td><td>数据包 fastqa-ref。</td></tr>
+  <tr><td class="center">REQ-016</td><td>后端-highThinkingQA</td><td>highThinkingQA 应加载独立 vectordb。</td><td>2026-05-20</td><td>深度问答需求</td><td>2026-05-20</td><td>已实现</td><td>数据包 highthinking-ref。</td></tr>
+  <tr><td class="center">REQ-017</td><td>后端-patentQA</td><td>patentQA 应加载两个专利向量库和 JSON-only archive。</td><td>2026-05-20</td><td>专利问答需求</td><td>2026-05-20</td><td>已实现</td><td>数据包 patentqa-ref。</td></tr>
+  <tr><td class="center">REQ-018</td><td>数据-MinIO</td><td>论文和专利原文应只以 MinIO 为权威副本。</td><td>2026-05-20</td><td>数据交付方案</td><td>2026-05-20</td><td>已实现</td><td>后端不重复携带 PDF/PNG。</td></tr>
+  <tr><td class="center">REQ-019</td><td>数据-向量库</td><td>向量库应通过 named volume 挂载，部署方不手工配置路径。</td><td>2026-05-20</td><td>数据交付方案</td><td>2026-05-20</td><td>已实现</td><td>compose 固定内部路径。</td></tr>
+  <tr><td class="center">REQ-020</td><td>数据-图谱</td><td>文献和专利图谱应分别使用独立 Neo4j 容器。</td><td>2026-05-20</td><td>图谱部署方案</td><td>2026-05-20</td><td>已实现</td><td>部署方不配置 Neo4j 地址。</td></tr>
+  <tr><td class="center">REQ-021</td><td>模型-LLM</td><td>系统应支持统一 LLM base url、模型名和 API Key。</td><td>2026-05-20</td><td>模型配置方案</td><td>2026-05-20</td><td>已实现</td><td>配置在 deploy/.env。</td></tr>
+  <tr><td class="center">REQ-022</td><td>模型-intent</td><td>fastQA 和 patentQA 应使用统一 intent 模型配置名。</td><td>2026-05-20</td><td>模型配置方案</td><td>2026-05-20</td><td>已实现</td><td><code>INTENT_MODEL_*</code>。</td></tr>
+  <tr><td class="center">REQ-023</td><td>模型-embedding</td><td>fastQA/patentQA 和 highThinkingQA 应分别配置 embedding。</td><td>2026-05-20</td><td>模型配置方案</td><td>2026-05-20</td><td>已实现</td><td><code>QA_EMBEDDING_*</code> 与 <code>HIGHTHINKINGQA_EMBEDDING_*</code>。</td></tr>
+  <tr><td class="center">REQ-024</td><td>模型-rerank</td><td>文献和专利检索应支持统一 rerank 配置和禁用。</td><td>2026-05-20</td><td>模型配置方案</td><td>2026-05-20</td><td>已实现</td><td><code>RERANK_PROVIDER=none</code> 可禁用。</td></tr>
+  <tr><td class="center">REQ-025</td><td>部署-离线</td><td>部署方应能通过 docker load 和 compose 完成离线部署。</td><td>2026-05-20</td><td>部署方案</td><td>2026-05-20</td><td>已实现</td><td>无需宿主机安装 mc/zstd/neo4j-admin。</td></tr>
+  <tr><td class="center">REQ-026</td><td>部署-HTTPS</td><td>系统应提供 HTTPS 入口并支持部署方替换证书。</td><td>2026-05-20</td><td>HTTPS 需求</td><td>2026-05-20</td><td>已实现</td><td>edge nginx 处理 TLS。</td></tr>
+  <tr><td class="center">REQ-027</td><td>部署-预检</td><td>系统应提供 preflight 检查配置、镜像和数据包。</td><td>2026-05-20</td><td>运维需求</td><td>2026-05-20</td><td>已实现</td><td><code>preflight_check.sh</code>。</td></tr>
+  <tr><td class="center">REQ-028</td><td>部署-更新</td><td>系统应支持单服务镜像增量更新。</td><td>2026-05-20</td><td>更新部署需求</td><td>2026-05-20</td><td>已实现</td><td>例如只更新 fastQA。</td></tr>
+  <tr><td class="center">REQ-029</td><td>运维-备份</td><td>系统应区分运行态数据和可重建 reference data。</td><td>2026-05-20</td><td>运维需求</td><td>2026-05-20</td><td>已实现</td><td>MySQL 和运行期 MinIO 需备份。</td></tr>
+  <tr><td class="center">REQ-030</td><td>安全-隐私</td><td>系统不应在文档和镜像上下文中包含真实密钥。</td><td>2026-05-20</td><td>安全要求</td><td>2026-05-20</td><td>已实现</td><td>密钥由部署方填写。</td></tr>
+  <tr><td class="center">REQ-031</td><td>前端-会话</td><td>系统应支持会话创建、切换、标题修改、删除和历史消息查看。</td><td>2026-05-20</td><td>用户操作需求</td><td>2026-05-20</td><td>已实现</td><td>会话数据进入 MySQL。</td></tr>
+  <tr><td class="center">REQ-032</td><td>前端-阶段展示</td><td>问答过程中应展示阶段、耗时、引用和错误提示。</td><td>2026-05-20</td><td>问答体验需求</td><td>2026-05-20</td><td>已实现</td><td>支持 intent、检索、rerank、生成等阶段。</td></tr>
+  <tr><td class="center">REQ-033</td><td>接口-任务</td><td>系统应支持任务创建、事件读取和取消。</td><td>2026-05-20</td><td>接口设计</td><td>2026-05-20</td><td>已实现</td><td><code>/api/v1/tasks*</code>。</td></tr>
+  <tr><td class="center">REQ-034</td><td>接口-准入</td><td>系统应支持请求准入状态、请求查询、取消和事件帧读取。</td><td>2026-05-20</td><td>接口设计</td><td>2026-05-20</td><td>已实现</td><td><code>/api/admission/*</code>。</td></tr>
+  <tr><td class="center">REQ-035</td><td>接口-内部协作</td><td>gateway 与 public-service 应通过内部接口完成配额和消息落库。</td><td>2026-05-20</td><td>接口设计</td><td>2026-05-20</td><td>已实现</td><td><code>/internal/quota/*</code> 和 <code>/internal/conversations/*</code>。</td></tr>
+  <tr><td class="center">REQ-036</td><td>文档-部署手册</td><td>部署手册应包含部署方案、环境要求、镜像加载、启动验证、模型配置、FAQ 和更新回滚。</td><td>2026-05-20</td><td>交付文档要求</td><td>2026-05-20</td><td>已实现</td><td>命令附成功和失败示例。</td></tr>
+  <tr><td class="center">REQ-037</td><td>文档-运维手册</td><td>运维手册应包含系统资源、巡检、日志、启停、备份恢复和应急处置。</td><td>2026-05-20</td><td>交付文档要求</td><td>2026-05-20</td><td>已实现</td><td>包含 Mermaid 拓扑和泳道图。</td></tr>
+  <tr><td class="center">REQ-038</td><td>文档-开发文档</td><td>开发文档应覆盖工程结构、模块、接口、数据库、配置和数据包构建规范。</td><td>2026-05-20</td><td>交付文档要求</td><td>2026-05-20</td><td>已实现</td><td>用于后续维护。</td></tr>
+  <tr><td class="center">REQ-039</td><td>文档-概要设计</td><td>概要设计应覆盖系统架构、软件架构、集成架构、部署架构、数据库和非功能设计。</td><td>2026-05-20</td><td>交付文档要求</td><td>2026-05-20</td><td>已实现</td><td>图使用 Mermaid 表达。</td></tr>
+  <tr><td class="center">REQ-040</td><td>文档-详细设计</td><td>详细设计应按模块说明功能、页面、库表、重点逻辑、流程、接口、输入输出和异常。</td><td>2026-05-20</td><td>交付文档要求</td><td>2026-05-20</td><td>已实现</td><td>覆盖三类问答和数据导入。</td></tr>
+  <tr><td class="center">REQ-041</td><td>文档-测试报告</td><td>测试报告应覆盖环境、功能、性能、安全、数据和模型调用。</td><td>2026-05-20</td><td>交付文档要求</td><td>2026-05-20</td><td>已实现</td><td>提供可执行用例表。</td></tr>
+  <tr><td class="center">REQ-042</td><td>文档-用户手册</td><td>用户手册应以最终用户视角说明注册、登录、问答、文件、原文和管理操作。</td><td>2026-05-20</td><td>交付文档要求</td><td>2026-05-20</td><td>已实现</td><td>不写部署细节。</td></tr>
+  <tr><td class="center">REQ-043</td><td>安全-HTTPS</td><td>系统应支持内网域名、客户自签证书和证书替换。</td><td>2026-05-20</td><td>安全传输需求</td><td>2026-05-20</td><td>已实现</td><td><code>deploy/certs</code> 为证书挂载目录。</td></tr>
+  <tr><td class="center">REQ-044</td><td>安全-账号</td><td>密码和人员校验码不得明文存储。</td><td>2026-05-20</td><td>安全需求</td><td>2026-05-20</td><td>已实现</td><td>使用哈希字段。</td></tr>
+  <tr><td class="center">REQ-045</td><td>安全-权限</td><td>管理员接口应限制为管理员角色访问。</td><td>2026-05-20</td><td>安全需求</td><td>2026-05-20</td><td>已实现</td><td>前端隐藏入口，后端校验权限。</td></tr>
+  <tr><td class="center">REQ-046</td><td>运维-日志</td><td>各容器应通过 Docker 日志输出关键阶段和错误信息。</td><td>2026-05-20</td><td>运维需求</td><td>2026-05-20</td><td>已实现</td><td>日志不得输出真实密钥。</td></tr>
+  <tr><td class="center">REQ-047</td><td>运维-恢复</td><td>系统应支持通过备份配置、数据库、镜像和数据包进行恢复。</td><td>2026-05-20</td><td>运维需求</td><td>2026-05-20</td><td>已实现</td><td>运维手册给出恢复步骤。</td></tr>
+  <tr><td class="center">REQ-048</td><td>数据-部门</td><td>MySQL 初始化应导入真实部门树，不导入测试部门。</td><td>2026-05-20</td><td>部门 seed 要求</td><td>2026-05-20</td><td>已实现</td><td>电池材料技术研究中心及下属部门。</td></tr>
+  <tr><td class="center">REQ-049</td><td>数据-管理员</td><td>MySQL 初始化应创建 bootstrap 管理员账号。</td><td>2026-05-20</td><td>管理员 seed 要求</td><td>2026-05-20</td><td>已实现</td><td>文档不记录明文密码。</td></tr>
+  <tr><td class="center">REQ-050</td><td>交付-命名</td><td>产品展示名使用 LiFeO4Agent，镜像仓库名使用 lowercase <code>lifeo4agent/*</code>。</td><td>2026-05-20</td><td>命名规范</td><td>2026-05-20</td><td>已实现</td><td>满足 Docker 镜像命名规范。</td></tr>
+</table>
+
+</body>
+</html>

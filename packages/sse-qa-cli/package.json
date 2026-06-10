@@ -1,0 +1,54 @@
+{
+  "name": "@sse-qa/cli",
+  "version": "0.3.1",
+  "description": "All-in-one CLI, MCP, and backend runtime for solid-state electrolyte QA (agent-only).",
+  "type": "module",
+  "bin": {
+    "sse-qa": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "runtime",
+    "README.md",
+    "LICENSE",
+    "examples"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "sync-backend": "bash ../../scripts/sync-server-bundle.sh",
+    "prepublishOnly": "npm run sync-backend && npm run build",
+    "postinstall": "node ./runtime/install.mjs",
+    "test:smoke": "node ./dist/index.js --help && node ./runtime/src/index.mjs --help"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "sse",
+    "solid-state-electrolyte",
+    "qa",
+    "mcp",
+    "claude",
+    "chromadb",
+    "neo4j"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BaBaoZhooou/SSE_QA.git",
+    "directory": "packages/sse-qa-cli"
+  },
+  "author": "Wenbo Li <BaBaoZhooou@users.noreply.github.com>"
+}

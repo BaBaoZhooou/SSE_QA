@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SSE QA User Config",
+  "type": "object",
+  "required": ["llm", "chroma", "ports", "modes"],
+  "properties": {
+    "llm": {
+      "type": "object",
+      "required": ["base_url", "model", "api_key_file"],
+      "properties": {
+        "base_url": { "type": "string" },
+        "model": { "type": "string" },
+        "api_key_file": { "type": "string" }
+      }
+    },
+    "embedding": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "enum": ["remote", "local"] },
+        "base_url": { "type": "string" },
+        "model": { "type": "string" },
+        "api_key_file": { "type": "string" }
+      }
+    },
+    "chroma": {
+      "type": "object",
+      "required": ["fastqa", "thinking"],
+      "properties": {
+        "fastqa": {
+          "type": "object",
+          "required": ["vector_db_path"],
+          "properties": {
+            "vector_db_path": { "type": "string" },
+            "vector_db_md_path": { "type": "string" }
+          }
+        },
+        "thinking": {
+          "type": "object",
+          "required": ["persist_dir", "collection_name"],
+          "properties": {
+            "persist_dir": { "type": "string" },
+            "collection_name": { "type": "string" }
+          }
+        }
+      }
+    },
+    "neo4j": {
+      "type": "object",
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "url": { "type": "string" },
+        "username": { "type": "string" },
+        "password_file": { "type": "string" },
+        "database": { "type": "string" },
+        "schema": { "type": "string", "enum": ["sse", "off", "auto"] }
+      }
+    },
+    "ports": {
+      "type": "object",
+      "properties": {
+        "gateway": { "type": "integer" },
+        "fastqa": { "type": "integer" },
+        "thinking": { "type": "integer" },
+        "redis": { "type": "integer" }
+      }
+    },
+    "modes": {
+      "type": "object",
+      "properties": {
+        "enabled": { "type": "string" }
+      }
+    },
+    "rerank": {
+      "type": "object",
+      "properties": {
+        "provider": { "type": "string" }
+      }
+    }
+  }
+}

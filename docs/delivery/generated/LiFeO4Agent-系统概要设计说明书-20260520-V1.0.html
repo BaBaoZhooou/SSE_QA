@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LiFeO4Agent-系统概要设计说明书-20260520-V1.0</title>
+
+<style>
+@page {
+  size: A4 portrait;
+  margin: 2.54cm 2.54cm 2.54cm 2.54cm;
+}
+body {
+  font-family: SimSun, "宋体", "Times New Roman", serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: #000;
+  text-align: justify;
+}
+.cover {
+  text-align: center;
+  page-break-after: always;
+  padding-top: 4.5cm;
+}
+.cover .system {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 0.8cm;
+}
+.cover .doc-title {
+  font-family: SimHei, "黑体", "Microsoft YaHei", sans-serif;
+  font-size: 22pt;
+  font-weight: bold;
+  margin-bottom: 3cm;
+}
+.cover .meta {
+  font-size: 10.5pt;
+  line-height: 1.8;
+}
+h1 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 16pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h2 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 12pt 0 6pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+h3 {
+  font-family: SimHei, "黑体", sans-serif;
+  font-size: 10.5pt;
+  font-weight: bold;
+  margin: 6pt 0 3pt 0;
+  line-height: 1.5;
+  page-break-after: avoid;
+}
+p {
+  margin: 0 0 6pt 0;
+  text-indent: 2em;
+}
+.no-indent,
+table p,
+li p {
+  text-indent: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6pt 0;
+  font-size: 10.5pt;
+  page-break-inside: auto;
+}
+th, td {
+  border: 0.5pt solid #000;
+  padding: 4pt 5pt;
+  vertical-align: middle;
+}
+th {
+  background: #eeeeee;
+  font-weight: bold;
+  text-align: center;
+}
+td.center {
+  text-align: center;
+}
+td.left {
+  text-align: left;
+}
+pre {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.2;
+  background: #f2f2f2;
+  border: 0.5pt solid #cccccc;
+  padding: 6pt;
+  margin: 3pt 0 6pt 0;
+  white-space: pre-wrap;
+}
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+}
+ol, ul {
+  margin-top: 0;
+  margin-bottom: 6pt;
+}
+li {
+  margin-bottom: 3pt;
+}
+.version-table td,
+.version-table th {
+  text-align: center;
+}
+.note {
+  border-left: 3pt solid #999;
+  padding-left: 8pt;
+  margin: 6pt 0;
+}
+.page-break {
+  page-break-before: always;
+}
+.diagram {
+  border: 0.75pt solid #777;
+  background: #fafafa;
+  margin: 8pt 0 10pt 0;
+  padding: 8pt;
+  font-family: SimSun, "宋体", serif;
+}
+.diagram-title {
+  font-family: SimHei, "黑体", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 6pt;
+}
+.diagram pre {
+  border: 0;
+  background: transparent;
+  margin: 0;
+}
+.mermaid {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 9pt;
+  line-height: 1.25;
+  background: #f7f7f7;
+  border: 0.5pt solid #bfbfbf;
+  padding: 6pt;
+  white-space: pre-wrap;
+}
+</style>
+
+</head>
+<body>
+<div class="cover">
+  <div class="system">LiFeO4Agent</div>
+  <div class="doc-title">系统概要设计说明书</div>
+  <div class="meta">
+    <div>文档版本：V1.0</div>
+    <div>文档日期：2026/05/20</div>
+    <div>适用环境：系统设计、评审和架构维护</div>
+    <div>文档对象：项目负责人、架构师、开发和测试人员</div>
+  </div>
+</div>
+<h1>版本记录</h1>
+<table class="version-table">
+  <tr><th>版本</th><th>日期</th><th>修订人</th><th>修订说明</th></tr>
+  <tr><td>V1.0</td><td>2026/05/20</td><td>项目组</td><td>初版</td></tr>
+</table>
+
+<h1>1 简介</h1>
+<h2>1.1 编写目的</h2>
+<p>本文档从宏观层面说明 LiFeO4Agent 的系统目标、总体架构、技术选型、模块划分、集成关系、部署策略、数据设计、安全和非功能设计，用于指导详细设计、开发实现、测试验收和后续运维。</p>
+<h2>1.2 适用范围</h2>
+<p>本文档适用于项目组成员、测试人员、部署运维人员和业务负责人。最终用户操作说明见用户手册；部署命令和现场实施步骤见部署手册。</p>
+<h2>1.3 名词术语</h2>
+<table>
+  <tr><th>编号</th><th>术语</th><th>说明</th></tr>
+  <tr><td>1</td><td>RAG</td><td>检索增强生成，通过检索知识库内容辅助大模型回答。</td></tr>
+  <tr><td>2</td><td>MinIO</td><td>对象存储，保存论文、专利原文和运行期文件。</td></tr>
+  <tr><td>3</td><td>Chroma</td><td>向量数据库，用于文献、专利和深度问答检索。</td></tr>
+  <tr><td>4</td><td>Neo4j</td><td>图数据库，承载文献和专利知识图谱。</td></tr>
+  <tr><td>5</td><td>Seed</td><td>部署时自动导入初始数据的过程。</td></tr>
+</table>
+<h2>1.4 参考资料</h2>
+<table>
+  <tr><th>资料</th><th>说明</th></tr>
+  <tr><td>需求清单 V1.0</td><td>功能和非功能需求来源。</td></tr>
+  <tr><td>部署手册 V1.0</td><td>部署和数据导入方式。</td></tr>
+  <tr><td>开发文档 V1.0</td><td>工程结构和接口实现。</td></tr>
+</table>
+
+<h1>2 系统架构设计</h1>
+<h2>2.1 项目简介</h2>
+<p>LiFeO4Agent 面向电池材料研发领域，帮助用户围绕文献、专利和上传文件进行专业问答、归纳分析和原文核对，提高研发信息检索和技术分析效率。</p>
+<h2>2.2 现状及应用场景</h2>
+<p>研发人员需要同时查询论文、专利、实验文件和知识图谱。传统检索方式存在信息分散、原文定位慢、专利表格难利用、文献和专利分析链路割裂等问题。系统通过文献问答、深度问答、专利问答和文件问答，将检索、重排、图谱和生成能力统一到一个入口。</p>
+<h2>2.3 建设目标</h2>
+<table>
+  <tr><th>目标</th><th>说明</th></tr>
+  <tr><td>统一入口</td><td>提供浏览器端统一问答和管理入口。</td></tr>
+  <tr><td>三类问答</td><td>支持文献、深度、专利三种模式。</td></tr>
+  <tr><td>原文可核对</td><td>论文和专利原文统一从 MinIO 读取。</td></tr>
+  <tr><td>可离线交付</td><td>镜像和数据包可在内网环境部署。</td></tr>
+  <tr><td>可增量维护</td><td>后续可按服务镜像或数据包单独升级。</td></tr>
+</table>
+
+<h1>3 架构</h1>
+<div class="diagram">
+  <div class="diagram-title">图 1 系统功能架构图</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-系统概要设计说明书-20260520-V1.0-diagram-01.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+
+<h2>3.1 功能模块说明</h2>
+<table>
+  <tr><th>模块</th><th>职责</th><th>交互方式</th></tr>
+  <tr><td>前端门户</td><td>提供用户操作界面。</td><td>调用 gateway API。</td></tr>
+  <tr><td>gateway</td><td>认证代理、路由、SSE、配额协调。</td><td>调用 public-service 和 QA 后端。</td></tr>
+  <tr><td>public-service</td><td>用户、部门、人员、配额、文件、原文代理。</td><td>访问 MySQL、Redis、MinIO。</td></tr>
+  <tr><td>fastQA</td><td>文献检索和生成。</td><td>访问 fastQA 向量库、MinIO、文献图谱和模型。</td></tr>
+  <tr><td>highThinkingQA</td><td>深度问答和多阶段推理。</td><td>访问 vectordb、MinIO 和模型。</td></tr>
+  <tr><td>patentQA</td><td>专利检索、tables、图谱增强和回答。</td><td>访问 patentQA 向量库、MinIO、专利图谱和模型。</td></tr>
+</table>
+
+<h1>4 软件架构</h1>
+<div class="diagram">
+  <div class="diagram-title">图 2 软件技术栈分层图</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-系统概要设计说明书-20260520-V1.0-diagram-02.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<table>
+  <tr><th>技术组件</th><th>用途</th><th>场景</th></tr>
+  <tr><td>Vue 3</td><td>构建前端页面。</td><td>问答首页、个人中心、管理后台。</td></tr>
+  <tr><td>FastAPI</td><td>构建后端 HTTP 服务。</td><td>gateway 和各后端服务。</td></tr>
+  <tr><td>MySQL</td><td>持久化业务数据。</td><td>用户、部门、人员、配额、会话。</td></tr>
+  <tr><td>Redis</td><td>缓存和运行态协调。</td><td>会话状态、配额缓存、任务状态。</td></tr>
+  <tr><td>MinIO</td><td>对象存储。</td><td>论文、专利、上传文件。</td></tr>
+  <tr><td>Neo4j</td><td>图谱查询。</td><td>文献图谱、专利图谱。</td></tr>
+  <tr><td>Chroma</td><td>向量检索。</td><td>文献、专利、深度问答向量库。</td></tr>
+</table>
+
+<h1>5 集成架构</h1>
+<div class="diagram">
+  <div class="diagram-title">图 3 外部集成架构图</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-系统概要设计说明书-20260520-V1.0-diagram-03.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<table>
+  <tr><th>接口名称</th><th>请求方</th><th>提供方</th><th>功能</th></tr>
+  <tr><td>Chat Completions</td><td>QA 后端</td><td>LLM 服务</td><td>生成答案、规划和总结。</td></tr>
+  <tr><td>Embedding</td><td>QA 后端</td><td>Embedding 服务</td><td>查询向量化。</td></tr>
+  <tr><td>Rerank</td><td>fastQA、patentQA</td><td>Rerank 服务</td><td>候选片段排序。</td></tr>
+  <tr><td>Intent</td><td>fastQA、patentQA</td><td>Intent 模型服务</td><td>识别问题意图。</td></tr>
+</table>
+
+<h1>6 部署架构</h1>
+<div class="diagram">
+  <div class="diagram-title">图 4 部署架构图</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-系统概要设计说明书-20260520-V1.0-diagram-04.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<p>部署采用容器化微服务方式。内部服务使用 compose service name 通信；部署方主要暴露 HTTPS、MySQL、Redis 和 MinIO 管理端口。Neo4j 地址不暴露给部署方配置，内部固定为 <code>neo4j-literature</code> 和 <code>neo4j-patent</code>。</p>
+
+<h1>7 数据库设计</h1>
+<div class="diagram">
+  <div class="diagram-title">图 5 主要实体关系图</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-系统概要设计说明书-20260520-V1.0-diagram-05.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<p>重要业务表均包含创建时间或更新时间字段，用于增量追踪和审计。用户、部门和人员使用状态字段停用，避免直接物理删除造成历史数据失联。后续新增业务表时，应补充 <code>created_at</code>、<code>updated_at</code> 或等价增量字段；涉及删除的主数据优先使用逻辑删除或状态停用。</p>
+
+<h1>8 基本功能设计</h1>
+<h2>8.1 异常处理</h2>
+<table>
+  <tr><th>异常类型</th><th>处理策略</th></tr>
+  <tr><td>业务异常</td><td>返回明确提示，例如配额不足、账号停用、文件格式不支持。</td></tr>
+  <tr><td>系统异常</td><td>记录日志并返回通用错误，避免暴露内部细节。</td></tr>
+  <tr><td>外部模型异常</td><td>记录模型响应和请求阶段，必要时提示模型服务不可用。</td></tr>
+  <tr><td>数据导入异常</td><td>seed job 失败退出，部署预检或日志中提示原因。</td></tr>
+</table>
+<h2>8.2 可配置项</h2>
+<p>客户主配置面包括端口、账号密码、MinIO、LLM、intent、embedding、rerank 和数据包版本。内部服务 URL、Redis DB、Neo4j 地址和 worker 参数由 compose 默认值控制，避免部署方配置过多内部细节。</p>
+<h2>8.3 系统日志</h2>
+<p>各容器输出标准日志，由 Docker 收集。重要日志包括 gateway 路由和配额日志、QA 阶段日志、模型调用错误、seed job 导入日志和基础组件健康检查日志。</p>
+<h2>8.4 个人信息安全保护</h2>
+<p>系统仅收集账号、工号、姓名、部门、人员绑定和安全问题等使用所需信息。密码和校验码以哈希形式保存，文档和镜像不写入真实密钥。系统应按客户制度控制访问权限、定期清理不再使用的外来人员记录，并避免在日志中输出敏感信息。</p>
+
+<h1>9 非功能设计</h1>
+<table>
+  <tr><th>类别</th><th>设计要求</th></tr>
+  <tr><td>性能</td><td>登录、管理类接口应快速响应；问答耗时受模型服务影响，需记录阶段耗时。</td></tr>
+  <tr><td>高可用</td><td>V1.0 单机 compose 部署；后续可替换为外部高可用 MySQL、Redis、MinIO 和多实例业务服务。</td></tr>
+  <tr><td>安全性</td><td>JWT 认证、管理员权限控制、内部 token、TLS 传输、密码哈希。</td></tr>
+  <tr><td>可维护性</td><td>服务拆分清晰，镜像和数据包分离，支持单服务增量更新。</td></tr>
+  <tr><td>可恢复性</td><td>运行态数据备份；reference data 和图谱可由数据包重建。</td></tr>
+</table>
+
+
+<h1>10 数据流设计</h1>
+<div class="diagram">
+  <div class="diagram-title">图 6 主要数据流图</div>
+  <p class="no-indent" style="text-align:center;"><img src="diagram_assets/LiFeO4Agent-系统概要设计说明书-20260520-V1.0-diagram-06.png" style="max-width:100%; width:16cm;" /></p>
+</div>
+<table>
+  <tr><th>数据类型</th><th>产生方</th><th>存储位置</th><th>生命周期</th></tr>
+  <tr><td>账号、部门、人员、配额</td><td>管理员或初始化脚本</td><td>MySQL</td><td>运行态业务数据，需备份。</td></tr>
+  <tr><td>会话和消息</td><td>用户问答</td><td>MySQL</td><td>运行态业务数据，按客户制度保留。</td></tr>
+  <tr><td>上传文件</td><td>用户</td><td>MinIO + MySQL 元数据</td><td>运行态数据，需备份。</td></tr>
+  <tr><td>论文和专利原文</td><td>数据包 seed</td><td>MinIO</td><td>可由数据包重建。</td></tr>
+  <tr><td>向量库和图谱</td><td>数据包 seed</td><td>named volume</td><td>可由数据包重建。</td></tr>
+  <tr><td>模型调用日志</td><td>QA 后端</td><td>Docker 日志</td><td>用于排障，不应包含密钥。</td></tr>
+</table>
+
+<h1>11 安全架构</h1>
+<table>
+  <tr><th>安全域</th><th>设计</th><th>说明</th></tr>
+  <tr><td>传输安全</td><td>edge nginx 提供 TLS。</td><td>证书由部署方签发或自签，客户端需信任。</td></tr>
+  <tr><td>身份认证</td><td>用户名密码 + JWT。</td><td>token 由 gateway 和 public-service 校验。</td></tr>
+  <tr><td>权限控制</td><td>普通用户和管理员角色。</td><td>管理员接口需要管理员权限。</td></tr>
+  <tr><td>内部调用</td><td>内部 token。</td><td>gateway 与 public-service 内部接口使用内部鉴权。</td></tr>
+  <tr><td>密钥治理</td><td>密钥只写入 <code>deploy/.env</code>。</td><td>文档和镜像上下文不包含真实密钥。</td></tr>
+  <tr><td>数据隔离</td><td>MinIO bucket、MySQL 用户、Docker 网络。</td><td>内部服务通过 compose service name 访问。</td></tr>
+</table>
+
+<h1>12 可扩展性设计</h1>
+<p>系统通过服务拆分和数据包分层支持后续扩展。新增问答模式时，应优先在 gateway 中增加模式路由，在独立 QA 后端中实现业务能力，并复用 public-service 的用户、会话、文件和配额能力。新增大规模数据时，应使用数据包和 seed job 交付，不应把原始数据打入业务镜像。</p>
+<table>
+  <tr><th>扩展方向</th><th>推荐做法</th></tr>
+  <tr><td>单服务代码更新</td><td>只构建并交付对应服务镜像，例如 <code>lifeo4agent/fastqa</code>。</td></tr>
+  <tr><td>新增向量库</td><td>新增独立 reference data 包和 named volume。</td></tr>
+  <tr><td>新增图谱</td><td>新增 Neo4j dump 包和独立 Neo4j 服务或数据库。</td></tr>
+  <tr><td>替换模型服务</td><td>只修改 <code>deploy/.env</code> 中 base url、模型名和 key。</td></tr>
+  <tr><td>高可用改造</td><td>将内置 MySQL、Redis、MinIO 替换为客户已有高可用中间件。</td></tr>
+</table>
+
+</body>
+</html>
