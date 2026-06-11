@@ -13,7 +13,7 @@
 |------|------|
 | **GitHub** | [github.com/BaBaoZhooou/SSE_QA](https://github.com/BaBaoZhooou/SSE_QA) |
 | **npm** | [`@sse-qa/cli`](https://www.npmjs.com/package/@sse-qa/cli)（全局命令 `sse-qa`） |
-| **当前版本** | `0.3.3` |
+| **当前版本** | `0.3.4` |
 
 ```bash
 npm install -g @sse-qa/cli

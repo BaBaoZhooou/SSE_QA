@@ -55,11 +55,32 @@ def format_retrieved_passages(
     return "\n\n".join(parts)
 
 
+def format_sub_answers(
+    sub_questions: list[str] | None,
+    sub_answers: list[str] | None,
+) -> str:
+    """Format sub-question answers for the synthesis prompt."""
+    if not sub_answers:
+        return "No sub-answers were generated."
+
+    parts: list[str] = []
+    for i, answer in enumerate(sub_answers):
+        question = ""
+        if sub_questions and i < len(sub_questions):
+            question = sub_questions[i]
+        if question:
+            parts.append(f"Sub-question {i + 1}: {question}\nAnswer: {answer or '(empty)'}")
+        else:
+            parts.append(f"Sub-answer {i + 1}: {answer or '(empty)'}")
+    return "\n\n".join(parts)
+
+
 def _build_synthesis_prompt(
     question: str,
     direct_answer: str,
     all_retrieved_chunks: list[list[RetrievedChunk]],
     sub_questions: list[str] = None,
+    sub_answers: list[str] | None = None,
     *,
     summary_enabled: bool | None = None,
 ) -> str:
@@ -71,7 +92,8 @@ def _build_synthesis_prompt(
     prompt = template.format(
         question=question,
         direct_answer=direct_answer,
-        retrieved_passages=retrieved_passages,
+        sub_answers=format_sub_answers(sub_questions, sub_answers),
+        passages=retrieved_passages,
     )
     summary_instruction = build_summary_instruction(enabled=summary_enabled)
     if summary_instruction:
@@ -84,6 +106,7 @@ def synthesize_answer(
     direct_answer: str,
     all_retrieved_chunks: list[list[RetrievedChunk]],
     sub_questions: list[str] = None,
+    sub_answers: list[str] | None = None,
     client: Optional[Any] = None,
     enable_thinking: Optional[bool] = None,
     summary_enabled: bool | None = None,
@@ -96,6 +119,7 @@ def synthesize_answer(
         direct_answer,
         all_retrieved_chunks,
         sub_questions,
+        sub_answers,
         summary_enabled=summary_enabled,
     )
 
@@ -117,6 +141,7 @@ def synthesize_answer_stream(
     direct_answer: str,
     all_retrieved_chunks: list[list[RetrievedChunk]],
     sub_questions: list[str] = None,
+    sub_answers: list[str] | None = None,
     client: Optional[Any] = None,
     enable_thinking: Optional[bool] = None,
     summary_enabled: bool | None = None,
@@ -130,6 +155,7 @@ def synthesize_answer_stream(
         direct_answer,
         all_retrieved_chunks,
         sub_questions,
+        sub_answers,
         summary_enabled=summary_enabled,
     )
 
